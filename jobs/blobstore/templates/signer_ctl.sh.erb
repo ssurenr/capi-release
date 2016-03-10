@@ -5,7 +5,7 @@ RUN_DIR=/var/vcap/sys/run/blobstore_url_signer
 PIDFILE=$RUN_DIR/blobstore_url_signer.pid
 SOCKETFILE=$RUN_DIR/signer.sock
 
-source /var/vcap/packages/common/utils.sh
+source /var/vcap/packages/capi_utils/utils.sh
 
 case $1 in
   start)

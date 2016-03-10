@@ -3,7 +3,7 @@
 RUN_DIR=/var/vcap/sys/run
 PIDFILE=$RUN_DIR/rpc_mountd.pid
 
-source /var/vcap/packages/common/utils.sh
+source /var/vcap/packages/capi_utils/utils.sh
 
 case $1 in
 

@@ -8,7 +8,7 @@ LOG_DIR=/var/vcap/sys/log/nfs_mounter
 export CONFIG_DIR=$NFS_JOB_DIR/config
 export NFS_SHARE=<%= p('nfs_server.share_path') %>
 
-source /var/vcap/packages/common/utils.sh
+source /var/vcap/packages/capi_utils/utils.sh
 source $NFS_JOB_DIR/bin/handle_nfs_blobstore.sh
 
 case $1 in

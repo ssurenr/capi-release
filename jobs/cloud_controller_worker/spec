@@ -14,7 +14,7 @@ templates:
   blobstore_waiter.sh.erb: bin/blobstore_waiter.sh
 
 packages:
-  - common
+  - capi_utils
   - cloud_controller_ng
   - nginx
   - nginx_newrelic_plugin

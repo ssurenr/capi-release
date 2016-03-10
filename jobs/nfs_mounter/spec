@@ -10,7 +10,7 @@ templates:
   nfs_mounter_ctl.erb: bin/nfs_mounter_ctl
 
 packages:
-  - common
+  - capi_utils
 
 properties:
   nfs_server.address:

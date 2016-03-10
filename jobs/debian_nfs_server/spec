@@ -10,7 +10,7 @@ templates:
   idmapd.conf.erb: config/idmapd.conf
 
 packages:
-  - common
+  - capi_utils
   - debian_nfs_server
 
 properties:

@@ -25,7 +25,7 @@ templates:
 
 
 packages:
-  - common
+  - capi_utils
   - cloud_controller_ng
   - nginx
   - nginx_newrelic_plugin
