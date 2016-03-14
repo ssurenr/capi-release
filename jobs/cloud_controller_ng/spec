@@ -26,6 +26,9 @@ templates:
   droplets_ca_cert.pem.erb: config/certs/droplets_ca_cert.pem
   packages_ca_cert.pem.erb: config/certs/packages_ca_cert.pem
   resource_pool_ca_cert.pem.erb: config/certs/resource_pool_ca_cert.pem
+  dea_ca.crt.erb: config/certs/dea_ca.crt
+  dea_client.crt.erb: config/certs/dea_client.crt
+  dea_client.key.erb: config/certs/dea_client.key
 
 packages:
   - capi_utils
@@ -642,3 +645,16 @@ properties:
   cc.reserved_private_domains:
     description: "File location of a list of reserved private domains (for file format, see https://publicsuffix.org/)"
     default: ~
+
+  cc.dea_use_https:
+    description: "enable ssl for communication with DEAs"
+    default: true
+
+  dea_next.ca_cert:
+    description: "PEM-encoded CA certificate"
+
+  dea_next.client_cert:
+    description: "PEM-encoded server certificate"
+
+  dea_next.client_key:
+    description: "PEM-encoded server key"
