@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /var/vcap/packages/capi_utils/utils.sh
+source /var/vcap/packages/capi_utils/syslog_utils.sh
 
 case $1 in
 

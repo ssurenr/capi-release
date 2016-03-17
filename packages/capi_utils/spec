@@ -1,4 +1,5 @@
 ---
 name: capi_utils
 files:
-- capi_utils/utils.sh
+- capi_utils/pid_utils.sh
+- capi_utils/syslog_utils.sh

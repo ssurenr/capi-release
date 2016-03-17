@@ -15,6 +15,7 @@ templates:
 packages:
 - nginx_webdav
 - blobstore_url_signer
+- capi_utils
 
 properties:
   blobstore.port:

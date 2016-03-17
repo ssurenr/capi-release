@@ -1,22 +1,3 @@
-
-# tee_output_to_sys_log
-#
-# When utils.sh is loaded, this sends stdout and stderr to /var/vcap/sys/log.
-# To disable this behavior, set SKIP_SYS_LOG_TEE=1
-function tee_output_to_sys_log() {
-  if [ "${SKIP_SYS_LOG_TEE}" = 1 ]; then
-    echo "Skipping output redirection to /var/vcap/sys/log" >&2
-  else
-    mkdir -p /var/vcap/sys/log
-
-    exec > >(tee -a >(logger -p user.info -t "vcap.$(basename "$0").stdout") | awk -W interactive '{lineWithDate="echo [`date +\"%Y-%m-%d %H:%M:%S%z\"`] \"" $0 "\""; system(lineWithDate)  }' >>"/var/vcap/sys/log/$(basename "$0").log")
-    exec 2> >(tee -a >(logger -p user.error -t "vcap.$(basename "$0").stderr") | awk -W interactive '{lineWithDate="echo [`date +\"%Y-%m-%d %H:%M:%S%z\"`] \"" $0 "\""; system(lineWithDate)  }' >>"/var/vcap/sys/log/$(basename "$0").err.log")
-  fi
-}
-
-tee_output_to_sys_log
-
-
 function pid_is_running() {
   declare pid="$1"
   ps -p "${pid}" >/dev/null 2>&1

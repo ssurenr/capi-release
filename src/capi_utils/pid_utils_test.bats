@@ -8,9 +8,8 @@
 readonly TIMEOUT=1
 
 setup() {
-  SKIP_SYS_LOG_TEE=1
   ## override stubs with original functions
-  source ./utils.sh
+  source ./pid_utils.sh
 
   TMPDIR=$(mktemp -dt "utils_test.XXXXXXX")
   PIDFILE="${TMPDIR}/test.pid"
