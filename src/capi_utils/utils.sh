@@ -48,7 +48,7 @@ function pid_guard() {
     exit 1
   fi
 
-  echo "Removing stale pidfile..."
+  echo "Removing stale pidfile"
   rm "${pidfile}"
 }
 
@@ -70,15 +70,13 @@ function wait_pid_death() {
   countdown=$(( timeout * 10 ))
 
   while true; do
-    if [ ${countdown} -le 0 ]; then
-      return 1
-    fi
-
     if ! pid_is_running "${pid}"; then
       return 0
     fi
 
-    [ $(( countdown % 10 )) = '0' ] && echo -n .
+    if [ ${countdown} -le 0 ]; then
+      return 1
+    fi
 
     countdown=$(( countdown - 1 ))
     sleep 0.1
@@ -100,7 +98,7 @@ function wait_pid_death() {
 # Append 'with timeout {n} seconds' to monit start/stop program configs
 #
 function kill_and_wait() {
-  declare pidfile="$1" timeout="${2:-25}"
+  declare pidfile="$1" timeout="${2:-25}" sigkill_on_timeout="${3:-1}"
 
   if [ ! -f "${pidfile}" ]; then
     echo "Pidfile ${pidfile} doesn't exist"
@@ -125,9 +123,11 @@ function kill_and_wait() {
   kill "${pid}"
 
   if ! wait_pid_death "${pid}" "${timeout}"; then
-    echo -ne "\nKill timed out, using kill -9 on ${pid}... "
-    kill -9 "${pid}"
-    sleep 0.5
+    if [ "${sigkill_on_timeout}" = "1" ]; then
+      echo "Kill timed out, using kill -9 on ${pid}"
+      kill -9 "${pid}"
+      sleep 0.5
+    fi
   fi
 
   if pid_is_running "${pid}"; then

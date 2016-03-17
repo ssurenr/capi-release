@@ -5,6 +5,8 @@
 # descriptor used by the test suite.
 # see: https://github.com/sstephenson/bats/issues/80
 
+readonly TIMEOUT=1
+
 setup() {
   SKIP_SYS_LOG_TEE=1
   ## override stubs with original functions
@@ -23,6 +25,28 @@ assertContains() {
   local e
   for e in "${@:2}"; do [[ "$e" == "$1" ]] && return 0; done
   return 1
+}
+
+refuteContains() {
+  local e
+  for e in "${@:2}"; do [[ "$e" == "$1" ]] && return 1; done
+  return 0
+}
+
+createUntermableProcess() {
+  local process_name
+  process_name="${TMPDIR}/untermable"
+
+  cat >"${process_name}" <<EOL
+#!/usr/bin/env bash
+
+trap "echo noooope" SIGINT SIGTERM
+
+sleep 10
+EOL
+
+  chmod +x "${process_name}"
+  ${process_name} >/dev/null 2>/dev/null 3>${FD3} &
 }
 
 ###
@@ -61,7 +85,7 @@ assertContains() {
   run pid_guard ${PIDFILE} "empty pidfile"
   [ "$status" -eq 0 ]
   [ ! -e ${PIDFILE} ]
-  assertContains "Removing stale pidfile..." "${lines[@]}"
+  assertContains "Removing stale pidfile" "${lines[@]}"
 }
 
 @test "pid_guard exits 0 and deletes the pid file if pid file exists and process is NOT running" {
@@ -71,7 +95,7 @@ assertContains() {
   run pid_guard ${PIDFILE} "fast process"
   [ "$status" -eq 0 ]
   [ ! -e ${PIDFILE} ]
-  assertContains "Removing stale pidfile..." "${lines[@]}"
+  assertContains "Removing stale pidfile" "${lines[@]}"
 }
 
 @test "pid_guard exits 0 if pid file does not exist" {
@@ -84,7 +108,7 @@ assertContains() {
 ###
 
 @test "kill_and_wait exits 0 with a warning when the pidfile does not exist" {
-  run kill_and_wait ${PIDFILE} 1
+  run kill_and_wait ${PIDFILE} "${TIMEOUT}"
   [ "$status" -eq 0 ]
   assertContains "Pidfile ${PIDFILE} doesn't exist" "${lines[@]}"
 }
@@ -94,7 +118,7 @@ assertContains() {
   pid=$!
   echo ${pid} > ${PIDFILE}
 
-  run kill_and_wait ${PIDFILE} 1
+  run kill_and_wait ${PIDFILE} "${TIMEOUT}"
   [ "$status" -eq 0 ]
   [ ! -e ${PIDFILE} ]
   assertContains "Process ${pid} is not running" "${lines[@]}"
@@ -104,7 +128,7 @@ assertContains() {
   sleep 5 3>${FD3} &
   echo $! > ${PIDFILE}
 
-  run kill_and_wait ${PIDFILE} 1
+  run kill_and_wait ${PIDFILE} "${TIMEOUT}"
   [ "$status" -eq 0 ]
 }
 
@@ -112,7 +136,7 @@ assertContains() {
   sleep 5 3>${FD3} &
   echo $! > ${PIDFILE}
 
-  run kill_and_wait ${PIDFILE} 1
+  run kill_and_wait ${PIDFILE} "${TIMEOUT}"
 
   [ "$status" -eq 0 ]
   assertContains "Stopped" "${lines[@]}"
@@ -122,12 +146,12 @@ assertContains() {
 @test "kill_and_wait exits 1 when the pidfile is empty" {
   echo "" > ${PIDFILE}
 
-  run kill_and_wait ${PIDFILE} 1
+  run kill_and_wait ${PIDFILE} "${TIMEOUT}"
   [ "$status" -eq 1 ]
   assertContains "Unable to get pid from ${PIDFILE}" "${lines[@]}"
 }
 
-@test "kill_and_wait exits 1 and times out when we don't try very hard to kill the process" {
+@test "kill_and_wait exits 1 if process does not die" {
   pid_is_running() {
     true
   }
@@ -139,13 +163,39 @@ assertContains() {
   sleep 5 3>${FD3} &
   echo $! > ${PIDFILE}
 
-  run kill_and_wait ${PIDFILE} 1
+  run kill_and_wait ${PIDFILE} "${TIMEOUT}"
 
   [ "$status" -eq 1 ]
   [ -e ${PIDFILE} ]
   assertContains "Timed Out" "${lines[@]}"
 }
 
+@test "kill_and_wait does a kill -9 if sigkill_on_timeout uses default and kill times out" {
+  createUntermableProcess
+  pid="$!"
+  echo "${pid}" > "${PIDFILE}"
+
+  run kill_and_wait ${PIDFILE} "${TIMEOUT}"
+  [ "$status" -eq 0 ]
+  assertContains "Kill timed out, using kill -9 on ${pid}" "${lines[@]}"
+  assertContains "Stopped" "${lines[@]}"
+}
+
+@test "kill_and_wait does not kill -9 if sigkill_on_timeout is 0" {
+  sig_kill_timeout=0
+
+  createUntermableProcess
+  pid="$!"
+  echo "${pid}" > "${PIDFILE}"
+
+  run kill_and_wait "${PIDFILE}" "${TIMEOUT}" "${sig_kill_timeout}"
+  [ "$status" -eq 1 ]
+
+  echo $output
+
+  refuteContains "Kill timed out, using kill -9 on ${pid}" "${lines[@]}"
+  assertContains "Timed Out" "${lines[@]}"
+}
 
 ###
 ### wait_pid_death
@@ -155,7 +205,7 @@ assertContains() {
   touch ${PIDFILE} 3>${FD3} &
   pid=$!
 
-  run wait_pid_death ${pid} 1
+  run wait_pid_death ${pid} "${TIMEOUT}"
   [ "$status" -eq 0 ]
 }
 
@@ -163,7 +213,7 @@ assertContains() {
   sleep 0.3 3>${FD3} &
   pid=$!
 
-  run wait_pid_death ${pid} 1
+  run wait_pid_death ${pid} "${TIMEOUT}"
   [ "$status" -eq 0 ]
 }
 
@@ -171,14 +221,26 @@ assertContains() {
   sleep 5 3>${FD3} &
   pid=$!
 
-  run wait_pid_death ${pid} 1
+  run wait_pid_death ${pid} "${TIMEOUT}"
   [ "$status" -eq 1 ]
 }
 
-@test "wait_pid_death prints a . for each second before it exits" {
+@test "wait_pid_death exits 1 when the process is running and timeout is zero" {
+  timeout=0
+
   sleep 5 3>${FD3} &
   pid=$!
 
-  run wait_pid_death ${pid} 2
-  [ "$output" = ".." ]
+  run wait_pid_death ${pid} "${timeout}"
+  [ "$status" -eq 1 ]
+}
+
+@test "wait_pid_death exits 0 when the process is not running and timeout is zero" {
+  timeout=0
+
+  touch ${PIDFILE} 3>${FD3} &
+  pid=$!
+
+  run wait_pid_death ${pid} "${timeout}"
+  [ "$status" -eq 0 ]
 }
