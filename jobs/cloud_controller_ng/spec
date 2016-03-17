@@ -607,3 +607,7 @@ properties:
   router.route_services_secret:
     description: "Support for route services is disabled when no value is configured."
     default: ""
+
+  routing_api.enabled:
+    description: "Whether to expose the routing_endpoint listed at /v2/info. Enable this after deploying the Routing API"
+    default: false
