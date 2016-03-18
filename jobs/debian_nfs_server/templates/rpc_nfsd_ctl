@@ -1,6 +1,9 @@
 #!/bin/bash
 
+LOG_DIR=/var/vcap/sys/log
+
 source /var/vcap/packages/capi_utils/syslog_utils.sh
+tee_output_to_sys_log "${LOG_DIR}"
 
 case $1 in
 
