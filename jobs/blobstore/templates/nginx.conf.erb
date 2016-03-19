@@ -10,6 +10,7 @@ events {
 }
 
 http {
+  server_names_hash_bucket_size 128;
   include      /var/vcap/jobs/blobstore/config/mime.types;
   default_type text/html;
 
