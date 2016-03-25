@@ -16,7 +16,7 @@ case $1 in
     mkdir -p $LOG_DIR
     mkdir -p $DATA
     mkdir -p $TMP_DIR
-    chown -R vcap:vcap $RUN_DIR $LOG_DIR $DATA
+    chown vcap:vcap $RUN_DIR $LOG_DIR $DATA
 
     pid_guard "${PIDFILE}" "blobstore_nginx"
     echo $$ > "${PIDFILE}"
