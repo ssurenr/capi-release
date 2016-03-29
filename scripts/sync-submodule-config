@@ -1,0 +1,24 @@
+#!/bin/bash
+ 
+set -e -x
+
+# ensure gosub is installed (this will recompile it only if necessary)
+go get github.com/vito/gosub
+go install github.com/vito/gosub
+
+{
+  gosub list \
+    -app github.com/cloudfoundry-incubator/cc-uploader/cmd/... \
+    -app github.com/cloudfoundry-incubator/nsync/cmd/... \
+    -app github.com/cloudfoundry-incubator/stager/cmd/... \
+    -app github.com/cloudfoundry-incubator/tps/cmd/... 
+
+  # separate these so gosub doesn't asplode
+  gosub list -test github.com/cloudfoundry-incubator/cc-uploader/...
+  gosub list -test github.com/cloudfoundry-incubator/nsync/...
+  gosub list -test github.com/cloudfoundry-incubator/stager/...
+  gosub list -test github.com/cloudfoundry-incubator/tps/...
+
+} > /tmp/packages
+
+cat /tmp/packages | xargs gosub sync -i src/cloud_controller_ng -i src/github.com/cloudfoundry/blobstore_url_signer

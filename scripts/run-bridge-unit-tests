@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+pushd src/github.com/cloudfoundry-incubator
+  ginkgo -r -p --race nsync cc-uploader tps stager
+popd
