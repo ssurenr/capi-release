@@ -22,7 +22,10 @@ templates:
   console.erb: bin/console
   dns_health_check.erb: bin/dns_health_check
   blobstore_waiter.sh.erb: bin/blobstore_waiter.sh
-
+  buildpacks_ca_cert.pem.erb: config/certs/buildpacks_ca_cert.pem
+  droplets_ca_cert.pem.erb: config/certs/droplets_ca_cert.pem
+  packages_ca_cert.pem.erb: config/certs/packages_ca_cert.pem
+  resource_pool_ca_cert.pem.erb: config/certs/resource_pool_ca_cert.pem
 
 packages:
   - capi_utils
@@ -243,13 +246,19 @@ properties:
     default: "fog"
   cc.resource_pool.webdav_config.public_endpoint:
     description: "The location of the webdav server eg: https://blobstore.com"
+    default: ""
   cc.resource_pool.webdav_config.private_endpoint:
     description: "The location of the webdav server eg: https://blobstore.internal"
     default: "https://blobstore.service.cf.internal"
   cc.resource_pool.webdav_config.username:
     description: "The basic auth user that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.resource_pool.webdav_config.password:
     description: "The basic auth password that CC uses to connect to the admin endpoint on webdav"
+    default: ""
+  cc.resource_pool.webdav_config.ca_cert:
+    description: "The ca cert to use when communicating with webdav"
+    default: ""
   cc.resource_pool.minimum_size:
     description: "Minimum size of a resource to add to the pool"
     default: 65536
@@ -276,13 +285,19 @@ properties:
     default: "fog"
   cc.packages.webdav_config.public_endpoint:
     description: "The location of the webdav server eg: https://blobstore.com"
+    default: ""
   cc.packages.webdav_config.private_endpoint:
     description: "The location of the webdav server eg: https://blobstore.internal"
     default: "https://blobstore.service.cf.internal"
   cc.packages.webdav_config.username:
     description: "The basic auth user that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.packages.webdav_config.password:
     description: "The basic auth password that CC uses to connect to the admin endpoint on webdav"
+    default: ""
+  cc.packages.webdav_config.ca_cert:
+    description: "The ca cert to use when communicating with webdav"
+    default: ""
   cc.packages.app_package_directory_key:
     description: "Directory (bucket) used store app packages.  It does not have be pre-created."
     default: "cc-packages"
@@ -309,13 +324,19 @@ properties:
     default: "fog"
   cc.droplets.webdav_config.public_endpoint:
     description: "The location of the webdav server eg: https://blobstore.com"
+    default: ""
   cc.droplets.webdav_config.private_endpoint:
     description: "The location of the webdav server eg: https://blobstore.internal"
     default: "https://blobstore.service.cf.internal"
   cc.droplets.webdav_config.username:
     description: "The basic auth user that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.droplets.webdav_config.password:
     description: "The basic auth password that CC uses to connect to the admin endpoint on webdav"
+    default: ""
+  cc.droplets.webdav_config.ca_cert:
+    description: "The ca cert to use when communicating with webdav"
+    default: ""
   cc.droplets.droplet_directory_key:
     description: "Directory (bucket) used store droplets.  It does not have be pre-created."
     default: "cc-droplets"
@@ -339,13 +360,19 @@ properties:
     default: "fog"
   cc.buildpacks.webdav_config.public_endpoint:
     description: "The location of the webdav server eg: https://blobstore.com"
+    default: ""
   cc.buildpacks.webdav_config.private_endpoint:
     description: "The location of the webdav server eg: https://blobstore.internal"
     default: "https://blobstore.service.cf.internal"
   cc.buildpacks.webdav_config.username:
     description: "The basic auth user that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.buildpacks.webdav_config.password:
     description: "The basic auth password that CC uses to connect to the admin endpoint on webdav"
+    default: ""
+  cc.buildpacks.webdav_config.ca_cert:
+    description: "The ca cert to use when communicating with webdav"
+    default: ""
   cc.buildpacks.buildpack_directory_key:
     description: "Directory (bucket) used store buildpacks.  It does not have be pre-created."
     default: "cc-buildpacks"
