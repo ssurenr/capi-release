@@ -275,13 +275,16 @@ properties:
     default: "fog"
   cc.droplets.webdav_config.public_endpoint:
     description: "The location of the webdav server eg: https://blobstore.com"
+    default: ""
   cc.droplets.webdav_config.private_endpoint:
     description: "The location of the webdav server eg: https://blobstore.internal"
     default: "https://blobstore.service.cf.internal"
   cc.droplets.webdav_config.username:
     description: "The basic auth user that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.droplets.webdav_config.password:
     description: "The basic auth password that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.droplets.webdav_config.ca_cert:
     description: "The ca cert to use when communicating with webdav"
     default: ""
