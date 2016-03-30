@@ -638,3 +638,7 @@ properties:
   routing_api.enabled:
     description: "Whether to expose the routing_endpoint listed at /v2/info. Enable this after deploying the Routing API"
     default: false
+
+  cc.reserved_private_domains:
+    description: "File location of a list of reserved private domains (for file format, see https://publicsuffix.org/)"
+    default: ~
