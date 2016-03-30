@@ -1,7 +1,5 @@
 set -e -x
 
-ls 1>&2
-
 cp -a capi-release/src/* ${BOSH_INSTALL_TARGET}
 cd ${BOSH_INSTALL_TARGET}/cloud_controller_ng
 
