@@ -206,13 +206,16 @@ properties:
     default: "fog"
   cc.resource_pool.webdav_config.public_endpoint:
     description: "The location of the webdav server eg: https://blobstore.com"
+    default: ""
   cc.resource_pool.webdav_config.private_endpoint:
     description: "The location of the webdav server eg: https://blobstore.internal"
     default: "https://blobstore.service.cf.internal"
   cc.resource_pool.webdav_config.username:
     description: "The basic auth user that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.resource_pool.webdav_config.password:
     description: "The basic auth password that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.resource_pool.webdav_config.ca_cert:
     description: "The ca cert to use when communicating with webdav"
     default: ""
@@ -242,13 +245,16 @@ properties:
     default: "fog"
   cc.packages.webdav_config.public_endpoint:
     description: "The location of the webdav server eg: https://blobstore.com"
+    default: ""
   cc.packages.webdav_config.private_endpoint:
     description: "The location of the webdav server eg: https://blobstore.internal"
     default: "https://blobstore.service.cf.internal"
   cc.packages.webdav_config.username:
     description: "The basic auth user that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.packages.webdav_config.password:
     description: "The basic auth password that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.packages.webdav_config.ca_cert:
     description: "The ca cert to use when communicating with webdav"
     default: ""
@@ -308,13 +314,16 @@ properties:
     default: "fog"
   cc.buildpacks.webdav_config.public_endpoint:
     description: "The location of the webdav server eg: https://blobstore.com"
+    default: ""
   cc.buildpacks.webdav_config.private_endpoint:
     description: "The location of the webdav server eg: https://blobstore.internal"
     default: "https://blobstore.service.cf.internal"
   cc.buildpacks.webdav_config.username:
     description: "The basic auth user that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.buildpacks.webdav_config.password:
     description: "The basic auth password that CC uses to connect to the admin endpoint on webdav"
+    default: ""
   cc.buildpacks.webdav_config.ca_cert:
     description: "The ca cert to use when communicating with webdav"
     default: ""
