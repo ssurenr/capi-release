@@ -1,8 +1,9 @@
 set -e -x
 
-cp -a * ${BOSH_INSTALL_TARGET}
+ls 1>&2
 
-cd ${BOSH_INSTALL_TARGET}/cloud_controller_ng
+cp -a capi-release/src/cloud_controller_ng/* ${BOSH_INSTALL_TARGET}
+cd ${BOSH_INSTALL_TARGET}
 
 bundle_cmd=/var/vcap/packages/ruby-2.2.4/bin/bundle
 mariadb_dir=/var/vcap/packages/libmariadb/libmariadb

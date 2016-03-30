@@ -11,7 +11,7 @@ tar xzvf nginx/nginx-upload-module-2.2.tar.gz
 
 echo "Patching upload module"
 pushd nginx-upload-module-2.2
-  patch < ../nginx/upload_module_put_support.patch
+  patch < ../capi-release/src/nginx/upload_module_put_support.patch
 popd
 
 echo "Extracting nginx..."

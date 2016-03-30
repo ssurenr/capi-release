@@ -19,7 +19,7 @@ case $1 in
 
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap /var/vcap/packages/blobstore_url_signer/bin/blobstore_url_signer \
+    exec chpst -u vcap:vcap /var/vcap/packages/blobstore_url_signer/blobstore_url_signer \
       -secret <%=p("blobstore.secure_link.secret")%> \
       -network unix \
       -laddr $SOCKETFILE \
