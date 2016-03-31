@@ -47,3 +47,7 @@ ruby-2.2.4/rubygems-2.4.8.tgz:
   object_id: 9179053d-6e16-4694-bed6-e9accfb59062
   sha: 0db6b2f1cdd2267fe19f1f875057c2f2ce9f5696
   size: 447712
+golang/go1.6.linux-amd64.tar.gz:
+  object_id: 95136d43-21c8-4226-9191-69c2dba48df6
+  sha: 01a6a28dbe31a53103b600979bbbbd63a8104456
+  size: 84799480
