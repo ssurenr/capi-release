@@ -648,7 +648,7 @@ properties:
 
   cc.dea_use_https:
     description: "enable ssl for communication with DEAs"
-    default: true
+    default: false
 
   dea_next.ca_cert:
     description: "PEM-encoded CA certificate"
