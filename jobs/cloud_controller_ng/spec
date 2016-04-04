@@ -660,5 +660,5 @@ properties:
     description: "PEM-encoded server key"
 
   cc.core_file_pattern:
-    description: "Filename template for core dump files"
+    description: "Filename template for core dump files. Use an empty string if you don't want core files saved."
     default: "/var/vcap/sys/cores/core-%e-%s-%p-%t"
