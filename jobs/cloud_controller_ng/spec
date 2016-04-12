@@ -662,3 +662,7 @@ properties:
   cc.core_file_pattern:
     description: "Filename template for core dump files. Use an empty string if you don't want core files saved."
     default: "/var/vcap/sys/cores/core-%e-%s-%p-%t"
+
+  cc.security_event_logging.enabled:
+    description: "Enable logging of all requests made to the Cloud Controller in CEF format."
+    default: false
