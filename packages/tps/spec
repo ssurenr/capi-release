@@ -54,6 +54,7 @@ files:
   - capi-release/src/github.com/cloudfoundry/gunk/urljoiner/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/gunk/workpool/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/noaa/*.go # gosub
+  - capi-release/src/github.com/cloudfoundry/noaa/consumer/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/noaa/errors/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/sonde-go/events/*.go # gosub
   - capi-release/src/github.com/gogo/protobuf/gogoproto/*.go # gosub
