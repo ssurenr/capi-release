@@ -343,34 +343,34 @@ properties:
     default: ""
 
   ccdb.databases:
-    description:
+    description: "Contains the name of the database on the database server"
   ccdb.roles:
-    description:
+    description: "Users to create on the database when seeding"
   ccdb.db_scheme:
-    description:
+    description: "The type of database being used. mysql or postgres"
     default: postgres
   ccdb.address:
-    description:
+    description: "The address of the database server"
   ccdb.port:
-    description:
+    description: "The port of the database server"
   ccdb.max_connections:
     default: 25
     description: "Maximum connections for Sequel"
   ccdb.pool_timeout:
     default: 10
-    description:
+    description: "The timeout for Sequel pooled connections"
 
   uaa.cc.token_secret:
-    description:
+    description: "Symmetric secret used to decode uaa tokens. Used for testing."
   uaa.url:
-    description:
+    description: "URL of the UAA server"
   login.protocol:
     description: "http or https"
     default: "https"
   login.url:
-    description:
+    description: "URL of the login server"
   hm9000.url:
-    description:
+    description: "URL of the hm9000 server"
 
   uaa.jwt.verification_key:
     default: ""
