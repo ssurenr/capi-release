@@ -29,8 +29,6 @@ templates:
   dea_ca.crt.erb: config/certs/dea_ca.crt
   dea_client.crt.erb: config/certs/dea_client.crt
   dea_client.key.erb: config/certs/dea_client.key
-  pre-start.sh.erb: bin/pre-start
-  check_for_domain_overlap.sh: bin/check_for_domain_overlap.sh
 
 packages:
   - capi_utils
