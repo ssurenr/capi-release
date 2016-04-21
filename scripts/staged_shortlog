@@ -14,10 +14,7 @@ puts # Second line of git commit message should always be empty
 
 locations.each do |location, shas|
   Dir.chdir(location) do
-    remote = `git remote -v`.match(/github.com[\/:]([^\s]+?).git/)
-    repo = remote && remote[1]
-
-    puts "Bump #{repo}"
+    puts "Bump #{location}"
     
     commit_messages_by_author = Hash.new([])
     `git log #{shas} --pretty=format:'%h %an: %s'`.split("\n").each do |commit|
