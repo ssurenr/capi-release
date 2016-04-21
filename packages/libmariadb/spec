@@ -1,4 +1,4 @@
 ---
 name: libmariadb
 files:
-- libmariadb/libmariadb.tar.xz
+- libmariadb/libmariadb-5.5.36.tar.xz

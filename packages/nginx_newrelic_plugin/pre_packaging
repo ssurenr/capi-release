@@ -1,7 +1,7 @@
 set -e -x
 
 pushd ${BUILD_DIR}/nginx
-	tar zxvf newrelic_nginx_agent.tar.gz
+	tar zxvf newrelic_nginx_agent-1.2.1.tar.gz
 popd
 
 pushd ${BUILD_DIR}/nginx/newrelic_nginx_agent
