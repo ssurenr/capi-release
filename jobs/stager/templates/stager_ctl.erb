@@ -10,16 +10,16 @@ PIDFILE=$RUN_DIR/stager.pid
 source /var/vcap/packages/capi_utils/pid_utils.sh
 source /var/vcap/packages/capi_utils/container_utils.sh
 
-<% if p("diego.stager.bbs.require_ssl") %>
+<% if p(["capi.stager.bbs.require_ssl", "diego.stager.bbs.require_ssl"]) %>
   bbs_sec_flags=" \
    -bbsClientCert=${CONF_DIR}/certs/bbs/client.crt \
    -bbsClientKey=${CONF_DIR}/certs/bbs/client.key \
    -bbsCACert=${CONF_DIR}/certs/bbs/ca.crt"
 
-  bbs_api_url="<%= "https://" + p("diego.stager.bbs.api_location") %>"
+  bbs_api_url="<%= "https://" + p(["capi.stager.bbs.api_location", "diego.stager.bbs.api_location"]) %>"
 <% else %>
   bbs_sec_flags=""
-  bbs_api_url="<%= "http://" + p("diego.stager.bbs.api_location") %>"
+  bbs_api_url="<%= "http://" + p(["capi.stager.bbs.api_location", "diego.stager.bbs.api_location"]) %>"
 <% end %>
 
 case $1 in
@@ -65,30 +65,34 @@ case $1 in
 
     exec chpst -u vcap:vcap /var/vcap/packages/stager/bin/stager ${bbs_sec_flags} \
       -bbsAddress=${bbs_api_url} \
-      <% if_p("diego.stager.bbs.client_session_cache_size") do |value| %> \
+      <% if_p("capi.stager.bbs.client_session_cache_size") do |value| %> \
+        -bbsClientSessionCacheSize=<%= value %> \
+      <% end.else_if_p("diego.stager.bbs.client_session_cache_size") do |value| %> \
         -bbsClientSessionCacheSize=<%= value %> \
       <% end %> \
-      <% if_p("diego.stager.bbs.max_idle_conns_per_host") do |value| %> \
+      <% if_p("capi.stager.bbs.max_idle_conns_per_host") do |value| %> \
+        -bbsMaxIdleConnsPerHost=<%= value %> \
+      <% end.else_if_p("diego.stager.bbs.max_idle_conns_per_host") do |value| %> \
         -bbsMaxIdleConnsPerHost=<%= value %> \
       <% end %> \
-      -dropsondePort=<%= p("diego.stager.dropsonde_port") %> \
-      -listenAddress=<%= p("diego.stager.listen_addr") %> \
-      -stagingTaskCallbackURL=<%= p("diego.stager.staging_task_callback_url") %> \
-      -ccBaseURL=http://<%= p("diego.stager.cc.internal_service_hostname") %>:<%= p("diego.stager.cc.external_port") %> \
-      -ccUsername=<%= Shellwords.shellescape(p("diego.stager.cc.basic_auth_username")) %> \
-      -ccPassword=<%= Shellwords.shellescape(p("diego.stager.cc.basic_auth_password")) %> \
+      -dropsondePort=<%= p(["capi.stager.dropsonde_port", "diego.stager.dropsonde_port"]) %> \
+      -listenAddress=<%= p(["capi.stager.listen_addr", "diego.stager.listen_addr"]) %> \
+      -stagingTaskCallbackURL=<%= p(["capi.stager.staging_task_callback_url", "diego.stager.staging_task_callback_url"]) %> \
+      -ccBaseURL=http://<%= p(["capi.stager.cc.internal_service_hostname", "diego.stager.cc.internal_service_hostname"]) %>:<%= p(["capi.stager.cc.external_port", "diego.stager.cc.external_port"]) %> \
+      -ccUsername=<%= Shellwords.shellescape(p(["capi.stager.cc.basic_auth_username", "diego.stager.cc.basic_auth_username"])) %> \
+      -ccPassword=<%= Shellwords.shellescape(p(["capi.stager.cc.basic_auth_password", "diego.stager.cc.basic_auth_password"])) %> \
       -skipCertVerify=<%= p("diego.ssl.skip_cert_verify") %> \
-      -debugAddr=<%= p("diego.stager.debug_addr") %> \
-      <%= p("diego.stager.lifecycle_bundles").map { |bundle| "-lifecycle #{bundle}" }.join(" ") %> \
-      -dockerStagingStack=<%= p("diego.stager.docker_staging_stack") %> \
-      -fileServerURL=<%= p("diego.stager.file_server_url") %> \
-      -ccUploaderURL=<%= p("diego.stager.cc_uploader_url") %> \
-      -consulCluster=http://127.0.0.1:<%= p("diego.stager.consul_agent_port") %> \
-      -dockerRegistryAddress=<%= p("diego.stager.docker_registry_address") %> \
-      <% p("diego.stager.insecure_docker_registry_list").each do |url| %> \
+      -debugAddr=<%= p(["capi.stager.debug_addr", "diego.stager.debug_addr"]) %> \
+      <%= p(["capi.stager.lifecycle_bundles", "diego.stager.lifecycle_bundles"]).map { |bundle| "-lifecycle #{bundle}" }.join(" ") %> \
+      -dockerStagingStack=<%= p(["capi.stager.docker_staging_stack", "diego.stager.docker_staging_stack"]) %> \
+      -fileServerURL=<%= p(["capi.stager.file_server_url", "diego.stager.file_server_url"]) %> \
+      -ccUploaderURL=<%= p(["capi.stager.cc_uploader_url", "diego.stager.cc_uploader_url"]) %> \
+      -consulCluster=http://127.0.0.1:<%= p(["capi.stager.consul_agent_port", "diego.stager.consul_agent_port"]) %> \
+      -dockerRegistryAddress=<%= p(["capi.stager.docker_registry_address", "diego.stager.docker_registry_address"]) %> \
+      <% p(["capi.stager.insecure_docker_registry_list", "diego.stager.insecure_docker_registry_list"]).each do |url| %> \
         -insecureDockerRegistry=<%= url %> \
       <% end %> \
-      -logLevel=<%= p("diego.stager.log_level") %> \
+      -logLevel=<%= p(["capi.stager.log_level", "diego.stager.log_level"]) %> \
       2> >(tee -a $LOG_DIR/stager.stderr.log | logger -p user.error -t vcap.stager) \
       1> >(tee -a $LOG_DIR/stager.stdout.log | logger -p user.info -t vcap.stager)
 
