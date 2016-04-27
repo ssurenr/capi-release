@@ -40,6 +40,7 @@ packages:
   - libpq
   - libmariadb
   - ruby-2.2.4
+  - ruby-2.3
 
 properties:
   ssl.skip_cert_verify:

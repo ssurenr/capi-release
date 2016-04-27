@@ -4,6 +4,7 @@ dependencies:
 - libpq
 - libmariadb
 - ruby-2.2.4
+- ruby-2.3
 
 files:
 - capi-release/src/cloud_controller_ng/{.ruby-version,Rakefile,Gemfile,Gemfile.lock}

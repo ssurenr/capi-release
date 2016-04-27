@@ -4,6 +4,7 @@ cp -a capi-release/src/* ${BOSH_INSTALL_TARGET}
 cd ${BOSH_INSTALL_TARGET}/cloud_controller_ng
 
 bundle_cmd=/var/vcap/packages/ruby-2.2.4/bin/bundle
+bundle_cmd=/var/vcap/packages/ruby-2.3/bin/bundle
 mariadb_dir=/var/vcap/packages/libmariadb/libmariadb
 libpq_dir=/var/vcap/packages/libpq
 
