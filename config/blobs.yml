@@ -47,3 +47,15 @@ nginx/newrelic_nginx_agent-1.2.1.tar.gz:
   object_id: c63358f6-574a-4e20-9d2b-7e1450368b6d
   sha: 98a1b10475371705932fea4769f8ac1b0451106f
   size: 5222
+ruby-2.3/bundler-1.11.2.gem:
+  object_id: f1b1e5c1-5ff5-4346-bd82-e2aa4ee2f49c
+  sha: 8eb956dec72da753d3d2a2126c78508b17af434e
+  size: 263168
+ruby-2.3/ruby-2.3.1.tar.gz:
+  object_id: 654540b3-2f41-480f-b874-d74467856f27
+  sha: c39b4001f7acb4e334cb60a0f4df72d434bef711
+  size: 17797997
+ruby-2.3/rubygems-2.6.4.tgz:
+  object_id: 2c63b010-b055-4eb4-9371-5fba9a01e9a1
+  sha: 8ef39e536af2ecd20b0e7a95765fa6a485087ac8
+  size: 478582
