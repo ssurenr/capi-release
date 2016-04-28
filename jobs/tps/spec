@@ -30,7 +30,6 @@ properties:
     default: "info"
   diego.tps.traffic_controller_url:
     description: URL of Traffic controller
-    default: ws://loggregator-trafficcontroller.service.cf.internal:8081
 
   diego.tps.bbs.api_location:
     description: "Address to the BBS Server"
@@ -86,7 +85,6 @@ properties:
     default: "info"
   capi.tps.traffic_controller_url:
     description: URL of Traffic controller
-    default: ws://loggregator-trafficcontroller.service.cf.internal:8081
 
   capi.tps.bbs.api_location:
     description: "Address to the BBS Server"
