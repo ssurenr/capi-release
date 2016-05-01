@@ -3,7 +3,6 @@ name: cloud_controller_ng
 dependencies:
 - libpq
 - libmariadb
-- ruby-2.2.4
 - ruby-2.3
 
 files:
