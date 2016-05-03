@@ -661,3 +661,7 @@ properties:
   cc.security_event_logging.enabled:
     description: "Enable logging of all requests made to the Cloud Controller in CEF format."
     default: false
+
+  cc.volume_services_enabled:
+    description: "Enable binding to services that provide volume_mount information."
+    default: false
