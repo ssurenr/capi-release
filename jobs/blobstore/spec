@@ -48,5 +48,8 @@ properties:
     description: "Max allowed file size for upload"
     default: "5000m"
 
-  domain:
+  system_domain:
     description: "The system domain.  The public server will listen on host 'blobstore.system-domain.tld'"
+
+  domain:
+    description: "DEPRECATED: The system domain.  The public server will listen on host 'blobstore.system-domain.tld'"

@@ -68,7 +68,7 @@ server {
 # Public server
 server {
   listen      <%= p("blobstore.port") %>;
-  server_name blobstore.<%= p("domain") %>;
+  server_name blobstore.<%= p("system_domain") %>;
   root        /var/vcap/store/shared/;
 
   access_log /var/vcap/sys/log/blobstore/public_access.log;
