@@ -8,6 +8,7 @@ DATA=/var/vcap/store/shared
 TMP_DIR=$DATA/tmp/uploads
 
 source /var/vcap/packages/capi_utils/pid_utils.sh
+source /var/vcap/packages/capi_utils/cpu_utils.sh
 
 case $1 in
 
@@ -21,7 +22,12 @@ case $1 in
     pid_guard "${PIDFILE}" "blobstore_nginx"
     echo $$ > "${PIDFILE}"
 
-    exec /var/vcap/packages/nginx_webdav/sbin/nginx -c /var/vcap/jobs/blobstore/config/nginx.conf >>$LOG_DIR/nginx.stdout.log 2>>$LOG_DIR/nginx.stderr.log
+    cpu_count=$(cpu_count)
+
+    exec /var/vcap/packages/nginx_webdav/sbin/nginx \
+      -c /var/vcap/jobs/blobstore/config/nginx.conf \
+      -g "worker_processes ${cpu_count:-2};" \
+      >>$LOG_DIR/nginx.stdout.log 2>>$LOG_DIR/nginx.stderr.log
     ;;
 
   stop)
