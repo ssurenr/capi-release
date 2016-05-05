@@ -9,21 +9,19 @@ upstream blob_url_signer {
 
 # Internal server
 server {
-  listen      <%= p("blobstore.tls.port") %> ssl;
+  listen      <%= p('blobstore.tls.port') %> ssl;
   server_name blobstore.service.cf.internal;
   ssl_certificate     /var/vcap/jobs/blobstore/ssl/blobstore.crt;
   ssl_certificate_key /var/vcap/jobs/blobstore/ssl/blobstore.key;
   root        /var/vcap/store/shared/;
 
-  allow 10.0.0.0/8;
-  allow 172.16.0.0/12;
-  allow 192.168.0.0/16;
+  <%= p('blobstore.internal_access_rules').join("\n  ") %>
   deny all;
 
   access_log /var/vcap/sys/log/blobstore/internal_access.log;
   error_log  /var/vcap/sys/log/blobstore/internal_error.log;
 
-  client_max_body_size <%= p("blobstore.max_upload_size") %>;
+  client_max_body_size <%= p('blobstore.max_upload_size') %>;
 
   location /admin/ {
     auth_basic "Blobstore Admin";
@@ -51,7 +49,7 @@ server {
     }
 
     secure_link $arg_md5,$arg_expires;
-    secure_link_md5 "$secure_link_expires$uri <%= p("blobstore.secure_link.secret") %>";
+    secure_link_md5 "$secure_link_expires$uri <%= p('blobstore.secure_link.secret') %>";
 
     if ($secure_link = "") {
       return 403;
@@ -67,8 +65,8 @@ server {
 
 # Public server
 server {
-  listen      <%= p("blobstore.port") %>;
-  server_name blobstore.<%= p("system_domain") %>;
+  listen      <%= p('blobstore.port') %>;
+  server_name blobstore.<%= p('system_domain') %>;
   root        /var/vcap/store/shared/;
 
   access_log /var/vcap/sys/log/blobstore/public_access.log;
@@ -81,7 +79,7 @@ server {
     }
 
     secure_link $arg_md5,$arg_expires;
-    secure_link_md5 "$secure_link_expires$uri <%= p("blobstore.secure_link.secret") %>";
+    secure_link_md5 "$secure_link_expires$uri <%= p('blobstore.secure_link.secret') %>";
 
     if ($secure_link = "") {
       return 403;
