@@ -531,3 +531,7 @@ properties:
   cc.reserved_private_domains:
     description: "File location of a list of reserved private domains (for file format, see https://publicsuffix.org/)"
     default: ~
+
+  cc.system_hostnames:
+    description: "List of hostnames for which routes cannot be created on the system domain."
+    default: [api,uaa,login,doppler,loggregator,hm9000]

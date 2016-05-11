@@ -665,3 +665,7 @@ properties:
   cc.volume_services_enabled:
     description: "Enable binding to services that provide volume_mount information."
     default: false
+
+  cc.system_hostnames:
+    description: "List of hostnames for which routes cannot be created on the system domain."
+    default: [api,uaa,login,doppler,loggregator,hm9000]
