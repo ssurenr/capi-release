@@ -2,10 +2,6 @@ set -e -x
 
 cd ${BUILD_DIR}/capi-release/src/cloud_controller_ng
 
-# bundler 1.12.x has a bug with caching built-in libraries
-# https://github.com/bundler/bundler/issues/4494
-gem install bundler
-gem install json -v 1.8.3
 BUNDLE_WITHOUT=development:test bundle package --all --no-install --path ./vendor/cache
 
 rm -rf ./vendor/cache/ruby
