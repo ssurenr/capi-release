@@ -10,16 +10,16 @@ source /var/vcap/packages/capi_utils/pid_utils.sh
 
 <% require "shellwords" %>
 
-<% if p(["capi.nsync.bbs.require_ssl","diego.nsync.bbs.require_ssl"]) %>
+<% if p("capi.nsync.bbs.require_ssl") %>
   bbs_sec_flags=" \
    -bbsClientCert=${CONF_DIR}/certs/bbs/client.crt \
    -bbsClientKey=${CONF_DIR}/certs/bbs/client.key \
    -bbsCACert=${CONF_DIR}/certs/bbs/ca.crt"
 
-  bbs_api_url="<%= "https://" + p(["capi.nsync.bbs.api_location", "diego.nsync.bbs.api_location"]) %>"
+  bbs_api_url="<%= "https://" + p("capi.nsync.bbs.api_location") %>"
 <% else %>
   bbs_sec_flags=""
-  bbs_api_url="<%= "http://" + p(["capi.nsync.bbs.api_location", "diego.nsync.bbs.api_location"]) %>"
+  bbs_api_url="<%= "http://" + p("capi.nsync.bbs.api_location") %>"
 <% end %>
 
 
@@ -46,21 +46,17 @@ case $1 in
       -bbsAddress=${bbs_api_url} \
       <% if_p("capi.nsync.bbs.client_session_cache_size") do |value| %> \
         -bbsClientSessionCacheSize=<%= value %> \
-      <% end.else_if_p("diego.nsync.bbs.client_session_cache_size") do |value| %> \
-        -bbsClientSessionCacheSize=<%= value %> \
       <% end %> \
       <% if_p("capi.nsync.bbs.max_idle_conns_per_host") do |value| %> \
         -bbsMaxIdleConnsPerHost=<%= value %> \
-      <% end.else_if_p("diego.nsync.bbs.max_idle_conns_per_host") do |value| %> \
-        -bbsMaxIdleConnsPerHost=<%= value %> \
       <% end %> \
-      -dropsondePort=<%= p(["capi.nsync.dropsonde_port", "diego.nsync.dropsonde_port"]) %> \
-      -consulCluster=http://127.0.0.1:<%= p(["capi.nsync.consul_agent_port", "diego.nsync.consul_agent_port"]) %> \
-      -listenAddress=<%= p(["capi.nsync.listen_addr", "diego.nsync.listen_addr"]) %> \
-      -debugAddr=<%= p(["capi.nsync.listener_debug_addr", "diego.nsync.listener_debug_addr"]) %> \
-      <%= p(["capi.nsync.lifecycle_bundles", "diego.nsync.lifecycle_bundles"]).map { |bundle| "-lifecycle #{bundle}" }.join(" ") %> \
-      -fileServerURL=<%= p(["capi.nsync.file_server_url", "diego.nsync.file_server_url"]) %> \
-      -logLevel=<%= p(["capi.nsync.log_level", "diego.nsync.log_level"]) %> \
+      -dropsondePort=<%= p("capi.nsync.dropsonde_port") %> \
+      -consulCluster=http://127.0.0.1:<%= p("capi.nsync.consul_agent_port") %> \
+      -listenAddress=<%= p("capi.nsync.listen_addr") %> \
+      -debugAddr=<%= p("capi.nsync.listener_debug_addr") %> \
+      <%= p("capi.nsync.lifecycle_bundles").map { |bundle| "-lifecycle #{bundle}" }.join(" ") %> \
+      -fileServerURL=<%= p("capi.nsync.file_server_url") %> \
+      -logLevel=<%= p("capi.nsync.log_level") %> \
       2> >(tee -a $LOG_DIR/nsync_listener.stderr.log | logger -p user.error -t vcap.nsync-listener) \
       1> >(tee -a $LOG_DIR/nsync_listener.stdout.log | logger -p user.info -t vcap.nsync-listener)
 
