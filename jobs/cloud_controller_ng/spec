@@ -644,6 +644,10 @@ properties:
     description: "The percentage of top stagers considered when choosing a stager"
     default: 10
 
+  cc.minimum_candidate_stagers:
+    description: "Minimum number of candidate deas for staging.  Defaults to 5, should be fewer than the total DEAs in the deployment."
+    default: 5
+
   router.route_services_secret:
     description: "Support for route services is disabled when no value is configured."
     default: ""
