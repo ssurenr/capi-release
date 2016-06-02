@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # tee_output_to_sys_log
 #

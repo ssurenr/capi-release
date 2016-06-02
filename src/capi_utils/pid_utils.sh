@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 function pid_is_running() {
   declare pid="$1"
   ps -p "${pid}" >/dev/null 2>&1
