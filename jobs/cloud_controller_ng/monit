@@ -18,6 +18,26 @@
   end
 %>
 
+<%
+{
+  'migration_run_path' => '/var/vcap/sys/run/cloud_controller_migration',
+  'migration_log_path' => '/var/vcap/sys/log/cloud_controller_migration'
+}.each_pair do |name, path|
+%>
+check directory <%= name %> path <%= path %>
+  if does not exist then exec "/usr/bin/env bash -c 'mkdir -p <%= path %> && chown vcap:vcap <%= path %>'"
+<% end %>
+
+<%
+{
+  'migration_stderr_file' => '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.err.log',
+  'migration_stdout_file' => '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.log'
+}.each_pair do |name, path|
+%>
+check file <%= name %> with path <%= path %>
+  if failed uid vcap then exec "/usr/bin/env bash -c 'chown vcap:vcap <%= path %>'"
+<% end %>
+
 check process cloud_controller_ng
   with pidfile /var/vcap/sys/run/cloud_controller_ng/cloud_controller_ng.pid
   start program "/var/vcap/jobs/cloud_controller_ng/bin/cloud_controller_ng_ctl start" 
@@ -65,5 +85,8 @@ check process nginx_newrelic_plugin
 check process cloud_controller_migration
   with pidfile /var/vcap/sys/run/cloud_controller_migration/cloud_controller_migration.pid
   start program "/var/vcap/jobs/cloud_controller_ng/bin/cloud_controller_migration_ctl start"
+        as uid vcap and gid vcap
   stop program "/var/vcap/jobs/cloud_controller_ng/bin/cloud_controller_migration_ctl stop"
+        as uid vcap and gid vcap
   group vcap
+  depends on migration_run_path, migration_log_path
