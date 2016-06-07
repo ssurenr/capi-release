@@ -1,9 +1,55 @@
+<%
+
+worker_dependencies = ['worker_run_path', 'worker_log_path']
+
+directories = {
+  'worker_run_path' => '/var/vcap/sys/run/cloud_controller_worker',
+  'worker_log_path' => '/var/vcap/sys/log/cloud_controller_worker',
+}
+
+if p("cc.packages.blobstore_type").downcase == "fog" && p("cc.packages.fog_connection.provider", "").downcase == "local"
+  directories['cc_local_blobstore'] = p("cc.packages.fog_connection.local_root")
+  worker_dependencies << 'cc_local_blobstore'
+end
+
+if p("cc.resource_pool.blobstore_type").downcase == "fog" && p("cc.resource_pool.fog_connection.provider", "").downcase == "local"
+  directories['cc_local_resource_pool'] = p("cc.resource_pool.fog_connection.local_root")
+  worker_dependencies << 'cc_local_resource_pool'
+end
+
+if p("cc.droplets.blobstore_type").downcase == "fog" && p("cc.droplets.fog_connection.provider", "").downcase == "local"
+  directories['cc_local_droplets'] = p("cc.droplets.fog_connection.local_root")
+  worker_dependencies << 'cc_local_droplets'
+end
+
+directories.each do |name, path|
+%>
+check directory <%= name %> path <%= path %>
+  if does not exist then exec "/usr/bin/env bash -c 'mkdir -p <%= path %>'"
+  if failed uid vcap then exec "/usr/bin/env bash -c 'chown -R vcap:vcap <%= path %>'"
+<% end %>
+
+<%
+{
+  'worker_stderr_file' => '/var/vcap/sys/log/cloud_controller_worker/cloud_controller_worker_ctl.err.log',
+  'worker_stdout_file' => '/var/vcap/sys/log/cloud_controller_worker/cloud_controller_worker_ctl.log',
+}.each_pair do |name, path|
+%>
+check file <%= name %> with path <%= path %>
+  if failed uid vcap then exec "/usr/bin/env bash -c 'chown vcap:vcap <%= path %>'"
+<% end %>
+
 <% (1..(p("cc.jobs.generic.number_of_workers"))).each do |index| %>
 check process cloud_controller_worker_<%= index %>
   with pidfile /var/vcap/sys/run/cloud_controller_worker/cloud_controller_worker_<%= index %>.pid
   start program "/var/vcap/jobs/cloud_controller_worker/bin/cloud_controller_worker_ctl start <%= index %>"
+        as uid vcap and gid vcap
   stop program "/var/vcap/jobs/cloud_controller_worker/bin/cloud_controller_worker_ctl stop <%= index %>"
+        as uid vcap and gid vcap
   group vcap
+<% if worker_dependencies.any? %>
+  depends on <%= worker_dependencies.join(', ') %>
+<% end %>
 
   if totalmem > <%= p("cc.thresholds.worker.alert_if_above_mb") %> Mb for 3 cycles then alert
   if totalmem > <%= p("cc.thresholds.worker.restart_if_consistently_above_mb") %> Mb for 15 cycles then restart
