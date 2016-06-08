@@ -17,52 +17,20 @@
     network.ip
   end
 
-worker_dependencies = ['api_run_path', 'api_log_path', 'api_tmp_path']
+worker_dependencies = []
 
 if spec.index.to_i == 0
   worker_dependencies << 'cloud_controller_ng'
 end
 
-directories = {
-  'migration_run_path' => '/var/vcap/sys/run/cloud_controller_migration',
-  'migration_log_path' => '/var/vcap/sys/log/cloud_controller_migration',
-  'api_run_path' => '/var/vcap/sys/run/cloud_controller_ng',
-  'api_log_path' => '/var/vcap/sys/log/cloud_controller_ng',
-  'api_tmp_path' => '/var/vcap/data/cloud_controller_ng/tmp',
-  'api_core_path' => '/var/vcap/sys/cores'
-}
-
-if_p('cc.directories.diagnostics') do |diag_dir|
-  directories['api_diagnostic_path'] = diag_dir
-end
-
-directories.each_pair do |name, path|
 %>
-check directory <%= name %> path <%= path %>
-  if does not exist then exec "/usr/bin/env bash -c 'mkdir -p <%= path %>'"
-  if failed uid vcap then exec "/usr/bin/env bash -c 'chown -R vcap:vcap <%= path %>'"
-<% end %>
 
-<%
-{
-  'migration_stderr_file' => '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.err.log',
-  'migration_stdout_file' => '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.log',
-  'api_stderr_file' => '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_ng_ctl.err.log',
-  'api_stdout_file' => '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_ng_ctl.log',
-  'api_worker_stderr_file' => '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_worker_ctl.err.log',
-  'api_worker_stdout_file' => '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_worker_ctl.log',
-}.each_pair do |name, path|
-%>
-check file <%= name %> with path <%= path %>
-  if failed uid vcap then exec "/usr/bin/env bash -c 'chown vcap:vcap <%= path %>'"
-<% end %>
 
 check process cloud_controller_ng
   with pidfile /var/vcap/sys/run/cloud_controller_ng/cloud_controller_ng.pid
   start program "/var/vcap/jobs/cloud_controller_ng/bin/cloud_controller_ng_ctl start" 
   stop program "/var/vcap/jobs/cloud_controller_ng/bin/cloud_controller_ng_ctl stop"
   group vcap
-  depends on api_run_path, api_log_path, api_tmp_path, api_core_path
 
   if totalmem > <%= p("cc.thresholds.api.alert_if_above_mb") %> Mb for 3 cycles then alert
   if totalmem > <%= p("cc.thresholds.api.restart_if_consistently_above_mb") %> Mb for 15 cycles then exec "/var/vcap/jobs/cloud_controller_ng/bin/restart_drain"
@@ -79,9 +47,6 @@ check process cloud_controller_worker_local_<%= index %>
         as uid vcap and gid vcap
   stop program "/var/vcap/jobs/cloud_controller_ng/bin/cloud_controller_worker_ctl stop <%= index %>"
         as uid vcap and gid vcap
-<% if worker_dependencies.any? %>
-  depends on <%= worker_dependencies.join(', ') %>
-<% end %>
   group vcap
 
   if totalmem > <%= p("cc.thresholds.api.alert_if_above_mb") %> Mb for 3 cycles then alert
@@ -111,4 +76,3 @@ check process cloud_controller_migration
   stop program "/var/vcap/jobs/cloud_controller_ng/bin/cloud_controller_migration_ctl stop"
         as uid vcap and gid vcap
   group vcap
-  depends on migration_run_path, migration_log_path
