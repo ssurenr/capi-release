@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 
-echo "MEOW HI TIM"
-
 #for cloud_controller_ng and cloud_controller_api_worker
 TMPDIR=/var/vcap/data/cloud_controller_ng/tmp
 RUN_DIR=/var/vcap/sys/run/cloud_controller_ng
 LOG_DIR=/var/vcap/sys/log/cloud_controller_ng
-echo "set vars"
 
 mkdir -p $RUN_DIR
 mkdir -p $LOG_DIR
 mkdir -p $TMPDIR
-echo "made directories"
 
 chown vcap:vcap $RUN_DIR
 chown -R vcap:vcap $LOG_DIR
@@ -35,25 +31,45 @@ mkdir -p $RUN_DIR
 mkdir -p $LOG_DIR
 
 chown vcap:vcap $RUN_DIR
-chown vcap:vcap $LOG_DIR
+chown -R vcap:vcap $LOG_DIR
+
+# for cloud_controller workers
+
+RUN_DIR=/var/vcap/sys/run/cloud_controller_worker
+LOG_DIR=/var/vcap/sys/log/cloud_controller_worker
+
+mkdir -p $RUN_DIR
+mkdir -p $LOG_DIR
+
+chown vcap:vcap $RUN_DIR
+chown -R vcap:vcap $LOG_DIR
+
+# for cloud_controller worker blobstore dirs
 
 <%
-  [
-   '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.err.log',
-   '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.log',
-   '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.log',
-   '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_ng_ctl.err.log',
-   '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_ng_ctl.log',
-   '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_worker_ctl.err.log',
-   '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_worker_ctl.log'
-  ].each do |path|
-  %>
-  if [ -f <%= path %> ]; then
-    exec "/usr/bin/env bash -c 'chown vcap:vcap <%= path %>'"
-  fi
+
+directories = []
+
+if p("cc.packages.blobstore_type").downcase == "fog" && p("cc.packages.fog_connection.provider", "").downcase == "local"
+  directories << p("cc.packages.fog_connection.local_root")
+end
+
+if p("cc.buildpacks.blobstore_type").downcase == "fog" && p("cc.buildpacks.fog_connection.provider", "").downcase == "local"
+  directories << p("cc.buildpacks.fog_connection.local_root")
+end
+
+if p("cc.resource_pool.blobstore_type").downcase == "fog" && p("cc.resource_pool.fog_connection.provider", "").downcase == "local"
+  directories << p("cc.resource_pool.fog_connection.local_root")
+end
+
+if p("cc.droplets.blobstore_type").downcase == "fog" && p("cc.droplets.fog_connection.provider", "").downcase == "local"
+  directories << p("cc.droplets.fog_connection.local_root")
+end
+
+directories.each do |path| %>
+  mkdir -p <%= path %>
+  chown -R vcap:vcap <%= path %>
 <% end %>
 
-whoami
-
-
 exit 0
+
