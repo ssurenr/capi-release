@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-#for cloud_controller_ng and cloud_controller_api_worker
+# for cloud_controller_ng and cloud_controller_api_worker
+
 TMPDIR=/var/vcap/data/cloud_controller_ng/tmp
 RUN_DIR=/var/vcap/sys/run/cloud_controller_ng
 LOG_DIR=/var/vcap/sys/log/cloud_controller_ng
@@ -23,9 +24,21 @@ chown vcap:vcap <%= diag_dir %>
 mkdir -p /var/vcap/sys/cores
 chown vcap:vcap /var/vcap/sys/cores
 
-#for cloud_controller_migrations
+# for cloud_controller_migrations
+
 RUN_DIR=/var/vcap/sys/run/cloud_controller_migration
 LOG_DIR=/var/vcap/sys/log/cloud_controller_migration
+
+mkdir -p $RUN_DIR
+mkdir -p $LOG_DIR
+
+chown -R vcap:vcap $RUN_DIR
+chown -R vcap:vcap $LOG_DIR
+
+# for cloud_controller clock
+
+RUN_DIR=/var/vcap/sys/run/cloud_controller_clock
+LOG_DIR=/var/vcap/sys/log/cloud_controller_clock
 
 mkdir -p $RUN_DIR
 mkdir -p $LOG_DIR
