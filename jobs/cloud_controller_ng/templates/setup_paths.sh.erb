@@ -14,7 +14,7 @@ mkdir -p $TMPDIR
 echo "made directories"
 
 chown vcap:vcap $RUN_DIR
-chown vcap:vcap $LOG_DIR
+chown -R vcap:vcap $LOG_DIR
 chown vcap:vcap $TMPDIR
 echo $?
 
@@ -37,6 +37,23 @@ mkdir -p $LOG_DIR
 chown vcap:vcap $RUN_DIR
 chown vcap:vcap $LOG_DIR
 
+<%
+  [
+   '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.err.log',
+   '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.log',
+   '/var/vcap/sys/log/cloud_controller_migration/cloud_controller_migration_ctl.log',
+   '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_ng_ctl.err.log',
+   '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_ng_ctl.log',
+   '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_worker_ctl.err.log',
+   '/var/vcap/sys/log/cloud_controller_ng/cloud_controller_worker_ctl.log'
+  ].each do |path|
+  %>
+  if [ -f <%= path %> ]; then
+    exec "/usr/bin/env bash -c 'chown vcap:vcap <%= path %>'"
+  fi
+<% end %>
+
+whoami
 
 
 exit 0
