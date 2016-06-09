@@ -30,7 +30,7 @@ LOG_DIR=/var/vcap/sys/log/cloud_controller_migration
 mkdir -p $RUN_DIR
 mkdir -p $LOG_DIR
 
-chown vcap:vcap $RUN_DIR
+chown -R vcap:vcap $RUN_DIR
 chown -R vcap:vcap $LOG_DIR
 
 # for cloud_controller workers
@@ -41,7 +41,7 @@ LOG_DIR=/var/vcap/sys/log/cloud_controller_worker
 mkdir -p $RUN_DIR
 mkdir -p $LOG_DIR
 
-chown vcap:vcap $RUN_DIR
+chown -R vcap:vcap $RUN_DIR
 chown -R vcap:vcap $LOG_DIR
 
 # for cloud_controller worker blobstore dirs
