@@ -31,7 +31,7 @@ templates:
   dea_client.key.erb: config/certs/dea_client.key
   pre-start.sh.erb: bin/pre-start
   check_for_domain_overlap.rb: bin/check_for_domain_overlap.rb
-  setup_paths.sh.erb: bin/setup_paths.sh.erb
+  setup_paths.sh.erb: bin/setup_paths.sh
 
 packages:
   - capi_utils
