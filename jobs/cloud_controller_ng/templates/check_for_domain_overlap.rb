@@ -1,1 +1,0 @@
-../../../src/cloud_controller_ng/bosh-templates/check_for_domain_overlap.rb
