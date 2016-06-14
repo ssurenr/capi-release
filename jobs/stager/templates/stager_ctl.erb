@@ -72,6 +72,7 @@ case $1 in
         -bbsMaxIdleConnsPerHost=<%= value %> \
       <% end %> \
       -dropsondePort=<%= p("capi.stager.dropsonde_port") %> \
+      -privilegedContainers=<%= p("capi.stager.diego_privileged_containers") %> \
       -listenAddress=<%= p("capi.stager.listen_addr") %> \
       -stagingTaskCallbackURL=<%= p("capi.stager.staging_task_callback_url") %> \
       -ccBaseURL=http://<%= p("capi.stager.cc.internal_service_hostname") %>:<%= p("capi.stager.cc.external_port") %> \

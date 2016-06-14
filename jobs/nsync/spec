@@ -83,3 +83,7 @@ properties:
   capi.nsync.cc.external_port:
     description: "External Cloud Controller port"
     default: 9022
+
+  capi.nsync.diego_privileged_containers:
+    description: "Whether or not to use privileged containers for  buildpack based LRPs and tasks. Containers with a docker-image-based rootfs will continue to always be unprivileged and cannot be changed."
+    default: false

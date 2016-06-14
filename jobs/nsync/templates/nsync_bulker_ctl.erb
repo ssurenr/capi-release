@@ -51,6 +51,7 @@ case $1 in
         -bbsMaxIdleConnsPerHost=<%= value %> \
       <% end %> \
       -dropsondePort=<%= p("capi.nsync.dropsonde_port") %> \
+      -privilegedContainers=<%= p("capi.nsync.diego_privileged_containers") %> \
       -consulCluster=http://127.0.0.1:<%= p("capi.nsync.consul_agent_port") %> \
       -ccBaseURL=<%= Shellwords.shellescape(p("capi.nsync.cc.base_url")) %> \
       -ccUsername=<%= Shellwords.shellescape(p("capi.nsync.cc.basic_auth_username")) %> \
