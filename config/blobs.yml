@@ -3,22 +3,10 @@ debian_nfs_server/nfs-kernel-server_1%3a1.2.0-4ubuntu4.1_amd64.deb:
   object_id: ba69b993-ec3f-47cf-9fb1-0fcb37212959
   sha: a44b3f8319984bace61f21bb6d15cee1419e5bf3
   size: 169618
-nginx/headers-more-v0.25.tgz:
-  object_id: e0bab3f0-2cf6-4f97-87e6-310489cfbc5b
-  sha: 514bc3df30b24eb0a06533f1ebaa579b898990f5
-  size: 27973
-nginx/nginx-1.8.0.tar.gz:
-  object_id: b7c55a3c-9278-450a-a5c0-8cdca98d9604
-  sha: 12bad312764feae50246685ab2e74512d1aa9b2f
-  size: 832104
 nginx/nginx-upload-module-2.2.tar.gz:
   object_id: 161d5d5f-ffde-4e37-9b9f-151139fdc027
   sha: 74ccd116525a155db76f92a1cd484d9516a70398
   size: 28505
-nginx/pcre-8.37.tar.gz:
-  object_id: 3af8837c-70c9-495f-9445-ffd5a93e31dc
-  sha: 4a24a20c61347d8da4edc86d5475aaf70ac146bb
-  size: 2041593
 postgres/postgresql-9.4.6.tar.gz:
   object_id: 3d8b3029-d9dd-431a-82b9-875801c58d9e
   sha: bd031beebd86bf149c497525dccf57eebe5a6add
@@ -47,3 +35,15 @@ ruby-2.3/rubygems-2.6.4.tgz:
   object_id: 2c63b010-b055-4eb4-9371-5fba9a01e9a1
   sha: 8ef39e536af2ecd20b0e7a95765fa6a485087ac8
   size: 478582
+nginx/nginx-1.11.1.tar.gz:
+  object_id: 53e21bda-b6b2-4d6a-9d6e-1fbfa1f63ecd
+  sha: 6b6172b26628b95c4ad0d6cb5b11eb4aa59c2a83
+  size: 913417
+nginx/headers-more-nginx-module-0.30.tar.gz:
+  object_id: c9069331-8ff2-4b2f-b663-45d7230c5a39
+  sha: a188a399f3e365a0831585a9d7aa0e6ed1a75f0d
+  size: 27793
+nginx/pcre-8.39.tar.gz:
+  object_id: 0bea0468-82a8-4349-8444-2e8674a8bdfb
+  sha: b3aec1f643d9701841e2f9d57ac121a7ff448fc8
+  size: 2062258
