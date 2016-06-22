@@ -8,6 +8,8 @@ templates:
   idmapd.conf.erb: config/idmapd.conf
   nfs-common: config/nfs-common
   nfs_mounter_ctl.erb: bin/nfs_mounter_ctl
+  nfs_mounter_crontab: bin/nfs_mounter_crontab
+  pre-start.sh.erb: bin/pre-start
 
 packages:
   - capi_utils
