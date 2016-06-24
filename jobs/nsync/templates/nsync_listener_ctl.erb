@@ -50,6 +50,7 @@ case $1 in
       <% if_p("capi.nsync.bbs.max_idle_conns_per_host") do |value| %> \
         -bbsMaxIdleConnsPerHost=<%= value %> \
       <% end %> \
+      -privilegedContainers=<%= p("capi.nsync.diego_privileged_containers") %> \
       -dropsondePort=<%= p("capi.nsync.dropsonde_port") %> \
       -consulCluster=http://127.0.0.1:<%= p("capi.nsync.consul_agent_port") %> \
       -listenAddress=<%= p("capi.nsync.listen_addr") %> \
