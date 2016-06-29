@@ -3,6 +3,7 @@ name: cc_uploader
 
 templates:
   cc_uploader_ctl.erb: bin/cc_uploader_ctl
+  cc_uploader_as_vcap.erb: bin/cc_uploader_as_vcap
 
 packages:
   - capi_utils

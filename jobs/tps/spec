@@ -2,6 +2,8 @@
 name: tps
 
 templates:
+  tps_listener_as_vcap.erb: bin/tps_listener_as_vcap
+  tps_watcher_as_vcap.erb: bin/tps_watcher_as_vcap
   tps_listener_ctl.erb: bin/tps_listener_ctl
   tps_watcher_ctl.erb: bin/tps_watcher_ctl
   bbs_ca.crt.erb: config/certs/bbs/ca.crt
