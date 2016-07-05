@@ -41,8 +41,8 @@ sync_package stager                  -app  github.com/cloudfoundry-incubator/sta
 sync_package nsync                   -app  github.com/cloudfoundry-incubator/nsync/cmd/nsync-bulker \
   -app github.com/cloudfoundry-incubator/nsync/cmd/nsync-listener &
 
-sync_package tps                     -app  github.com/cloudfoundry-incubator/tps/cmd/tps-listener \
-  -app github.com/cloudfoundry-incubator/tps/cmd/tps-watcher &
+sync_package tps                     -app  code.cloudfoundry.org/tps/cmd/tps-listener \
+  -app code.cloudfoundry.org/tps/cmd/tps-watcher &
 
 wait
 

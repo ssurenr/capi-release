@@ -58,10 +58,6 @@
 	path = src/github.com/cloudfoundry-incubator/stager
 	url = https://github.com/cloudfoundry-incubator/stager
 	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/tps"]
-	path = src/github.com/cloudfoundry-incubator/tps
-	url = https://github.com/cloudfoundry-incubator/tps
-	branch = master
 [submodule "src/github.com/cloudfoundry/dropsonde"]
 	path = src/github.com/cloudfoundry/dropsonde
 	url = https://github.com/cloudfoundry/dropsonde
@@ -140,3 +136,7 @@
 [submodule "src/cloud_controller_ng"]
 	path = src/cloud_controller_ng
 	url = https://github.com/cloudfoundry/cloud_controller_ng
+[submodule "src/code.cloudfoundry.org/tps"]
+	path = src/code.cloudfoundry.org/tps
+	url = https://github.com/cloudfoundry/tps
+	branch = master

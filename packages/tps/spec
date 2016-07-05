@@ -5,6 +5,16 @@ dependencies:
   - golang1.6
 
 files:
+  - capi-release/src/code.cloudfoundry.org/tps/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/cc_client/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/cmd/tps-listener/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/cmd/tps-watcher/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/handler/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/handler/bulklrpstatus/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/handler/cc_conv/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/handler/lrpstats/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/handler/lrpstatus/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/watcher/*.go # gosub
   - capi-release/src/github.com/bmizerany/pat/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/encryption/*.go # gosub
@@ -26,16 +36,6 @@ files:
   - capi-release/src/github.com/cloudfoundry-incubator/routing-info/tcp_routes/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/runtime-schema/cc_messages/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/runtime-schema/metric/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/cc_client/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/cmd/tps-listener/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/cmd/tps-watcher/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/handler/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/handler/bulklrpstatus/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/handler/cc_conv/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/handler/lrpstats/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/handler/lrpstatus/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/tps/watcher/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/emitter/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/envelope_sender/*.go # gosub
