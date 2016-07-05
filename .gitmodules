@@ -10,10 +10,6 @@
 	path = src/github.com/cloudfoundry-incubator/buildpack_app_lifecycle
 	url = https://github.com/cloudfoundry-incubator/buildpack_app_lifecycle
 	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/cc-uploader"]
-	path = src/github.com/cloudfoundry-incubator/cc-uploader
-	url = https://github.com/cloudfoundry-incubator/cc-uploader
-	branch = master
 [submodule "src/github.com/cloudfoundry-incubator/cf-debug-server"]
 	path = src/github.com/cloudfoundry-incubator/cf-debug-server
 	url = https://github.com/cloudfoundry-incubator/cf-debug-server
@@ -139,4 +135,8 @@
 [submodule "src/code.cloudfoundry.org/nsync"]
 	path = src/code.cloudfoundry.org/nsync
 	url = https://github.com/cloudfoundry/nsync
+	branch = master
+[submodule "src/code.cloudfoundry.org/cc-uploader"]
+	path = src/code.cloudfoundry.org/cc-uploader
+	url = https://github.com/cloudfoundry/cc-uploader
 	branch = master

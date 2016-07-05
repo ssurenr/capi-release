@@ -35,7 +35,7 @@ function sync_package() {
   )
 }
 
-sync_package cc_uploader             -app  github.com/cloudfoundry-incubator/cc-uploader/cmd/cc-uploader &
+sync_package cc_uploader             -app  code.cloudfoundry.org/cc-uploader/cmd/cc-uploader &
 sync_package stager                  -app  code.cloudfoundry.org/stager/cmd/stager &
 
 sync_package nsync                   -app  code.cloudfoundry.org/nsync/cmd/nsync-bulker \

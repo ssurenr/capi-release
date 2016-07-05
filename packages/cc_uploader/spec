@@ -5,16 +5,16 @@ dependencies:
   - golang1.6
 
 files:
+  - capi-release/src/code.cloudfoundry.org/cc-uploader/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/cc-uploader/ccclient/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/cc-uploader/cmd/cc-uploader/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/cc-uploader/handlers/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/cc-uploader/handlers/upload_build_artifacts/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/cc-uploader/handlers/upload_droplet/*.go # gosub
   - capi-release/src/github.com/bmizerany/pat/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/encryption/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/format/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/models/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cc-uploader/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cc-uploader/ccclient/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cc-uploader/cmd/cc-uploader/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cc-uploader/handlers/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cc-uploader/handlers/upload_build_artifacts/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cc-uploader/handlers/upload_droplet/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/cf-debug-server/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/cf-lager/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/cf_http/*.go # gosub

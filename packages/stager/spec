@@ -5,6 +5,7 @@ dependencies:
   - golang1.6
 
 files:
+  - capi-release/src/code.cloudfoundry.org/cc-uploader/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/stager/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/stager/backend/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/stager/cc_client/*.go # gosub
@@ -19,7 +20,6 @@ files:
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/format/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/models/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/buildpack_app_lifecycle/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cc-uploader/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/cf-debug-server/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/cf-lager/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/cf_http/*.go # gosub
