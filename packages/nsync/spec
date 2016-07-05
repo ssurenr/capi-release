@@ -5,6 +5,13 @@ dependencies:
   - golang1.6
 
 files:
+  - capi-release/src/code.cloudfoundry.org/nsync/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/nsync/bulk/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/nsync/cmd/nsync-bulker/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/nsync/cmd/nsync-listener/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/nsync/handlers/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/nsync/helpers/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/nsync/recipebuilder/*.go # gosub
   - capi-release/src/github.com/bmizerany/pat/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/encryption/*.go # gosub
@@ -20,13 +27,6 @@ files:
   - capi-release/src/github.com/cloudfoundry-incubator/diego-ssh/keys/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/diego-ssh/routes/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/locket/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/nsync/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/nsync/bulk/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/nsync/cmd/nsync-bulker/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/nsync/cmd/nsync-listener/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/nsync/handlers/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/nsync/helpers/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/nsync/recipebuilder/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/routing-info/cfroutes/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/routing-info/tcp_routes/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/runtime-schema/cc_messages/*.go # gosub

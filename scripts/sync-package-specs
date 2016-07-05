@@ -38,8 +38,8 @@ function sync_package() {
 sync_package cc_uploader             -app  github.com/cloudfoundry-incubator/cc-uploader/cmd/cc-uploader &
 sync_package stager                  -app  code.cloudfoundry.org/stager/cmd/stager &
 
-sync_package nsync                   -app  github.com/cloudfoundry-incubator/nsync/cmd/nsync-bulker \
-  -app github.com/cloudfoundry-incubator/nsync/cmd/nsync-listener &
+sync_package nsync                   -app  code.cloudfoundry.org/nsync/cmd/nsync-bulker \
+  -app code.cloudfoundry.org/nsync/cmd/nsync-listener &
 
 sync_package tps                     -app  code.cloudfoundry.org/tps/cmd/tps-listener \
   -app code.cloudfoundry.org/tps/cmd/tps-watcher &
