@@ -5,8 +5,26 @@ dependencies:
   - golang1.6
 
 files:
+  - capi-release/src/code.cloudfoundry.org/bbs/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/bbs/encryption/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/bbs/events/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/bbs/format/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/bbs/models/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/cfhttp/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/cfhttp/unix_transport/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/cflager/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/clock/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/consuladapter/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/debugserver/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/diego-ssh/helpers/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/diego-ssh/keys/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/diego-ssh/routes/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/lager/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/locket/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/helpers/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/recipebuilder/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/runtimeschema/cc_messages/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/runtimeschema/metric/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/cc_client/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/cmd/tps-listener/*.go # gosub
@@ -18,24 +36,8 @@ files:
   - capi-release/src/code.cloudfoundry.org/tps/handler/lrpstatus/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/watcher/*.go # gosub
   - capi-release/src/github.com/bmizerany/pat/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/bbs/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/bbs/encryption/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/bbs/events/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/bbs/format/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/bbs/models/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cf-debug-server/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cf-lager/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cf_http/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/cf_http/unix_transport/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/consuladapter/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/diego-ssh/helpers/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/diego-ssh/keys/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/diego-ssh/routes/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/locket/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/routing-info/cfroutes/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/routing-info/tcp_routes/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/runtime-schema/cc_messages/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/runtime-schema/metric/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/emitter/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/envelope_sender/*.go # gosub
@@ -66,8 +68,6 @@ files:
   - capi-release/src/github.com/hashicorp/consul/vendor/github.com/hashicorp/go-cleanhttp/*.go # gosub
   - capi-release/src/github.com/hashicorp/consul/vendor/github.com/hashicorp/serf/coordinate/*.go # gosub
   - capi-release/src/github.com/nu7hatch/gouuid/*.go # gosub
-  - capi-release/src/github.com/pivotal-golang/clock/*.go # gosub
-  - capi-release/src/github.com/pivotal-golang/lager/*.go # gosub
   - capi-release/src/github.com/tedsuo/ifrit/*.go # gosub
   - capi-release/src/github.com/tedsuo/ifrit/grouper/*.go # gosub
   - capi-release/src/github.com/tedsuo/ifrit/http_server/*.go # gosub

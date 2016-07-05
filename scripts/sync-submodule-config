@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+
 set -e -x
 
 # ensure gosub is installed (this will recompile it only if necessary)

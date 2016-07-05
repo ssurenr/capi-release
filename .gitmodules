@@ -2,50 +2,10 @@
 	path = src/github.com/bmizerany/pat
 	url = https://github.com/bmizerany/pat
 	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/bbs"]
-	path = src/github.com/cloudfoundry-incubator/bbs
-	url = https://github.com/cloudfoundry-incubator/bbs
-	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/buildpack_app_lifecycle"]
-	path = src/github.com/cloudfoundry-incubator/buildpack_app_lifecycle
-	url = https://github.com/cloudfoundry-incubator/buildpack_app_lifecycle
-	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/cf-debug-server"]
-	path = src/github.com/cloudfoundry-incubator/cf-debug-server
-	url = https://github.com/cloudfoundry-incubator/cf-debug-server
-	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/cf-lager"]
-	path = src/github.com/cloudfoundry-incubator/cf-lager
-	url = https://github.com/cloudfoundry-incubator/cf-lager
-	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/cf_http"]
-	path = src/github.com/cloudfoundry-incubator/cf_http
-	url = https://github.com/cloudfoundry-incubator/cf_http
-	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/consuladapter"]
-	path = src/github.com/cloudfoundry-incubator/consuladapter
-	url = https://github.com/cloudfoundry-incubator/consuladapter
-	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/diego-ssh"]
-	path = src/github.com/cloudfoundry-incubator/diego-ssh
-	url = https://github.com/cloudfoundry-incubator/diego-ssh
-	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/docker_app_lifecycle"]
-	path = src/github.com/cloudfoundry-incubator/docker_app_lifecycle
-	url = https://github.com/cloudfoundry-incubator/docker_app_lifecycle
-	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/locket"]
-	path = src/github.com/cloudfoundry-incubator/locket
-	url = https://github.com/cloudfoundry-incubator/locket
-	branch = master
 [submodule "src/github.com/cloudfoundry-incubator/routing-info"]
 	path = src/github.com/cloudfoundry-incubator/routing-info
 	url = https://github.com/cloudfoundry-incubator/routing-info
-	branch = master
-[submodule "src/github.com/cloudfoundry-incubator/runtime-schema"]
-	path = src/github.com/cloudfoundry-incubator/runtime-schema
-	url = https://github.com/cloudfoundry-incubator/runtime-schema
-	branch = master
+	branch = bbs-import-path
 [submodule "src/github.com/cloudfoundry/dropsonde"]
 	path = src/github.com/cloudfoundry/dropsonde
 	url = https://github.com/cloudfoundry/dropsonde
@@ -139,4 +99,52 @@
 [submodule "src/code.cloudfoundry.org/cc-uploader"]
 	path = src/code.cloudfoundry.org/cc-uploader
 	url = https://github.com/cloudfoundry/cc-uploader
+	branch = master
+[submodule "src/code.cloudfoundry.org/dockerapplifecycle"]
+	path = src/code.cloudfoundry.org/dockerapplifecycle
+	url = https://github.com/cloudfoundry/dockerapplifecycle
+	branch = master
+[submodule "src/code.cloudfoundry.org/debugserver"]
+	path = src/code.cloudfoundry.org/debugserver
+	url = https://github.com/cloudfoundry/debugserver
+	branch = master
+[submodule "src/code.cloudfoundry.org/lager"]
+	path = src/code.cloudfoundry.org/lager
+	url = https://github.com/cloudfoundry/lager
+	branch = master
+[submodule "src/code.cloudfoundry.org/consuladapter"]
+	path = src/code.cloudfoundry.org/consuladapter
+	url = https://github.com/cloudfoundry/consuladapter
+	branch = master
+[submodule "src/code.cloudfoundry.org/runtimeschema"]
+	path = src/code.cloudfoundry.org/runtimeschema
+	url = https://github.com/cloudfoundry/runtimeschema
+	branch = master
+[submodule "src/code.cloudfoundry.org/buildpackapplifecycle"]
+	path = src/code.cloudfoundry.org/buildpackapplifecycle
+	url = https://github.com/cloudfoundry/buildpackapplifecycle
+	branch = master
+[submodule "src/code.cloudfoundry.org/cfhttp"]
+	path = src/code.cloudfoundry.org/cfhttp
+	url = https://github.com/cloudfoundry/cfhttp
+	branch = master
+[submodule "src/code.cloudfoundry.org/cflager"]
+	path = src/code.cloudfoundry.org/cflager
+	url = https://github.com/cloudfoundry/cflager
+	branch = master
+[submodule "src/code.cloudfoundry.org/clock"]
+	path = src/code.cloudfoundry.org/clock
+	url = https://github.com/cloudfoundry/clock
+	branch = master
+[submodule "src/code.cloudfoundry.org/locket"]
+	path = src/code.cloudfoundry.org/locket
+	url = https://github.com/cloudfoundry/locket
+	branch = master
+[submodule "src/code.cloudfoundry.org/diego-ssh"]
+	path = src/code.cloudfoundry.org/diego-ssh
+	url = https://github.com/cloudfoundry/diego-ssh
+	branch = master
+[submodule "src/code.cloudfoundry.org/bbs"]
+	path = src/code.cloudfoundry.org/bbs
+	url = https://github.com/cloudfoundry/bbs
 	branch = master
