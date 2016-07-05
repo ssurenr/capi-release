@@ -5,6 +5,13 @@ dependencies:
   - golang1.6
 
 files:
+  - capi-release/src/code.cloudfoundry.org/stager/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/stager/backend/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/stager/cc_client/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/stager/cmd/stager/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/stager/diego_errors/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/stager/handlers/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/stager/vars/*.go # gosub
   - capi-release/src/github.com/bmizerany/pat/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/bbs/encryption/*.go # gosub
@@ -22,13 +29,6 @@ files:
   - capi-release/src/github.com/cloudfoundry-incubator/runtime-schema/cc_messages/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/runtime-schema/cc_messages/flags/*.go # gosub
   - capi-release/src/github.com/cloudfoundry-incubator/runtime-schema/metric/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/stager/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/stager/backend/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/stager/cc_client/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/stager/cmd/stager/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/stager/diego_errors/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/stager/handlers/*.go # gosub
-  - capi-release/src/github.com/cloudfoundry-incubator/stager/vars/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/emitter/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/envelope_sender/*.go # gosub
