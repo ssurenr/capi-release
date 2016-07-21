@@ -11,10 +11,6 @@ postgres/postgresql-9.4.6.tar.gz:
   object_id: 3d8b3029-d9dd-431a-82b9-875801c58d9e
   sha: bd031beebd86bf149c497525dccf57eebe5a6add
   size: 23249307
-golang/go1.6.1.linux-amd64.tar.gz:
-  object_id: da1e3778-4ea8-459d-8287-951dac95ee70
-  sha: c73492474dcc7a233772d27e948b74468d9f1849
-  size: 84824395
 libmariadb/libmariadb-5.5.36.tar.xz:
   object_id: 4827612c-e535-408b-bf60-ba5f25690fdd
   sha: 4985fd30ffd60de12770153346b4485cd5dcb7ad
@@ -47,3 +43,7 @@ nginx/pcre-8.39.tar.gz:
   object_id: 0bea0468-82a8-4349-8444-2e8674a8bdfb
   sha: b3aec1f643d9701841e2f9d57ac121a7ff448fc8
   size: 2062258
+golang/go1.6.3.darwin-amd64.tar.gz:
+  object_id: 6d8a8b09-9729-42b7-bf89-f4bf46957ce8
+  sha: 998c82ce6f2b856bc0c1e508adc27625017e52e7
+  size: 84755819
