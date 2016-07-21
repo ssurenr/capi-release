@@ -43,7 +43,7 @@ nginx/pcre-8.39.tar.gz:
   object_id: 0bea0468-82a8-4349-8444-2e8674a8bdfb
   sha: b3aec1f643d9701841e2f9d57ac121a7ff448fc8
   size: 2062258
-golang/go1.6.3.darwin-amd64.tar.gz:
-  object_id: 6d8a8b09-9729-42b7-bf89-f4bf46957ce8
-  sha: 998c82ce6f2b856bc0c1e508adc27625017e52e7
-  size: 84755819
+golang/go1.6.3.linux-amd64.tar.gz:
+  object_id: cd8d4f0d-90fa-40a6-ba05-5b2f0824b222
+  sha: 5e916ba4dd8c2fc43beafca4c08b334c4d0686f3
+  size: 84856920
