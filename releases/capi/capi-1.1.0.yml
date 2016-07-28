@@ -131,5 +131,5 @@ license:
   sha1: 025f63a8e7af91c4fb9e6dfba29f02ae89359d10
 commit_hash: e76d9d7e
 uncommitted_changes: false
-name: capi-release-final
+name: capi
 version: 1.1.0
