@@ -128,7 +128,7 @@ jobs:
 license:
   version: a738422c402b593d4c8a38bdbbd3876148de3116
   fingerprint: a738422c402b593d4c8a38bdbbd3876148de3116
-  sha1: 025f63a8e7af91c4fb9e6dfba29f02ae89359d10
+  sha1: 2a52f20f88d5e7c83f384c11ac54a9b486811792
 commit_hash: e76d9d7e
 uncommitted_changes: false
 name: capi
