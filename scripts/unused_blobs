@@ -13,9 +13,7 @@ package_specs.each do |spec_path|
   spec["files"].each do |pattern|
     Dir.chdir("blobs") do
       Dir.glob(pattern, File::FNM_DOTMATCH).each do |blob|
-        p File.basename(blob)
         next if %w[. ..].include?(File.basename(blob))
-
         unused_blobs.delete(blob)
       end
     end
