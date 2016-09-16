@@ -54,14 +54,6 @@
 	path = src/github.com/onsi/gomega
 	url = https://github.com/onsi/gomega
 	branch = master
-[submodule "src/github.com/pivotal-golang/clock"]
-	path = src/github.com/pivotal-golang/clock
-	url = https://github.com/pivotal-golang/clock
-	branch = master
-[submodule "src/github.com/pivotal-golang/lager"]
-	path = src/github.com/pivotal-golang/lager
-	url = https://github.com/pivotal-golang/lager
-	branch = master
 [submodule "src/github.com/tedsuo/ifrit"]
 	path = src/github.com/tedsuo/ifrit
 	url = https://github.com/tedsuo/ifrit
