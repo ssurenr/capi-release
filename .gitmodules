@@ -14,10 +14,6 @@
 	path = src/github.com/cloudfoundry/gosteno
 	url = https://github.com/cloudfoundry/gosteno
 	branch = master
-[submodule "src/github.com/cloudfoundry/gunk"]
-	path = src/github.com/cloudfoundry/gunk
-	url = https://github.com/cloudfoundry/gunk
-	branch = master
 [submodule "src/github.com/cloudfoundry/noaa"]
 	path = src/github.com/cloudfoundry/noaa
 	url = https://github.com/cloudfoundry/noaa
@@ -139,4 +135,12 @@
 [submodule "src/code.cloudfoundry.org/bbs"]
 	path = src/code.cloudfoundry.org/bbs
 	url = https://github.com/cloudfoundry/bbs
+	branch = master
+[submodule "src/code.cloudfoundry.org/urljoiner"]
+	path = src/code.cloudfoundry.org/urljoiner
+	url = https://github.com/cloudfoundry/urljoiner
+	branch = master
+[submodule "src/code.cloudfoundry.org/workpool"]
+	path = src/code.cloudfoundry.org/workpool
+	url = https://github.com/cloudfoundry/workpool
 	branch = master
