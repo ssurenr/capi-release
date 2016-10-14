@@ -68,4 +68,6 @@ files:
   - capi-release/src/github.com/vito/go-sse/sse/*.go # gosub
   - capi-release/src/golang.org/x/crypto/curve25519/*.go # gosub
   - capi-release/src/golang.org/x/crypto/curve25519/*.s # gosub
+  - capi-release/src/golang.org/x/crypto/ed25519/*.go # gosub
+  - capi-release/src/golang.org/x/crypto/ed25519/internal/edwards25519/*.go # gosub
   - capi-release/src/golang.org/x/crypto/ssh/*.go # gosub

@@ -57,6 +57,7 @@ files:
   - capi-release/src/github.com/cloudfoundry/gosteno/syslog/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/noaa/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/noaa/consumer/*.go # gosub
+  - capi-release/src/github.com/cloudfoundry/noaa/consumer/internal/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/noaa/errors/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/sonde-go/events/*.go # gosub
   - capi-release/src/github.com/gogo/protobuf/gogoproto/*.go # gosub
@@ -76,4 +77,6 @@ files:
   - capi-release/src/github.com/vito/go-sse/sse/*.go # gosub
   - capi-release/src/golang.org/x/crypto/curve25519/*.go # gosub
   - capi-release/src/golang.org/x/crypto/curve25519/*.s # gosub
+  - capi-release/src/golang.org/x/crypto/ed25519/*.go # gosub
+  - capi-release/src/golang.org/x/crypto/ed25519/internal/edwards25519/*.go # gosub
   - capi-release/src/golang.org/x/crypto/ssh/*.go # gosub
