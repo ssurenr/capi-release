@@ -68,8 +68,8 @@ properties:
     default: "0.0.0.0:1518"
   capi.tps.listener.debug_addr:
     description: "address at which to serve debug info"
-    default: "0.0.0.0:17014"
+    default: "127.0.0.1:17014"
 
   capi.tps.watcher.debug_addr:
     description: "address at which to serve debug info"
-    default: "0.0.0.0:17015"
+    default: "127.0.0.1:17015"

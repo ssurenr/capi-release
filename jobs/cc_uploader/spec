@@ -19,7 +19,7 @@ properties:
     default: "0.0.0.0:9090"
   capi.cc_uploader.debug_addr:
     description: "address at which to serve debug info"
-    default: "0.0.0.0:17018"
+    default: "127.0.0.1:17018"
   capi.cc_uploader.cc.job_polling_interval_in_seconds:
     description: "the interval between job polling requests"
   capi.cc_uploader.log_level:

@@ -71,10 +71,10 @@ properties:
     default: 30
   capi.nsync.listener_debug_addr:
     description: "address at which to serve debug info"
-    default: "0.0.0.0:17006"
+    default: "127.0.0.1:17006"
   capi.nsync.bulker_debug_addr:
     description: "address at which to serve debug info"
-    default: "0.0.0.0:17007"
+    default: "127.0.0.1:17007"
   capi.nsync.log_level:
     description: "Log level"
     default: "info"
