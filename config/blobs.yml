@@ -39,11 +39,11 @@ nginx/pcre-8.39.tar.gz:
   object_id: 0bea0468-82a8-4349-8444-2e8674a8bdfb
   sha: b3aec1f643d9701841e2f9d57ac121a7ff448fc8
   size: 2062258
-golang/go1.7.linux-amd64.tar.gz:
-  object_id: c0196ca0-44ab-453e-88af-4f296166175c
-  sha: a744e29da97fc3aadad1ee0d7d89b0d899645e50
-  size: 81573766
 postgres/postgresql-9.4.9.tar.gz:
   object_id: 412b77c8-966c-463e-84e1-e5fc47e47269
   sha: c9d641eb69885672e5aacee413cd778d88b8420d
   size: 23300245
+golang/go1.7.linux-amd64.tar.gz/go1.7.linux-amd64.tar.gz:
+  object_id: a288c8ad-3ff4-4168-a944-918158efdd18
+  sha: a744e29da97fc3aadad1ee0d7d89b0d899645e50
+  size: 81573766
