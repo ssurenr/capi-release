@@ -1,6 +1,6 @@
 ---
 name: blobstore_url_signer
 dependencies:
-- golang1.6
+- golang1.7
 files:
   - capi-release/src/github.com/cloudfoundry/blobstore_url_signer/**/*
