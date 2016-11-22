@@ -1,0 +1,30 @@
+{
+<% log_dir = "/var/vcap/sys/log/nsync" %>
+<% conf_dir = "/var/vcap/jobs/nsync/config" %>
+<% if p("capi.nsync.bbs.require_ssl") %>
+  "bbs_client_cert": "<%="#{conf_dir}/certs/bbs/client.crt"%>",
+  "bbs_client_key": "<%="#{conf_dir}/certs/bbs/client.key"%>",
+  "bbs_ca_cert": "<%="#{conf_dir}/certs/bbs/ca.crt"%>",
+  "bbs_api_url": "<%="https://" + p("capi.nsync.bbs.api_location") %>",
+<% else %>
+  "bbs_api_url": "<%= "http://" + p("capi.nsync.bbs.api_location") %>",
+<% end %>
+<% if_p("capi.nsync.bbs.client_session_cache_size") do |value| %>
+  "bbs_client_cache_size": <%= p("capi.nsync.bbs.client_session_cache_size")%>,
+<% end %>
+<% if_p("capi.nsync.bbs.max_idle_conns_per_host") do |value| %>
+  "bbs_max_idle_conns_per_host": <%= p("capi.nsync.bbs.max_idle_conns_per_host")%>,
+<% end %>
+  "consul_cluster": "<%= "http://127.0.0.1:" + p("capi.nsync.consul_agent_port").to_s%>",
+  "debug_server_config": {
+    "debug_address": "<%= p("capi.nsync.listener_debug_addr")%>"
+  },
+  "diego_privileged_containers": <%= p("capi.nsync.diego_privileged_containers")%>,
+  "dropsonde_port": <%= p("capi.nsync.dropsonde_port")%>,
+  "file_server_url": "<%= p("capi.nsync.file_server_url")%>",
+  "lager_config": {
+    "log_level": "<%= p("capi.nsync.log_level")%>"
+  },
+  "lifecycle_bundles": <%= p("capi.nsync.lifecycle_bundles")%>,
+  "nsync_listen_addr": "<%= p("capi.nsync.listen_addr")%>"
+}

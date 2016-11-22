@@ -12,7 +12,6 @@ files:
   - capi-release/src/code.cloudfoundry.org/bbs/models/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/cfhttp/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/cfhttp/unix_transport/*.go # gosub
-  - capi-release/src/code.cloudfoundry.org/cflager/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/clock/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/consuladapter/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/debugserver/*.go # gosub
@@ -20,11 +19,13 @@ files:
   - capi-release/src/code.cloudfoundry.org/diego-ssh/keys/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/diego-ssh/routes/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/lager/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/lager/lagerflags/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/locket/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/bulk/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/cmd/nsync-bulker/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/cmd/nsync-listener/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/nsync/config/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/handlers/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/helpers/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/recipebuilder/*.go # gosub
