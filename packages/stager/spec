@@ -14,11 +14,11 @@ files:
   - capi-release/src/code.cloudfoundry.org/cc-uploader/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/cfhttp/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/cfhttp/unix_transport/*.go # gosub
-  - capi-release/src/code.cloudfoundry.org/cflager/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/clock/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/consuladapter/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/debugserver/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/lager/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/lager/lagerflags/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/locket/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/runtimeschema/cc_messages/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/runtimeschema/cc_messages/flags/*.go # gosub
@@ -27,6 +27,7 @@ files:
   - capi-release/src/code.cloudfoundry.org/stager/backend/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/stager/cc_client/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/stager/cmd/stager/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/stager/config/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/stager/diego_errors/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/stager/handlers/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/stager/vars/*.go # gosub

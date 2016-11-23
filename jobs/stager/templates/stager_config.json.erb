@@ -1,0 +1,58 @@
+<%=
+require 'json'
+
+conf_dir = "/var/vcap/jobs/stager/config"
+
+config = {
+  "log_level" => p("capi.stager.log_level"),
+  "dropsonde_port" => p("capi.stager.dropsonde_port"),
+  "file_server_url" => p("capi.stager.file_server_url"),
+  "lager_config" => {
+    "log_level" => p("capi.stager.log_level")
+  },
+  "stager_listen_addr" => p("capi.stager.listen_addr"),
+  "diego_privileged_containers" => p("capi.stager.diego_privileged_containers"),
+  "skip_cert_verify" => p("diego.ssl.skip_cert_verify"),
+  "staging_task_callback_url" => p("capi.stager.staging_task_callback_url"),
+
+  "docker_staging_stack" => p("capi.stager.docker_staging_stack"),
+  "cc_uploader_url" => p("capi.stager.cc_uploader_url"),
+  "consul_cluster" => "http://127.0.0.1:#{p("capi.stager.consul_agent_port")}",
+  "docker_registry_address" => p("capi.stager.docker_registry_address"),
+
+  "cc_base_url" => "http://#{p("capi.stager.cc.internal_service_hostname")}:#{p("capi.stager.cc.external_port")}",
+  "cc_basic_auth_username" => "#{Shellwords.shellescape(p("capi.stager.cc.basic_auth_username"))}",
+  "cc_basic_auth_password" => "#{Shellwords.shellescape(p("capi.stager.cc.basic_auth_password"))}",
+  "debug_server_config" => {
+    "debug_address" => p("capi.stager.debug_addr")
+  },
+  "lifecycles" => [],
+  "insecure_docker_registries" => [],
+}
+
+if p("capi.stager.bbs.require_ssl")
+  config.merge!({
+    "bbs_api_url" => "https://#{p("capi.stager.bbs.api_location")}",
+    "bbs_ca_cert" => "#{conf_dir}/certs/bbs/ca.crt",
+    "bbs_client_key" => "#{conf_dir}/certs/bbs/client.key",
+    "bbs_client_cert" => "#{conf_dir}/certs/bbs/client.crt",
+  })
+else
+  config.merge!({ "bbs_api_url" => "http://#{p("capi.stager.bbs.api_location")}" })
+end
+
+
+if_p("capi.stager.bbs.client_session_cache_size") do |value|
+  config.merge!({"bbs_client_cache_size" => value})
+end
+if_p("capi.stager.bbs.max_idle_conns_per_host") do |value|
+  config.merge!({"bbs_max_idle_conns_per_host" => value})
+end
+
+p("capi.stager.lifecycle_bundles").each { |bundle| config["lifecycles"] << bundle }
+p("capi.stager.insecure_docker_registry_list").each do |url|
+  config["insecure_docker_registries"] << url
+end
+
+config.to_json
+%>
