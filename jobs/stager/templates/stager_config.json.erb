@@ -21,8 +21,8 @@ config = {
   "docker_registry_address" => p("capi.stager.docker_registry_address"),
 
   "cc_base_url" => "http://#{p("capi.stager.cc.internal_service_hostname")}:#{p("capi.stager.cc.external_port")}",
-  "cc_basic_auth_username" => "#{Shellwords.shellescape(p("capi.stager.cc.basic_auth_username"))}",
-  "cc_basic_auth_password" => "#{Shellwords.shellescape(p("capi.stager.cc.basic_auth_password"))}",
+  "cc_basic_auth_username" => p("capi.stager.cc.basic_auth_username"),
+  "cc_basic_auth_password" => p("capi.stager.cc.basic_auth_password"),
   "debug_server_config" => {
     "debug_address" => p("capi.stager.debug_addr")
   },
