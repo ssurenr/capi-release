@@ -20,6 +20,7 @@ files:
   - capi-release/src/code.cloudfoundry.org/diego-ssh/keys/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/diego-ssh/routes/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/lager/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/lager/lagerflags/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/locket/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/helpers/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/recipebuilder/*.go # gosub
@@ -29,6 +30,7 @@ files:
   - capi-release/src/code.cloudfoundry.org/tps/cc_client/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/cmd/tps-listener/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/cmd/tps-watcher/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/tps/config/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/handler/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/handler/bulklrpstatus/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/handler/cc_conv/*.go # gosub
