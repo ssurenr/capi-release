@@ -15,7 +15,7 @@ if_p("capi.tps.bbs.max_idle_conns_per_host") do |value|
   config[:bbs_max_idle_conns_per_host] =  value
 end
 
-config[:cc_base_url] =  "#{p("capi.tps.cc.internal_service_hostname")}:#{p("capi.tps.cc.external_port")}"
+config[:cc_base_url] =  "http://#{p("capi.tps.cc.internal_service_hostname")}:#{p("capi.tps.cc.external_port")}"
 config[:cc_basic_auth_password] =  Shellwords.shellescape(p("capi.tps.cc.basic_auth_password"))
 config[:cc_basic_auth_username] =  Shellwords.shellescape(p("capi.tps.cc.basic_auth_username"))
 config[:consul_cluster] =  "http://127.0.0.1:" + p("capi.tps.consul_agent_port").to_s
