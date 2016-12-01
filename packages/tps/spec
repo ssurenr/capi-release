@@ -12,7 +12,6 @@ files:
   - capi-release/src/code.cloudfoundry.org/bbs/models/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/cfhttp/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/cfhttp/unix_transport/*.go # gosub
-  - capi-release/src/code.cloudfoundry.org/cflager/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/clock/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/consuladapter/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/debugserver/*.go # gosub
