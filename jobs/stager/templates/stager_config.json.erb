@@ -15,7 +15,6 @@ config[:staging_task_callback_url] = p("capi.stager.staging_task_callback_url")
 config[:docker_staging_stack] = p("capi.stager.docker_staging_stack")
 config[:cc_uploader_url] = p("capi.stager.cc_uploader_url")
 config[:consul_cluster] = "http://127.0.0.1:#{p("capi.stager.consul_agent_port")}"
-config[:docker_registry_address] = p("capi.stager.docker_registry_address")
 
 config[:cc_base_url] = "http://#{p("capi.stager.cc.internal_service_hostname")}:#{p("capi.stager.cc.external_port")}"
 config[:cc_basic_auth_username] = p("capi.stager.cc.basic_auth_username")
