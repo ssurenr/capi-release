@@ -146,4 +146,4 @@
 	branch = master
 [submodule "src/gopkg.in/yaml.v2"]
 	path = src/gopkg.in/yaml.v2
-	url = https://github.com/go-yaml/yaml/
+	url = https://github.com/go-yaml/yaml
