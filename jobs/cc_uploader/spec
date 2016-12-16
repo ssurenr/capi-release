@@ -4,6 +4,7 @@ name: cc_uploader
 templates:
   cc_uploader_ctl.erb: bin/cc_uploader_ctl
   cc_uploader_as_vcap.erb: bin/cc_uploader_as_vcap
+  cc_uploader_config.json.erb: config/cc_uploader_config.json
 
 packages:
   - capi_utils
@@ -31,7 +32,6 @@ properties:
   capi.cc_uploader.consul_agent_port:
     description: "local consul agent's port"
     default: 8500
-
   capi.cc_uploader.cc.external_port:
     description: "External Cloud Controller port"
     default: 9022
