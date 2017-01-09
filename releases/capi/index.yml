@@ -28,4 +28,6 @@ builds:
     version: 1.13.0
   1572ba83-c005-4cc2-a829-fcc3668b8db0:
     version: 1.14.0
+  45a550e2-cfb9-4252-9e69-2620e5fbfbb1:
+    version: 1.15.0
 format-version: '2'
