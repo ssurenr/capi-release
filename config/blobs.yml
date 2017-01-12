@@ -15,10 +15,6 @@ nginx/newrelic_nginx_agent-1.2.1.tar.gz:
   object_id: c63358f6-574a-4e20-9d2b-7e1450368b6d
   sha: 98a1b10475371705932fea4769f8ac1b0451106f
   size: 5222
-nginx/headers-more-nginx-module-0.30.tar.gz:
-  object_id: c9069331-8ff2-4b2f-b663-45d7230c5a39
-  sha: a188a399f3e365a0831585a9d7aa0e6ed1a75f0d
-  size: 27793
 nginx/pcre-8.39.tar.gz:
   object_id: 0bea0468-82a8-4349-8444-2e8674a8bdfb
   sha: b3aec1f643d9701841e2f9d57ac121a7ff448fc8
@@ -47,3 +43,7 @@ nginx/nginx-1.11.8.tar.gz:
   object_id: b0a5f1a5-38d5-4d7a-88b4-13caf2ce1ff6
   sha: 6946c4304aba1e8eef375fc620f569cdd3e3f080
   size: 964918
+nginx/headers-more-nginx-module-0.32.tar.gz:
+  object_id: b14a356b-97f0-4b9a-b61d-bfff1f233e94
+  sha: aadb7f0b6c5b5b9cae2af72984e03dc2fbf3fecb
+  size: 28033
