@@ -18,12 +18,10 @@ end
 config[:cc_base_url] =  "http://#{p("capi.tps.cc.internal_service_hostname")}:#{p("capi.tps.cc.external_port")}"
 config[:cc_basic_auth_password] =  Shellwords.shellescape(p("capi.tps.cc.basic_auth_password"))
 config[:cc_basic_auth_username] =  Shellwords.shellescape(p("capi.tps.cc.basic_auth_username"))
-config[:cc_client_cert] = "#{conf_dir}/certs/cc/client.crt"
-config[:cc_client_key] = "#{conf_dir}/certs/cc/client.key"
-config[:cc_ca_cert] = "#{conf_dir}/certs/cc/ca.crt"
 config[:consul_cluster] =  "http://127.0.0.1:" + p("capi.tps.consul_agent_port").to_s
 config[:debug_server_config] = { debug_address: p("capi.tps.watcher.debug_addr") }
 config[:dropsonde_port] =  p("capi.tps.dropsonde_port")
 config[:lager_config] = { log_level: p("capi.tps.log_level") }
+config[:skip_cert_verify] =  p("diego.ssl.skip_cert_verify")
 %>
 <%= config.to_json %>
