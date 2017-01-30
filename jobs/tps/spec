@@ -75,3 +75,8 @@ properties:
   capi.tps.watcher.debug_addr:
     description: "address at which to serve debug info"
     default: "127.0.0.1:17015"
+
+  capi.tps.listener_enabled:
+    description: "Flag to enable TPS listener. Listener functionality has be absorbed into modern CC"
+    default: true
+
