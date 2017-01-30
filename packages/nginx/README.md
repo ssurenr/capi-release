@@ -8,3 +8,4 @@ The files can be downloaded from the following locations:
 | -------- | ------------ |
 | nginx-1.11.8.tar.gz | [nginx.org](https://http://nginx.org/download/nginx-1.11.8.tar.gz) |
 | headers-more-nginx-module-0.32.tar.gz | [github.com/openresty/headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module/archive/v0.32.tar.gz) |
+| pcre-8.40.tar.gz | [pcre.org](ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz) |
