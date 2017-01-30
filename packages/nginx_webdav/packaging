@@ -1,7 +1,7 @@
 set -e -x
 
 echo "Extracting pcre..."
-tar xzvf nginx/pcre-8.39.tar.gz
+tar xzvf nginx/pcre-8.40.tar.gz
 
 echo "Extracting nginx..."
 tar xzvf nginx/nginx-1.11.8.tar.gz
@@ -10,7 +10,7 @@ echo "Building nginx..."
 pushd nginx-1.11.8
   ./configure \
     --prefix=${BOSH_INSTALL_TARGET} \
-    --with-pcre=../pcre-8.39 \
+    --with-pcre=../pcre-8.40 \
     --with-http_dav_module \
     --with-http_secure_link_module \
     --with-http_ssl_module
