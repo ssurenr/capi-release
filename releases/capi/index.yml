@@ -34,4 +34,6 @@ builds:
     version: 1.16.0
   1e883eaa-6ab8-48e0-9a7b-c0a48faead06:
     version: 1.17.0
+  896a814b-483d-4365-abb3-ec3688ba806a:
+    version: 1.18.0
 format-version: '2'
