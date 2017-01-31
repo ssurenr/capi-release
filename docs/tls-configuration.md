@@ -48,7 +48,8 @@ Contents of file                                 | Property
 
 # Generating the TPS client certificate
 
-The `./diego-release/scripts/generate-tps-certs` script will guide you on how to generate the values. 
+The `./diego-release/scripts/generate-tps-certs` script will guide you on how to generate the values.
+Use the same CA as the steps above.
 
 Contents of file                                 | Property
 ------------------------------------------------ | ---------
