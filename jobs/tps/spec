@@ -59,11 +59,6 @@ properties:
   capi.tps.cc.external_port:
     description: "External port to access the Cloud Controller"
     default: 9023
-  capi.tps.cc.basic_auth_username:
-    description: "Basic auth username for CC internal API"
-    default: "internal_user"
-  capi.tps.cc.basic_auth_password:
-    description: "Basic auth password for CC internal API"
   capi.tps.cc.internal_service_hostname:
     description: "Internal CC host name"
     default: cloud-controller-ng.service.cf.internal
