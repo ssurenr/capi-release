@@ -23,16 +23,9 @@ Contents of file                            | Property
 
 # Generating the Cloud Controller Server certificate
 
-If you generated a cert above using `./cf-release/scripts/generate-cf-diego-certs`:
+## For an existing deployment
 
-Contents of file                                 | Property
------------------------------------------------  | ---------
-`cf-release/cf-diego-certs/cloud-controller.crt` | `properties.cc.mutual_tls.client_cert`
-`cf-release/cf-diego-certs/cloud-controller.key` | `properties.cc.mutual_tls.client_key`
-
-For a pre-existing CA, run the following:
-
-generate a signing request and sign it with the CA
+Given an existing CA, with the .crt and .key files found in `/path/to/CA`, we can generate a signing request and sign it with that CA
 
 ```
 $ certstrap --depot-path /path/to/CA request-cert --passphrase '' --common-name cloud-controller-ng.service.cf.internal
@@ -43,6 +36,15 @@ Contents of file                                          | Property
 --------------------------------------------------------- | ---------
 `/path/to/CA/cloud-controller-ng.service.cf.internal.crt` | `properties.cc.mutual_tls.client_cert`
 `/path/to/CA/cloud-controller-ng.service.cf.internal.key` | `properties.cc.mutual_tls.client_key`
+
+## For a new deployment
+
+If you generated a cert above using `./cf-release/scripts/generate-cf-diego-certs`:
+
+Contents of file                                 | Property
+-----------------------------------------------  | ---------
+`cf-release/cf-diego-certs/cloud-controller.crt` | `properties.cc.mutual_tls.client_cert`
+`cf-release/cf-diego-certs/cloud-controller.key` | `properties.cc.mutual_tls.client_key`
 
 # Generating the TPS client certificate
 
