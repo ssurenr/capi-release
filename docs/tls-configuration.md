@@ -56,4 +56,4 @@ Contents of file                                 | Property
 `diego-release/diego-certs/tps-certs/client.crt` | `properties.capi.tps.cc.client_cert`
 `diego-release/diego-certs/tps-certs/client.key` | `properties.capi.tps.cc.client_key`.
 
-If you run into trouble, please feel free to reach out to us on slack.
+If you run into trouble, please feel free to reach out to us on [slack](https://cloudfoundry.slack.com/messages/capi/).
