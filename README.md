@@ -1,8 +1,10 @@
+[![slack.cloudfoundry.org](https://slack.cloudfoundry.org/badge.svg)](https://cloudfoundry.slack.com/messages/capi/)
+
 # Cloud Foundry CAPI Bosh Release
 
 This is the [bosh release](http://bosh.io/docs/release.html) for Cloud Foundry's [Cloud Controller API](https://github.com/cloudfoundry/cloud_controller_ng). 
 
-[![slack.cloudfoundry.org](https://slack.cloudfoundry.org/badge.svg)](https://cloudfoundry.slack.com/messages/capi/)
+**CI**: [CAPI Concourse Pipelines](https://capi.ci.cf-app.com)
 
 ## Components
 
