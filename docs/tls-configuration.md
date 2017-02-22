@@ -34,8 +34,8 @@ $ certstrap --depot-path /path/to/CA sign cloud-controller-ng.service.cf.interna
 
 Contents of file                                          | Property
 --------------------------------------------------------- | ---------
-`/path/to/CA/cloud-controller-ng.service.cf.internal.crt` | `properties.cc.mutual_tls.client_cert`
-`/path/to/CA/cloud-controller-ng.service.cf.internal.key` | `properties.cc.mutual_tls.client_key`
+`/path/to/CA/cloud-controller-ng.service.cf.internal.crt` | `properties.cc.mutual_tls.public_cert`
+`/path/to/CA/cloud-controller-ng.service.cf.internal.key` | `properties.cc.mutual_tls.private_key`
 
 ## For a new deployment
 
@@ -43,8 +43,8 @@ If you generated a cert above using `./cf-release/scripts/generate-cf-diego-cert
 
 Contents of file                                 | Property
 -----------------------------------------------  | ---------
-`cf-release/cf-diego-certs/cloud-controller.crt` | `properties.cc.mutual_tls.client_cert`
-`cf-release/cf-diego-certs/cloud-controller.key` | `properties.cc.mutual_tls.client_key`
+`cf-release/cf-diego-certs/cloud-controller.crt` | `properties.cc.mutual_tls.public_cert`
+`cf-release/cf-diego-certs/cloud-controller.key` | `properties.cc.mutual_tls.private_key`
 
 # Generating the TPS client certificate
 
