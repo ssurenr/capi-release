@@ -43,7 +43,7 @@ nginx/pcre-8.40.tar.gz:
   object_id: 44706e8c-255c-4ff3-9737-23ab55a1a214
   sha: 10384eb3d411794cc15f55b9d837d3f69e35391e
   size: 2065161
-nginx/nginx-1.11.9.tar.gz:
-  object_id: eff51447-b387-4be6-8081-31df3ad4f036
-  sha: d8f225e7bb9503ee9084c25f6056a3493dfd4db8
-  size: 965463
+nginx/nginx-1.11.10.tar.gz:
+  object_id: 15a1f2a6-7df1-47cf-b67a-76e4cd354db6
+  sha: d9c4e3361c0802eaa90aa924b8981c5d3ed771dc
+  size: 967773
