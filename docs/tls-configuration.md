@@ -48,12 +48,22 @@ Contents of file                                 | Property
 
 # Generating the TPS client certificate
 
-The `./diego-release/scripts/generate-tps-certs` script will guide you on how to generate the values.
-Use the same CA as the steps above.
+The `./diego-release/scripts/generate-tps-certs <CA-Name> <OutputDirectory>` script will guide you on how to generate the values.
+Use the same CA as the steps above for `capi.tps.cc.ca_cert`.
 
-Contents of file                                 | Property
------------------------------------------------- | ---------
-`diego-release/diego-certs/tps-certs/client.crt` | `properties.capi.tps.cc.client_cert`
-`diego-release/diego-certs/tps-certs/client.key` | `properties.capi.tps.cc.client_key`.
+Contents of file               | Property
+------------------------------ | ---------
+`<OutputDirectory>/client.crt` | `properties.capi.tps.cc.client_cert`
+`<OutputDirectory>/client.key` | `properties.capi.tps.cc.client_key`.
+
+# Generating the CC Uploader client certificate
+
+The `./diego-release/scripts/generate-cc-uploader-certs <CA-Name> <OutputDirectory>` script will guide you on how to generate the values.
+Use the same CA as the steps above for `capi.cc_uploader.cc.ca_cert`.
+
+Contents of file               | Property
+------------------------------ | ---------
+`<OutputDirectory>/client.crt` | `properties.capi.cc_uploader.cc.client_cert`
+`<OutputDirectory>/client.key` | `properties.capi.cc_uploader.cc.client_key`.
 
 If you run into trouble, please feel free to reach out to us on [slack](https://cloudfoundry.slack.com/messages/capi/).
