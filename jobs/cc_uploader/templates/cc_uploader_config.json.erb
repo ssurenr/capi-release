@@ -7,7 +7,6 @@
   config[:lager_config] = { log_level: p("capi.cc_uploader.log_level") }
 
   config[:listen_addr] = p("capi.cc_uploader.listen_addr")
-  config[:skip_cert_verify] = p("diego.ssl.skip_cert_verify")
   config[:debug_server_config] = { debug_address: p("capi.cc_uploader.debug_addr") }
   config[:consul_cluster] = "http://127.0.0.1:#{p("capi.cc_uploader.consul_agent_port")}"
 
