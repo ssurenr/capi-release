@@ -9,6 +9,10 @@ templates:
   cc_uploader_client.crt.erb: config/certs/cc/client.crt
   cc_uploader_client.key.erb: config/certs/cc/client.key
 
+  cc_uploader_server_ca.crt.erb: config/certs/cc_uploader/ca.crt
+  cc_uploader_server.crt.erb: config/certs/cc_uploader/server.crt
+  cc_uploader_server.key.erb: config/certs/cc_uploader/server.key
+
 packages:
   - capi_utils
   - cc_uploader
@@ -37,3 +41,12 @@ properties:
     description: "PEM-encoded client certificate"
   capi.cc_uploader.cc.client_key:
     description: "PEM-encoded client key"
+
+  capi.cc_uploader.mutual_tls.listen_addr:
+    default: "0.0.0.0:9091"
+  capi.cc_uploader.mutual_tls.ca_cert:
+    description: "PEM-encoded CA certificate for secure, mutually authenticated TLS communication"
+  capi.cc_uploader.mutual_tls.server_cert:
+    description: "PEM-encoded certificate for secure, mutually authenticated TLS communication"
+  capi.cc_uploader.mutual_tls.server_key:
+    description: "PEM-encoded key for secure, mutually authenticated TLS communication"

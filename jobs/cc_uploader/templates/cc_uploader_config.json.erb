@@ -14,6 +14,13 @@
   config[:cc_client_cert] = "#{conf_dir}/certs/cc/client.crt"
   config[:cc_client_key] = "#{conf_dir}/certs/cc/client.key"
 
+  config[:mutual_tls] = {
+    listen_addr:  p("capi.cc_uploader.mutual_tls.listen_addr"),
+    ca_cert:      "#{conf_dir}/certs/cc_uploader/ca.crt",
+    server_cert:  "#{conf_dir}/certs/cc_uploader/server.crt",
+    server_key:   "#{conf_dir}/certs/cc_uploader/server.key",
+  }
+
   if_p("capi.cc_uploader.cc.job_polling_interval_in_seconds") do |interval|
     config[:job_polling_interval_in_seconds] = "#{interval}s"
   end
