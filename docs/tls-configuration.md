@@ -15,6 +15,7 @@ Contents of file                                 | Property
 `cf-release/cf-diego-certs/cf-diego-ca.crt`      | `properties.cc.mutual_tls.ca_cert`
 `cf-release/cf-diego-certs/cf-diego-ca.crt`      | `properties.capi.tps.cc.ca_cert`
 `cf-release/cf-diego-certs/cf-diego-ca.crt`      | `properties.capi.cc_uploader.cc.ca_cert`
+`cf-release/cf-diego-certs/cf-diego-ca.crt`      | `properties.capi.cc_uploader.mutual_tls.ca_cert`
 `cf-release/cf-diego-certs/cloud-controller.crt` | `properties.cc.mutual_tls.public_cert`
 `cf-release/cf-diego-certs/cloud-controller.key` | `properties.cc.mutual_tls.private_key`
 
@@ -63,15 +64,22 @@ Contents of file                                 | Property
 `diego-release/diego-certs/tps-certs/client.key` | `properties.capi.tps.cc.client_key`.
 
 
-## Generating the CC-Uploader client certificate
+## Generating the CC-Uploader certificates
 
 Please run `diego-release/scripts/generate-cc-uploader-certs`, this will guide you on how to generate the values below.
 Use the same CA as for the steps above.
 
-Contents of file                                         | Property
--------------------------------------------------------- | ---------
-`diego-release/diego-certs/cc-uploader-certs/client.crt` | `properties.capi.cc_uploader.cc.client_cert`
-`diego-release/diego-certs/cc-uploader-certs/client.key` | `properties.capi.cc_uploader.cc.client_key`
+This script will generate two sets of certificates:
+
+1. Enabling mTLS communication from the CC Uploader to CC
+1. Enabling mTLS communication from Diego to CC Uploader
+
+Contents of file                                            | Property
+----------------------------------------------------------- | ---------
+`diego-release/diego-certs/cc-uploader-certs/cc/client.crt` | `properties.capi.cc_uploader.cc.client_cert`
+`diego-release/diego-certs/cc-uploader-certs/cc/client.key` | `properties.capi.cc_uploader.cc.client_key`
+`diego-release/diego-certs/cc-uploader-certs/server.crt`    | `properties.capi.cc_uploader.mutual_tls.server_cert`
+`diego-release/diego-certs/cc-uploader-certs/server.key`    | `properties.capi.cc_uploader.mutual_tls.server_key`
 
 
 
