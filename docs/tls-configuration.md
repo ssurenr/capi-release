@@ -10,26 +10,27 @@ For most deployments, use a shared CA between CF and Diego deployments.
 Please run `cf-release/scripts/generate-cf-diego-certs`. This script will create a directory called cf-diego-certs.
 Within this directory will be a CA, to be shared between your cf-release and diego-release deployments.
 
-Contents of file                                 | Property
------------------------------------------------- | ---------
-`cf-release/cf-diego-certs/cf-diego-ca.crt`      | `properties.cc.mutual_tls.ca_cert`
-`cf-release/cf-diego-certs/cf-diego-ca.crt`      | `properties.capi.tps.cc.ca_cert`
-`cf-release/cf-diego-certs/cf-diego-ca.crt`      | `properties.capi.cc_uploader.cc.ca_cert`
-`cf-release/cf-diego-certs/cf-diego-ca.crt`      | `properties.capi.cc_uploader.mutual_tls.ca_cert`
-`cf-release/cf-diego-certs/cloud-controller.crt` | `properties.cc.mutual_tls.public_cert`
-`cf-release/cf-diego-certs/cloud-controller.key` | `properties.cc.mutual_tls.private_key`
+Contents of file                                 | Deployment | Property
+------------------------------------------------ | ---------- | ---------
+`cf-release/cf-diego-certs/cf-diego-ca.crt`      | CF         | `properties.cc.mutual_tls.ca_cert`
+`cf-release/cf-diego-certs/cf-diego-ca.crt`      | Diego      | `properties.capi.tps.cc.ca_cert`
+`cf-release/cf-diego-certs/cf-diego-ca.crt`      | Diego      | `properties.capi.cc_uploader.cc.ca_cert`
+`cf-release/cf-diego-certs/cf-diego-ca.crt`      | Diego      | `properties.capi.cc_uploader.mutual_tls.ca_cert`
+`cf-release/cf-diego-certs/cf-diego-ca.crt`      | Diego      | `properties.tls.ca_cert`
+`cf-release/cf-diego-certs/cloud-controller.crt` | CF         | `properties.cc.mutual_tls.public_cert`
+`cf-release/cf-diego-certs/cloud-controller.key` | CF         | `properties.cc.mutual_tls.private_key`
 
 ## Generating Diego client certificates
-   
+
 Please run `diego-release/scripts/generate-diego-certs <CA_NAME> <CA_CERT_REPO_PATH>`.  For example, if you ran `cf-release/scripts/generate-cf-diego-certs`
 as per the step above, you would now run `scripts/generate-diego-certs cf-diego-ca /path/to/cf-release/cf-diego-certs`.
 
-Contents of file                                         | Property
--------------------------------------------------------- | ---------
-`diego-release/diego-certs/tps-certs/client.crt`         | `properties.capi.tps.cc.client_cert`
-`diego-release/diego-certs/tps-certs/client.key`         | `properties.capi.tps.cc.client_key`
-`diego-release/diego-certs/cc-uploader-certs/client.key` | `properties.capi.cc_uploader.cc.client_key`
-`diego-release/diego-certs/cc-uploader-certs/client.key` | `properties.capi.cc_uploader.cc.client_key`
+Contents of file                                         | Deployment | Property
+-------------------------------------------------------- | ---------- | ---------
+`diego-release/diego-certs/tps-certs/client.crt`         | Diego      | `properties.capi.tps.cc.client_cert`
+`diego-release/diego-certs/tps-certs/client.key`         | Diego      | `properties.capi.tps.cc.client_key`
+`diego-release/diego-certs/cc-uploader-certs/client.key` | Diego      | `properties.capi.cc_uploader.cc.client_key`
+`diego-release/diego-certs/cc-uploader-certs/client.key` | Diego      | `properties.capi.cc_uploader.cc.client_key`
 
 
 # For an existing deployment
@@ -48,39 +49,40 @@ $ certstrap --depot-path /path/to/CA request-cert --passphrase '' --common-name 
 $ certstrap --depot-path /path/to/CA sign cloud-controller-ng.service.cf.internal --CA <CA NAME>
 ```
 
-Contents of file                                          | Property
---------------------------------------------------------- | ---------
-`/path/to/CA/cloud-controller-ng.service.cf.internal.crt` | `properties.cc.mutual_tls.public_cert`
-`/path/to/CA/cloud-controller-ng.service.cf.internal.key` | `properties.cc.mutual_tls.private_key`
+Contents of file                                          | Deployment | Property
+--------------------------------------------------------- | ---------  | --------
+`/path/to/CA/cloud-controller-ng.service.cf.internal.crt` | CF         | `properties.cc.mutual_tls.public_cert`
+`/path/to/CA/cloud-controller-ng.service.cf.internal.key` | CF         | `properties.cc.mutual_tls.private_key`
 
 ## Generating the TPS client certificate
 
 Please run `diego-release/scripts/generate-tps-certs`, this will guide you on how to generate the values below.
 Use the same CA as for the steps above.
 
-Contents of file                                 | Property
------------------------------------------------- | ---------
-`diego-release/diego-certs/tps-certs/client.crt` | `properties.capi.tps.cc.client_cert`
-`diego-release/diego-certs/tps-certs/client.key` | `properties.capi.tps.cc.client_key`.
+Contents of file                                 | Deployment | Property
+------------------------------------------------ | ---------- | --------
+`diego-release/diego-certs/tps-certs/client.crt` | Diego      | `properties.capi.tps.cc.client_cert`
+`diego-release/diego-certs/tps-certs/client.key` | Diego      | `properties.capi.tps.cc.client_key`.
 
 
 ## Generating the CC-Uploader certificates
 
-Please run `diego-release/scripts/generate-cc-uploader-certs`, this will guide you on how to generate the values below.
+Please run `diego-release/scripts/generate-cc-uploader-certs` and `diego-release/scripts/generate-rep-certs`, this will guide you on how to generate the values below.
 Use the same CA as for the steps above.
 
 This script will generate two sets of certificates:
 
-1. Enabling mTLS communication from the CC Uploader to CC
+1. Generates client certificates for enabling mTLS communication from the CC Uploader to CC
 1. Enabling mTLS communication from Diego to CC Uploader
 
-Contents of file                                            | Property
------------------------------------------------------------ | ---------
-`diego-release/diego-certs/cc-uploader-certs/cc/client.crt` | `properties.capi.cc_uploader.cc.client_cert`
-`diego-release/diego-certs/cc-uploader-certs/cc/client.key` | `properties.capi.cc_uploader.cc.client_key`
-`diego-release/diego-certs/cc-uploader-certs/server.crt`    | `properties.capi.cc_uploader.mutual_tls.server_cert`
-`diego-release/diego-certs/cc-uploader-certs/server.key`    | `properties.capi.cc_uploader.mutual_tls.server_key`
 
-
+Contents of file                                            | Deployment | Property
+----------------------------------------------------------- | ---------- | --------
+`diego-release/diego-certs/cc-uploader-certs/cc/client.crt` | Diego      | `properties.capi.cc_uploader.cc.client_cert`
+`diego-release/diego-certs/cc-uploader-certs/cc/client.key` | Diego      | `properties.capi.cc_uploader.cc.client_key`
+`diego-release/diego-certs/cc-uploader-certs/server.crt`    | Diego      | `properties.capi.cc_uploader.mutual_tls.server_cert`
+`diego-release/diego-certs/cc-uploader-certs/server.key`    | Diego      | `properties.capi.cc_uploader.mutual_tls.server_key`
+`diego-release/diego-certs/rep-certs/client.crt`            | Diego      | `properties.tls.cert`
+`diego-release/diego-certs/rep-certs/client.key`            | Diego      | `properties.tls.key`
 
 If you run into trouble, please feel free to reach out to us on [slack](https://cloudfoundry.slack.com/messages/capi/).
