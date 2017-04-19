@@ -79,6 +79,12 @@ properties:
   capi.tps.watcher.debug_addr:
     description: "address at which to serve debug info"
     default: "127.0.0.1:17015"
+  capi.tps.watcher.locket.api_location:
+    description: "Hostname and port of the Locket server"
+    default: ""
+  capi.tps.watcher.skip_consul_lock:
+    description: "Determines whether to skip obtaining a lock from Consul"
+    default: false
 
   capi.tps.listener_enabled:
     description: "Flag to enable TPS listener. Listener functionality has be absorbed into modern CC"

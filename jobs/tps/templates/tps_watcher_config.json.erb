@@ -23,5 +23,14 @@ config[:consul_cluster] =  "http://127.0.0.1:" + p("capi.tps.consul_agent_port")
 config[:debug_server_config] = { debug_address: p("capi.tps.watcher.debug_addr") }
 config[:dropsonde_port] =  p("capi.tps.dropsonde_port")
 config[:lager_config] = { log_level: p("capi.tps.log_level") }
+
+if p("capi.tps.bbs.require_ssl")
+  config[:locket_client_cert_file] = "#{conf_dir}/certs/bbs/client.crt"
+  config[:locket_client_key_file] = "#{conf_dir}/certs/bbs/client.key"
+  config[:locket_ca_cert_file] = "#{conf_dir}/certs/bbs/ca.crt"
+  config[:locket_address] = p("capi.tps.watcher.locket.api_location")
+end
+
+config[:skip_consul_lock] = p("capi.tps.watcher.skip_consul_lock")
 %>
 <%= config.to_json %>

@@ -21,6 +21,8 @@ files:
   - capi-release/src/code.cloudfoundry.org/lager/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/lager/lagerflags/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/locket/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/locket/lock/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/locket/models/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/helpers/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/nsync/recipebuilder/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/runtimeschema/cc_messages/*.go # gosub
@@ -65,6 +67,8 @@ files:
   - capi-release/src/github.com/gogo/protobuf/proto/*.go # gosub
   - capi-release/src/github.com/gogo/protobuf/protoc-gen-gogo/descriptor/*.go # gosub
   - capi-release/src/github.com/gogo/protobuf/sortkeys/*.go # gosub
+  - capi-release/src/github.com/golang/protobuf/proto/*.go # gosub
+  - capi-release/src/github.com/golang/protobuf/ptypes/any/*.go # gosub
   - capi-release/src/github.com/gorilla/websocket/*.go # gosub
   - capi-release/src/github.com/hashicorp/consul/api/*.go # gosub
   - capi-release/src/github.com/hashicorp/consul/vendor/github.com/hashicorp/go-cleanhttp/*.go # gosub
@@ -81,3 +85,28 @@ files:
   - capi-release/src/golang.org/x/crypto/ed25519/*.go # gosub
   - capi-release/src/golang.org/x/crypto/ed25519/internal/edwards25519/*.go # gosub
   - capi-release/src/golang.org/x/crypto/ssh/*.go # gosub
+  - capi-release/src/golang.org/x/net/context/*.go # gosub
+  - capi-release/src/golang.org/x/net/http2/*.go # gosub
+  - capi-release/src/golang.org/x/net/http2/hpack/*.go # gosub
+  - capi-release/src/golang.org/x/net/idna/*.go # gosub
+  - capi-release/src/golang.org/x/net/internal/timeseries/*.go # gosub
+  - capi-release/src/golang.org/x/net/lex/httplex/*.go # gosub
+  - capi-release/src/golang.org/x/net/trace/*.go # gosub
+  - capi-release/src/golang.org/x/text/secure/bidirule/*.go # gosub
+  - capi-release/src/golang.org/x/text/transform/*.go # gosub
+  - capi-release/src/golang.org/x/text/unicode/bidi/*.go # gosub
+  - capi-release/src/golang.org/x/text/unicode/norm/*.go # gosub
+  - capi-release/src/google.golang.org/genproto/googleapis/rpc/status/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/codes/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/credentials/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/grpclog/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/internal/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/keepalive/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/metadata/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/naming/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/peer/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/stats/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/status/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/tap/*.go # gosub
+  - capi-release/src/google.golang.org/grpc/transport/*.go # gosub
