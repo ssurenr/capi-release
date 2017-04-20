@@ -147,3 +147,21 @@
 [submodule "src/gopkg.in/yaml.v2"]
 	path = src/gopkg.in/yaml.v2
 	url = https://github.com/go-yaml/yaml
+[submodule "src/code.cloudfoundry.org/executor"]
+	path = src/code.cloudfoundry.org/executor
+	url = git@github.com:cloudfoundry/executor
+[submodule "src/code.cloudfoundry.org/localip"]
+	path = src/code.cloudfoundry.org/localip
+	url = git@github.com:cloudfoundry/localip
+[submodule "src/code.cloudfoundry.org/rep"]
+	path = src/code.cloudfoundry.org/rep
+	url = git@github.com:cloudfoundry/rep
+[submodule "src/google.golang.org/genproto"]
+	path = src/google.golang.org/genproto
+	url = https://github.com/google/go-genproto
+[submodule "src/google.golang.org/grpc"]
+	path = src/google.golang.org/grpc
+	url = https://github.com/grpc/grpc-go
+[submodule "src/github.com/go-sql-driver/mysql"]
+	path = src/github.com/go-sql-driver/mysql
+	url = https://github.com/go-sql-driver/mysql
