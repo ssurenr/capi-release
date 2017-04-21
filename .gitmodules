@@ -149,13 +149,13 @@
 	url = https://github.com/go-yaml/yaml
 [submodule "src/code.cloudfoundry.org/executor"]
 	path = src/code.cloudfoundry.org/executor
-	url = git@github.com:cloudfoundry/executor
+	url = https://github.com/cloudfoundry/executor
 [submodule "src/code.cloudfoundry.org/localip"]
 	path = src/code.cloudfoundry.org/localip
-	url = git@github.com:cloudfoundry/localip
+	url = https://github.com/cloudfoundry/localip
 [submodule "src/code.cloudfoundry.org/rep"]
 	path = src/code.cloudfoundry.org/rep
-	url = git@github.com:cloudfoundry/rep
+	url = https://github.com/cloudfoundry/rep
 [submodule "src/google.golang.org/genproto"]
 	path = src/google.golang.org/genproto
 	url = https://github.com/google/go-genproto
