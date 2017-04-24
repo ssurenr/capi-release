@@ -4,10 +4,10 @@ echo "Extracting pcre..."
 tar xzvf nginx/pcre-8.40.tar.gz
 
 echo "Extracting nginx..."
-tar xzvf nginx/nginx-1.11.11.tar.gz
+tar xzvf nginx/nginx-1.11.13.tar.gz
 
 echo "Building nginx..."
-pushd nginx-1.11.11
+pushd nginx-1.11.13
   ./configure \
     --prefix=${BOSH_INSTALL_TARGET} \
     --with-pcre=../pcre-8.40 \
