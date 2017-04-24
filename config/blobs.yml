@@ -1,49 +1,48 @@
----
 debian_nfs_server/nfs-kernel-server_1%3a1.2.0-4ubuntu4.1_amd64.deb:
+  size: 169618
   object_id: ba69b993-ec3f-47cf-9fb1-0fcb37212959
   sha: a44b3f8319984bace61f21bb6d15cee1419e5bf3
-  size: 169618
-nginx/nginx-upload-module-2.2.tar.gz:
-  object_id: 161d5d5f-ffde-4e37-9b9f-151139fdc027
-  sha: 74ccd116525a155db76f92a1cd484d9516a70398
-  size: 28505
-libmariadb/libmariadb-5.5.36.tar.xz:
-  object_id: 4827612c-e535-408b-bf60-ba5f25690fdd
-  sha: 4985fd30ffd60de12770153346b4485cd5dcb7ad
-  size: 1260684
-nginx/newrelic_nginx_agent-1.2.1.tar.gz:
-  object_id: c63358f6-574a-4e20-9d2b-7e1450368b6d
-  sha: 98a1b10475371705932fea4769f8ac1b0451106f
-  size: 5222
-postgres/postgresql-9.4.9.tar.gz:
-  object_id: 412b77c8-966c-463e-84e1-e5fc47e47269
-  sha: c9d641eb69885672e5aacee413cd778d88b8420d
-  size: 23300245
-ruby-2.3/bundler-1.13.6.gem:
-  object_id: f789d120-4a5a-4df8-b20c-6f441f292863
-  sha: c4b33f5e0a6ad4a363d2820260f10454197cceff
-  size: 307200
-ruby-2.3/ruby-2.3.3.tar.gz:
-  object_id: 12288fa4-f74a-4f5e-9067-f60536d4916d
-  sha: 1014ee699071aa2ddd501907d18cbe15399c997d
-  size: 17813577
-ruby-2.3/rubygems-2.6.8.tgz:
-  object_id: 5fd4a544-aaac-437b-8435-8931964852a5
-  sha: d253fd1caca6103a9e2a69127ac158a3745fbb44
-  size: 754300
 golang/go1.7.4.linux-amd64.tar.gz:
+  size: 84021919
   object_id: 0d9542dc-f67a-43c8-8403-cd51e7f1b1d9
   sha: 2e5baf03d1590e048c84d1d5b4b6f2540efaaea1
-  size: 84021919
+libmariadb/libmariadb-5.5.36.tar.xz:
+  size: 1260684
+  object_id: 4827612c-e535-408b-bf60-ba5f25690fdd
+  sha: 4985fd30ffd60de12770153346b4485cd5dcb7ad
 nginx/headers-more-nginx-module-0.32.tar.gz:
+  size: 28033
   object_id: b14a356b-97f0-4b9a-b61d-bfff1f233e94
   sha: aadb7f0b6c5b5b9cae2af72984e03dc2fbf3fecb
-  size: 28033
-nginx/pcre-8.40.tar.gz:
-  object_id: 44706e8c-255c-4ff3-9737-23ab55a1a214
-  sha: 10384eb3d411794cc15f55b9d837d3f69e35391e
-  size: 2065161
+nginx/newrelic_nginx_agent-1.2.1.tar.gz:
+  size: 5222
+  object_id: c63358f6-574a-4e20-9d2b-7e1450368b6d
+  sha: 98a1b10475371705932fea4769f8ac1b0451106f
 nginx/nginx-1.11.13.tar.gz:
+  size: 980784
   object_id: 214aec6b-e095-4b21-7155-d038f699eaae
   sha: 84f27729754796181dc39d47da761c7e85eb3ae2
-  size: 980784
+nginx/nginx-upload-module-2.2.tar.gz:
+  size: 28505
+  object_id: 161d5d5f-ffde-4e37-9b9f-151139fdc027
+  sha: 74ccd116525a155db76f92a1cd484d9516a70398
+nginx/pcre-8.40.tar.gz:
+  size: 2065161
+  object_id: 44706e8c-255c-4ff3-9737-23ab55a1a214
+  sha: 10384eb3d411794cc15f55b9d837d3f69e35391e
+postgres/postgresql-9.4.9.tar.gz:
+  size: 23300245
+  object_id: 412b77c8-966c-463e-84e1-e5fc47e47269
+  sha: c9d641eb69885672e5aacee413cd778d88b8420d
+ruby-2.3/bundler-1.13.6.gem:
+  size: 307200
+  object_id: f789d120-4a5a-4df8-b20c-6f441f292863
+  sha: c4b33f5e0a6ad4a363d2820260f10454197cceff
+ruby-2.3/ruby-2.3.3.tar.gz:
+  size: 17813577
+  object_id: 12288fa4-f74a-4f5e-9067-f60536d4916d
+  sha: 1014ee699071aa2ddd501907d18cbe15399c997d
+ruby-2.3/rubygems-2.6.8.tgz:
+  size: 754300
+  object_id: 5fd4a544-aaac-437b-8435-8931964852a5
+  sha: d253fd1caca6103a9e2a69127ac158a3745fbb44
