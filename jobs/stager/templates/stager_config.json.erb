@@ -34,11 +34,11 @@ end
 
 
 if_p("capi.stager.bbs.client_session_cache_size") do |value|
-  config[:bbs_client_cache_size] = valu
+  config[:bbs_client_cache_size] = value
 end
 
 if_p("capi.stager.bbs.max_idle_conns_per_host") do |value|
-  config[:bbs_max_idle_conns_per_host] = valu
+  config[:bbs_max_idle_conns_per_host] = value
 end
 
 p("capi.stager.lifecycle_bundles").each { |bundle| config[:lifecycles] << bundle }
