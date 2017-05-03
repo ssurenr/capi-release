@@ -22,7 +22,7 @@ Contents of file                                 | Deployment | Property
 
 ## Generating Diego client certificates
 
-Please run `diego-release/scripts/generate-diego-certs <CA_NAME> <CA_CERT_REPO_PATH>`.  For example, if you ran `cf-release/scripts/generate-cf-diego-certs`
+Please run `diego-release/scripts/generate-diego-certs`.  For example, if you ran `cf-release/scripts/generate-cf-diego-certs`
 as per the step above, you would now run `scripts/generate-diego-certs cf-diego-ca /path/to/cf-release/cf-diego-certs`.
 
 Contents of file                                         | Deployment | Property
