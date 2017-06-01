@@ -4,6 +4,7 @@ debian_nfs_server/nfs-kernel-server_1%3a1.2.0-4ubuntu4.1_amd64.deb:
   sha: a44b3f8319984bace61f21bb6d15cee1419e5bf3
 expat/expat-2.2.0.tar.bz2:
   size: 414352
+  object_id: 319a0cba-01a1-477c-74ad-c36e92b85cab
   sha: 8453bc52324be4c796fd38742ec48470eef358b3
 golang/go1.7.4.linux-amd64.tar.gz:
   size: 84021919
@@ -27,6 +28,7 @@ nginx/nginx-1.11.13.tar.gz:
   sha: 84f27729754796181dc39d47da761c7e85eb3ae2
 nginx/nginx-dav-ext-module-0.0.3.tar.gz:
   size: 6260
+  object_id: a6a8d9ab-90b6-4b80-7959-26a95a875ee8
   sha: 80714f9471cb5c8259ecdca9e25eb32f4d581074
 nginx/nginx-upload-module-2.2.tar.gz:
   size: 28505
