@@ -62,4 +62,6 @@ builds:
     version: 1.30.0
   a084a1c7-cc44-4344-ad59-104602a3796f:
     version: 1.31.0
+  53900663-6cca-4849-910a-22bcffb16e61:
+    version: 1.32.0
 format-version: '2'
