@@ -12,6 +12,7 @@ golang/go1.7.4.linux-amd64.tar.gz:
   sha: 2e5baf03d1590e048c84d1d5b4b6f2540efaaea1
 golang/go1.8.3.linux-amd64.tar.gz:
   size: 90029041
+  object_id: 53346f1f-edfc-40d5-54b9-04126e05fdf3
   sha: 838c415896ef5ecd395dfabde5e7e6f8ac943c8e
 libmariadb/libmariadb-5.5.36.tar.xz:
   size: 1260684
