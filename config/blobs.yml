@@ -6,10 +6,6 @@ expat/expat-2.2.0.tar.bz2:
   size: 414352
   object_id: 319a0cba-01a1-477c-74ad-c36e92b85cab
   sha: 8453bc52324be4c796fd38742ec48470eef358b3
-golang/go1.7.4.linux-amd64.tar.gz:
-  size: 84021919
-  object_id: 0d9542dc-f67a-43c8-8403-cd51e7f1b1d9
-  sha: 2e5baf03d1590e048c84d1d5b4b6f2540efaaea1
 golang/go1.8.3.linux-amd64.tar.gz:
   size: 90029041
   object_id: 53346f1f-edfc-40d5-54b9-04126e05fdf3
