@@ -2,18 +2,25 @@
 name: stager
 
 templates:
+  bpm/stager.yml.erb: config/bpm/stager.yml
+
   stager_ctl.erb: bin/stager_ctl
   stager_as_vcap.erb: bin/stager_as_vcap
   stager_config.json.erb: config/stager_config.json
   bbs_ca.crt.erb: config/certs/bbs/ca.crt
   bbs_client.crt.erb: config/certs/bbs/client.crt
   bbs_client.key.erb: config/certs/bbs/client.key
+  pre-start.erb: bin/pre-start
 
 packages:
   - capi_utils
   - stager
 
 properties:
+  bpm.enabled:
+    description: "Enable Bosh Process Manager"
+    default: false
+
   diego.ssl.skip_cert_verify:
     description: "when connecting over https, ignore bad ssl certificates"
     default: false

@@ -1,3 +1,16 @@
+<% if p("bpm.enabled") %>
+check process blobstore_nginx
+  with pidfile /var/vcap/sys/run/bpm/blobstore/nginx.pid
+  start program "/var/vcap/packages/bpm/bin/bpm start blobstore -p nginx"
+  stop program "/var/vcap/packages/bpm/bin/bpm stop blobstore -p nginx"
+  group vcap
+
+ check process blobstore_url_signer
+   with pidfile /var/vcap/sys/run/bpm/blobstore/url_signer.pid
+   start program "/var/vcap/packages/bpm/bin/bpm start blobstore -p url_signer"
+   stop program "/var/vcap/packages/bpm/bin/bpm stop blobstore -p url_signer"
+   group vcap
+<% else %>
 check process blobstore_nginx
   with pidfile /var/vcap/sys/run/blobstore/nginx.pid
   start program "/var/vcap/jobs/blobstore/bin/nginx_ctl start"
@@ -11,3 +24,4 @@ check process blobstore_url_signer
   start program "/var/vcap/jobs/blobstore/bin/signer_ctl start"
   stop program "/var/vcap/jobs/blobstore/bin/signer_ctl stop"
   group vcap
+<% end %>

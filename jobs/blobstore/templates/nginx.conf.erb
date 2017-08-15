@@ -1,7 +1,11 @@
 daemon off;
 
 error_log /var/vcap/sys/log/blobstore/error.log;
+<% if p("bpm.enabled") %>
+pid       /var/vcap/data/blobstore/nginx.pid;
+<% else %>
 pid       /var/vcap/sys/run/blobstore/nginx.pid;
+<% end %>
 
 events {
   worker_connections 8192;
@@ -19,6 +23,12 @@ http {
 
   access_log	  /var/vcap/sys/log/blobstore/access.log timed_combined;
   server_tokens off;
+
+  client_body_temp_path /var/vcap/data/blobstore/tmp/client_body_temp;
+  proxy_temp_path /var/vcap/data/blobstore/tmp/proxy_temp;
+  fastcgi_temp_path /var/vcap/data/blobstore/tmp/fastcgi_temp;
+  uwsgi_temp_path /var/vcap/data/blobstore/tmp/uwsgi_temp;
+  scgi_temp_path /var/vcap/data/blobstore/tmp/scgi_temp;
 
   sendfile    on;
   tcp_nopush  on;

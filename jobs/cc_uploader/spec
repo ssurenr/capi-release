@@ -2,6 +2,8 @@
 name: cc_uploader
 
 templates:
+  bpm/cc_uploader.yml.erb: config/bpm/cc_uploader.yml
+
   cc_uploader_ctl.erb: bin/cc_uploader_ctl
   cc_uploader_as_vcap.erb: bin/cc_uploader_as_vcap
   cc_uploader_config.json.erb: config/cc_uploader_config.json
@@ -12,6 +14,7 @@ templates:
   cc_uploader_server_ca.crt.erb: config/certs/cc_uploader/ca.crt
   cc_uploader_server.crt.erb: config/certs/cc_uploader/server.crt
   cc_uploader_server.key.erb: config/certs/cc_uploader/server.key
+  pre-start.erb: bin/pre-start
 
 packages:
   - capi_utils
@@ -26,6 +29,10 @@ provides:
     - https_port
 
 properties:
+  bpm.enabled:
+    description: "Enable Bosh Process Manager"
+    default: false
+
   internal_hostname:
     description: "Hostname by which clients will communicate with the cc uploader"
     default: cc-uploader.service.cf.internal

@@ -5,7 +5,11 @@ server {
 }
 
 upstream blob_url_signer {
+<% if p("bpm.enabled") %>
+  server unix:/var/vcap/data/blobstore/signer.sock;
+<% else %>
   server unix:/var/vcap/sys/run/blobstore_url_signer/signer.sock;
+<% end %>
 }
 
 # Internal server
@@ -33,8 +37,6 @@ server {
   location /admin/ {
     auth_basic "Blobstore Admin";
     auth_basic_user_file write_users;
-
-    client_body_temp_path /var/vcap/store/shared/tmp/uploads/;
 
     dav_methods DELETE PUT COPY;
     dav_ext_methods PROPFIND;

@@ -5,7 +5,6 @@ LOG_DIR=/var/vcap/sys/log/blobstore
 PIDFILE=$RUN_DIR/nginx.pid
 
 source /var/vcap/packages/capi_utils/pid_utils.sh
-source /var/vcap/packages/capi_utils/cpu_utils.sh
 
 function setup_environment() {
   mkdir -p "${RUN_DIR}"
@@ -19,12 +18,7 @@ case $1 in
     pid_guard "${PIDFILE}" "blobstore_nginx"
     echo $$ > "${PIDFILE}"
 
-    cpu_count=$(cpu_count)
-    cpu_count=$((cpu_count * <%= p('blobstore.nginx_workers_per_core') %>))
-
-    exec /var/vcap/packages/nginx_webdav/sbin/nginx \
-      -c /var/vcap/jobs/blobstore/config/nginx.conf \
-      -g "worker_processes ${cpu_count};" \
+    exec /var/vcap/jobs/blobstore/bin/blobstore_nginx \
       >>$LOG_DIR/nginx.stdout.log 2>>$LOG_DIR/nginx.stderr.log
     ;;
 

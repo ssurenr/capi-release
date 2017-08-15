@@ -1,3 +1,16 @@
+<% if p("bpm.enabled") %>
+check process nsync_listener
+  with pidfile /var/vcap/sys/run/bpm/nsync/listener.pid
+  start program "/var/vcap/packages/bpm/bin/bpm start nsync -p listener"
+  stop program "/var/vcap/packages/bpm/bin/bpm stop nsync -p listener"
+  group vcap
+
+check process nsync_bulker
+  with pidfile /var/vcap/sys/run/bpm/nsync/bulker.pid
+  start program "/var/vcap/packages/bpm/bin/bpm start nsync -p bulker"
+  stop program "/var/vcap/packages/bpm/bin/bpm stop nsync -p bulker"
+  group vcap
+<% else %>
 check process nsync_listener
   with pidfile /var/vcap/sys/run/nsync/nsync_listener.pid
   start program "/var/vcap/jobs/nsync/bin/nsync_listener_ctl start"
@@ -9,3 +22,4 @@ check process nsync_bulker
   start program "/var/vcap/jobs/nsync/bin/nsync_bulker_ctl start"
   stop program "/var/vcap/jobs/nsync/bin/nsync_bulker_ctl stop"
   group vcap
+<% end %>

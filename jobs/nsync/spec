@@ -2,6 +2,9 @@
 name: nsync
 
 templates:
+  bpm/bulker.yml.erb: config/bpm/bulker.yml
+  bpm/listener.yml.erb: config/bpm/listener.yml
+
   nsync_listener_ctl.erb: bin/nsync_listener_ctl
   nsync_bulker_ctl.erb: bin/nsync_bulker_ctl
   nsync_bulker_as_vcap.erb: bin/nsync_bulker_as_vcap
@@ -18,6 +21,10 @@ packages:
   - nsync
 
 properties:
+  bpm.enabled:
+    description: "Enable Bosh Process Manager"
+    default: false
+
   diego.ssl.skip_cert_verify:
     description: "when connecting over https, ignore bad ssl certificates"
     default: false

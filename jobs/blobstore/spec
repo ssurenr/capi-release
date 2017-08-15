@@ -2,7 +2,11 @@
 name: blobstore
 
 templates:
-  nginx_ctl.erb:            bin/nginx_ctl
+  bpm/nginx.yml.erb:        config/bpm/nginx.yml
+  bpm/url_signer.yml.erb:   config/bpm/url_signer.yml
+  bin/blobstore_nginx.erb:  bin/blobstore_nginx
+
+  nginx_ctl.erb:        bin/nginx_ctl
   dns_health_check.erb: bin/dns_health_check
   signer_ctl.sh.erb:    bin/signer_ctl
   nginx.conf.erb:       config/nginx.conf
@@ -19,6 +23,10 @@ packages:
 - capi_utils
 
 properties:
+  bpm.enabled:
+    description: "Enable Bosh Process Manager"
+    default: false
+
   blobstore.internal_access_rules:
     description: >-
       List of allow / deny rules for the blobstore internal server. Defaults
