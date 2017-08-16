@@ -14,7 +14,7 @@ blobs
 *~
 *#
 #*
-bin/
+/bin/
 pkg/
 
 /src/github.com/vito/gosub/
