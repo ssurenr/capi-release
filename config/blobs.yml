@@ -10,10 +10,10 @@ golang/go1.8.3.linux-amd64.tar.gz:
   size: 90029041
   object_id: 53346f1f-edfc-40d5-54b9-04126e05fdf3
   sha: sha256:1862f4c3d3907e59b04a757cfda0ea7aa9ef39274af99a784f5be843c80c6772
-libmariadb/libmariadb-5.5.36.tar.xz:
-  size: 1260684
-  object_id: 4827612c-e535-408b-bf60-ba5f25690fdd
-  sha: sha256:0533f746355cd8e8450f586ebae0768176b38be37e6e9aa0809033d696e23c19
+mariadb_connector_c/mariadb-connector-c-2.3.0-src.tar.gz:
+  size: 536647
+  object_id: 0c2051d8-973f-4f37-5537-f846e82bd4d0
+  sha: 35f4c58c9d54d970b931c5df880718062efbb3c7
 nginx/headers-more-nginx-module-0.32.tar.gz:
   size: 28033
   object_id: b14a356b-97f0-4b9a-b61d-bfff1f233e94
