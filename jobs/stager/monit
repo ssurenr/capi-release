@@ -1,8 +1,8 @@
 <% if p("bpm.enabled") %>
 check process stager
   with pidfile /var/vcap/sys/run/bpm/stager/stager.pid
-  start program "/var/vcap/packages/bpm/bin/bpm start stager"
-  stop program "/var/vcap/packages/bpm/bin/bpm stop stager"
+  start program "/var/vcap/jobs/bpm/bin/bpm start stager"
+  stop program "/var/vcap/jobs/bpm/bin/bpm stop stager"
   group vcap
 <% else %>
 check process stager

@@ -2,14 +2,14 @@
 <% if p('capi.tps.listener_enabled') %>
 check process tps_listener
   with pidfile /var/vcap/sys/run/bpm/tps/listener.pid
-  start program "/var/vcap/packages/bpm/bin/bpm start tps -p listener"
-  stop program "/var/vcap/packages/bpm/bin/bpm stop tps -p listener"
+  start program "/var/vcap/jobs/bpm/bin/bpm start tps -p listener"
+  stop program "/var/vcap/jobs/bpm/bin/bpm stop tps -p listener"
   group vcap
 <% end %>
 check process tps_watcher
   with pidfile /var/vcap/sys/run/bpm/tps/watcher.pid
-  start program "/var/vcap/packages/bpm/bin/bpm start tps -p watcher"
-  stop program "/var/vcap/packages/bpm/bin/bpm stop tps -p watcher"
+  start program "/var/vcap/jobs/bpm/bin/bpm start tps -p watcher"
+  stop program "/var/vcap/jobs/bpm/bin/bpm stop tps -p watcher"
   group vcap
 <% else %>
 
