@@ -1,0 +1,134 @@
+name: capi
+version: 1.41.0
+commit_hash: a58b4fd
+uncommitted_changes: false
+jobs:
+- name: blobstore
+  version: 9ac1309372e28a779135322fd29f1e0561a2d59045ea750aec06437463a132ba
+  fingerprint: 9ac1309372e28a779135322fd29f1e0561a2d59045ea750aec06437463a132ba
+  sha1: sha256:8d250433456377c5b8482e8e3852d6289dbbbaef298e1cc655c7e942b1a06838
+- name: cc_uploader
+  version: 5d30cb45f1971995b407b687e4b9792fb09f78951667f9f16a05a663c564f1b3
+  fingerprint: 5d30cb45f1971995b407b687e4b9792fb09f78951667f9f16a05a663c564f1b3
+  sha1: sha256:460a118b00948d1eca3671115a1f797da7d552f6bb91e852de3021cb0984ab66
+- name: cloud_controller_clock
+  version: 0506f991d52b3bb54c48c8717e3e1b695af7097b92fbac90ac86b9cae6a22325
+  fingerprint: 0506f991d52b3bb54c48c8717e3e1b695af7097b92fbac90ac86b9cae6a22325
+  sha1: sha256:98e0647e9b58ef6f6ef1ada79fca3790d49a757fdcde5b2ea191de00eddcb81c
+- name: cloud_controller_ng
+  version: 27930500929afd137ffc4f805fd1ad253b7e581ab915f4e0b2df45e0fda574cf
+  fingerprint: 27930500929afd137ffc4f805fd1ad253b7e581ab915f4e0b2df45e0fda574cf
+  sha1: sha256:a9cae80afa9c85f36957f8c6749e1f3fe03740670a59f459865e4fba7a6f8e24
+- name: cloud_controller_worker
+  version: 4d57630b724bcac32f168c0931abe5656adca92bac0e2df0ca8d8ef7f6976dcc
+  fingerprint: 4d57630b724bcac32f168c0931abe5656adca92bac0e2df0ca8d8ef7f6976dcc
+  sha1: sha256:6d736379f7055557ecdbdf72781510edf8171ad9fe742680efc4fa98cd945c80
+- name: debian_nfs_server
+  version: 5ab07a180a535bb3d4381b8ecfc5131fab0bb190cc91f1b7426ae03d4e5b6fc1
+  fingerprint: 5ab07a180a535bb3d4381b8ecfc5131fab0bb190cc91f1b7426ae03d4e5b6fc1
+  sha1: sha256:6f0cf1efb4a3843051b0923504fb3e713a2ced05928532a932957ca39e32d1ab
+- name: nfs_mounter
+  version: 956c01628196bf3a92b2602b75871487121196d80afcfade38904d9656925f25
+  fingerprint: 956c01628196bf3a92b2602b75871487121196d80afcfade38904d9656925f25
+  sha1: sha256:62d3fc0290a330b1b3f004ad03722bed3ed4839e47b094f7c13b4deb095ab147
+- name: nsync
+  version: f4949c54faf77f8248f17def43287434d5ab7080a17f788aa1fe0061fb2a7b6f
+  fingerprint: f4949c54faf77f8248f17def43287434d5ab7080a17f788aa1fe0061fb2a7b6f
+  sha1: sha256:b06bfd0ed6f3758183dc05391ac077028c82b4b4361d6be1509368c354730b50
+- name: stager
+  version: ac203efad43ce30d95ee81640d2283ee3cf1360fe9b9b50ebf12b6e6a5cdf268
+  fingerprint: ac203efad43ce30d95ee81640d2283ee3cf1360fe9b9b50ebf12b6e6a5cdf268
+  sha1: sha256:b95e7f0da83135884f8c8761e43f0a35393a57f02b7f4c8cbe70ca6838cb45e3
+- name: tps
+  version: 867342b0829f9ec6ac62d75c60b5a7420703556f9d085e4cd64e84836c181c3a
+  fingerprint: 867342b0829f9ec6ac62d75c60b5a7420703556f9d085e4cd64e84836c181c3a
+  sha1: sha256:d42d345a088e0a73ea48e4b7d112c79f9a5e6a455fe92e214731e8408a49e4e8
+packages:
+- name: blobstore_url_signer
+  version: d723ca8c1e6f9f5a3864630ae3aee749fc83b0c4d7fb13665ab9b99f05bcb10f
+  fingerprint: d723ca8c1e6f9f5a3864630ae3aee749fc83b0c4d7fb13665ab9b99f05bcb10f
+  sha1: sha256:7afd15040b4453827f7a5e2e09c7f22cbb5a0bdf9112b2a563740f28d933e68e
+  dependencies:
+  - golang1.8
+- name: capi_utils
+  version: 68bddae4d9974d4aee083e7a8d88b0321893360c939fd4e82edb9bfdbadb0fcd
+  fingerprint: 68bddae4d9974d4aee083e7a8d88b0321893360c939fd4e82edb9bfdbadb0fcd
+  sha1: sha256:08939bb38309346c52e1fcb780f49f324c609b2e4bee5d8fe6991f3e0a091ac4
+  dependencies: []
+- name: cc_uploader
+  version: af87cd817e22657daee717b72e27400e378cf9b5ec32d6f959d22be3d248ff78
+  fingerprint: af87cd817e22657daee717b72e27400e378cf9b5ec32d6f959d22be3d248ff78
+  sha1: sha256:b3b3d251d0d36c3a595fd49ce50be8f4d1f87d64a2ab569a5686c95e227c0b4b
+  dependencies:
+  - golang1.8
+- name: cloud_controller_ng
+  version: 9efcafab9c8fb275aa968ab8b51f3bd9aae637aa9a837779bc2686b47e3d65b5
+  fingerprint: 9efcafab9c8fb275aa968ab8b51f3bd9aae637aa9a837779bc2686b47e3d65b5
+  sha1: sha256:87cd0a7d0f7fa4962643687f4c6efd30e5722793fc6bd73d3fdeeceafb4b51d6
+  dependencies:
+  - libpq
+  - mariadb_connector_c
+  - ruby-2.3
+- name: debian_nfs_server
+  version: f918879fc70d73cb84e00d0e7378d5f60c8236e0f25fa205f260822bd0021498
+  fingerprint: f918879fc70d73cb84e00d0e7378d5f60c8236e0f25fa205f260822bd0021498
+  sha1: sha256:3a5914d4fdc192a6ce60c88c7c5253264896fdfa7b63d9a7ff4760c81506a1de
+  dependencies: []
+- name: golang1.8
+  version: 81204f38eebc29dbd249b8c27638f4de9331a3e263763b2b276f20cd22517904
+  fingerprint: 81204f38eebc29dbd249b8c27638f4de9331a3e263763b2b276f20cd22517904
+  sha1: sha256:f3917dc7af066376444296a8d806dbf14ac9e7c71e865224b68a01b15d51f78f
+  dependencies: []
+- name: libpq
+  version: d1097985d22108929a4d48118a238e20590f1f4327b66f8ef7fdeb19326ea7a7
+  fingerprint: d1097985d22108929a4d48118a238e20590f1f4327b66f8ef7fdeb19326ea7a7
+  sha1: sha256:c2ff4add38f0a08363142caa7fa0c1bcadb7e9d777558ea72f1d446867508007
+  dependencies: []
+- name: mariadb_connector_c
+  version: 39b76e323018ddf1c11b5cdb5f908b1d257f37d11eb791839b9a2a98384dffed
+  fingerprint: 39b76e323018ddf1c11b5cdb5f908b1d257f37d11eb791839b9a2a98384dffed
+  sha1: sha256:5ca363e1a0affdd37833f81abb3f67303bdd6ce38989d1d708df576cee619259
+  dependencies: []
+- name: nginx
+  version: 178b31bad7419ba931c49e4ca554c39779548387dd0783322c45ee926e09de10
+  fingerprint: 178b31bad7419ba931c49e4ca554c39779548387dd0783322c45ee926e09de10
+  sha1: sha256:21c80388ea9e518ee4f22c91caacc524d18bb0ee93f6a3b1909382e74fa431e1
+  dependencies: []
+- name: nginx_newrelic_plugin
+  version: 8ab8c86f3e7ad9bba673bb5481e03c10dc51a336dd7db6df2cafcea87e233d92
+  fingerprint: 8ab8c86f3e7ad9bba673bb5481e03c10dc51a336dd7db6df2cafcea87e233d92
+  sha1: sha256:cff4abcb5ef20e2ad0b4f18e078d49a20ec0795edf581cb69a581a1651da0e0b
+  dependencies:
+  - ruby-2.3
+- name: nginx_webdav
+  version: 8ed3ec745a7152034fe77ef854c06b550dd66f6c655d5ae9dbd0da2acbd232e8
+  fingerprint: 8ed3ec745a7152034fe77ef854c06b550dd66f6c655d5ae9dbd0da2acbd232e8
+  sha1: sha256:31858ee3e51ff444bc988dfffdc14ea9bd9e97b1b83cd82f91e04647828133d3
+  dependencies: []
+- name: nsync
+  version: e7c02c7e1a82e84bd6aaf2c43d62323502e973c80a60f7aa21b0fefb98c585e7
+  fingerprint: e7c02c7e1a82e84bd6aaf2c43d62323502e973c80a60f7aa21b0fefb98c585e7
+  sha1: sha256:2cde1dc15a84a030d4eba9121a6c78fceedfb89736fb3eb35752dec2b007a576
+  dependencies:
+  - golang1.8
+- name: ruby-2.3
+  version: 3c910939e7148e00fd80ddbf35d384bf92b511af1ee81aa74b3325451692e53f
+  fingerprint: 3c910939e7148e00fd80ddbf35d384bf92b511af1ee81aa74b3325451692e53f
+  sha1: sha256:48886b678da6c037cfe110e7841973210a7939595deb3ef6bfdbaaaa3514a1e3
+  dependencies: []
+- name: stager
+  version: cfc37993fac275a1b279a134b2a6f0d6375a0e2b278d37dc5478a56d80a16095
+  fingerprint: cfc37993fac275a1b279a134b2a6f0d6375a0e2b278d37dc5478a56d80a16095
+  sha1: sha256:508ddceafcf6aba0ee426092e003cdf90612a569455c6aaf87678efefed954b3
+  dependencies:
+  - golang1.8
+- name: tps
+  version: 73b8cda9800d68abbd431d69b50cabfe4d41e511c92bf4005395db11b2b42206
+  fingerprint: 73b8cda9800d68abbd431d69b50cabfe4d41e511c92bf4005395db11b2b42206
+  sha1: sha256:aa75a0f305a17039b2ee9bd123fea08df167f98c5f08a474db9da1946bf61bd8
+  dependencies:
+  - golang1.8
+license:
+  version: 47b97af07f8e50aee188250f38ed8b2fa9a7d4c9a0202982654c45c714550409
+  fingerprint: 47b97af07f8e50aee188250f38ed8b2fa9a7d4c9a0202982654c45c714550409
+  sha1: sha256:980318ef43a8e90c31feb053096e3fb92e7b53f6b45acf438701280b232ff6f6
