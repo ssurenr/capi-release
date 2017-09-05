@@ -2,7 +2,7 @@
 name: cc_uploader
 
 templates:
-  bpm/cc_uploader.yml.erb: config/bpm/cc_uploader.yml
+  bpm.yml.erb: config/bpm.yml
 
   cc_uploader_ctl.erb: bin/cc_uploader_ctl
   cc_uploader_as_vcap.erb: bin/cc_uploader_as_vcap

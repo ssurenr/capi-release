@@ -2,7 +2,7 @@
 name: stager
 
 templates:
-  bpm/stager.yml.erb: config/bpm/stager.yml
+  bpm.yml.erb: config/bpm.yml
 
   stager_ctl.erb: bin/stager_ctl
   stager_as_vcap.erb: bin/stager_as_vcap

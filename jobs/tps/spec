@@ -2,8 +2,7 @@
 name: tps
 
 templates:
-  bpm/listener.yml.erb: config/bpm/listener.yml
-  bpm/watcher.yml.erb: config/bpm/watcher.yml
+  bpm.yml.erb: config/bpm.yml
 
   tps_listener_as_vcap.erb: bin/tps_listener_as_vcap
   tps_watcher_as_vcap.erb: bin/tps_watcher_as_vcap
