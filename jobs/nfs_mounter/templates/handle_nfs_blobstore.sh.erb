@@ -28,6 +28,7 @@ mount_nfs() {
     exit 1
   fi
 
+  chpst -u vcap:vcap mkdir -p "${NFS_SHARE}/shared"
   chpst -u vcap:vcap touch "${NFS_SHARE}/shared/.nfs_test"
   if [ $? != 0 ]; then
     echo "Failed to start: cannot write to NFS"
