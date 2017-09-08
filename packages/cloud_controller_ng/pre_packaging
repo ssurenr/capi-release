@@ -4,7 +4,7 @@ cd ${BUILD_DIR}/capi-release/src/cloud_controller_ng
 
 set +e
 for i in {1..3}; do
-  BUNDLE_WITHOUT=development:test bundle package --all --no-install --path ./vendor/cache
+  BUNDLE_WITHOUT=development:test bundle package --all --all-platforms --no-install --path ./vendor/cache
   exit_code="$?"
 
   if [ "${exit_code}" == "0" ]; then
