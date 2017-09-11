@@ -1,6 +1,0 @@
----
-executable: /var/vcap/packages/blobstore_url_signer/blobstore_url_signer
-args:
-  - --secret=<%= p("blobstore.secure_link.secret") %>
-  - --network=unix
-  - --laddr=/var/vcap/data/blobstore/signer.sock

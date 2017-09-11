@@ -2,8 +2,7 @@
 name: blobstore
 
 templates:
-  bpm/nginx.yml.erb:        config/bpm/nginx.yml
-  bpm/url_signer.yml.erb:   config/bpm/url_signer.yml
+  bpm.yml.erb:        config/bpm.yml
   bin/blobstore_nginx.erb:  bin/blobstore_nginx
 
   nginx_ctl.erb:        bin/nginx_ctl

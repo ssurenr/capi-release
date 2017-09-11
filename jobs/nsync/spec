@@ -2,8 +2,7 @@
 name: nsync
 
 templates:
-  bpm/bulker.yml.erb: config/bpm/bulker.yml
-  bpm/listener.yml.erb: config/bpm/listener.yml
+  bpm.yml.erb: config/bpm.yml
 
   nsync_listener_ctl.erb: bin/nsync_listener_ctl
   nsync_bulker_ctl.erb: bin/nsync_bulker_ctl
