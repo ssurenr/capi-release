@@ -24,6 +24,10 @@ properties:
     description: "Enable Bosh Process Manager"
     default: false
 
+  capi.nsync.bulker.enabled:
+    description: "Run the Nsync bulker process. Set to false if cc.diego.temporary_local_sync is enabled"
+    default: true
+
   diego.ssl.skip_cert_verify:
     description: "when connecting over https, ignore bad ssl certificates"
     default: false
