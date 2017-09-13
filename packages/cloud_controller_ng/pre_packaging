@@ -2,8 +2,11 @@ set -e -x
 
 cd ${BUILD_DIR}/capi-release/src/cloud_controller_ng
 
+rm -rf ./vendor/cache/
+
 set +e
 for i in {1..3}; do
+  bundle config --local specific_platform true
   BUNDLE_WITHOUT=development:test bundle package --all --all-platforms --no-install --path ./vendor/cache
   exit_code="$?"
 
