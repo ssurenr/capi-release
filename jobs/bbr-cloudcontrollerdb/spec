@@ -1,0 +1,21 @@
+---
+name: bbr-cloudcontrollerdb
+
+templates:
+  config.json.erb: config/config.json
+  backup.sh.erb: bin/bbr/backup
+  restore.sh.erb: bin/bbr/restore
+
+packages: []
+
+consumes:
+- name: cloud_controller_db
+  type: cloud_controller_db
+- name: database # used as a fallback if `cloud_controller_db.ccdb.address` is omitted
+  type: database
+  optional: true
+
+properties:
+  cloud_controller.release_level_backup:
+    default: false
+    description: "Include cloud_controller DB in backup and restore operations"
