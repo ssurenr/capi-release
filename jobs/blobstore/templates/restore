@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -ex
+
+BOSH_DATA_DIRECTORY=${BOSH_DATA_DIRECTORY:-/var/vcap/store}
+BACKUP_DIRECTORY="$BBR_ARTIFACT_DIRECTORY"/shared
+BLOBS_DIRECTORY="$BOSH_DATA_DIRECTORY"/shared
+
+<% if p('blobstore.release_level_backup') %>
+  rm -rf ${BLOBS_DIRECTORY}
+  cp --recursive ${BACKUP_DIRECTORY} ${BOSH_DATA_DIRECTORY}
+
+  chown --recursive vcap:vcap ${BLOBS_DIRECTORY}
+<% end %>
