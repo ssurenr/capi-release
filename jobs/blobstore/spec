@@ -15,6 +15,8 @@ templates:
   blobstore.crt.erb:    ssl/blobstore.crt
   blobstore.key.erb:    ssl/blobstore.key
   pre-start.sh.erb:     bin/pre-start
+  backup:               bin/bbr/backup
+  restore:              bin/bbr/restore
 
 packages:
 - nginx_webdav
@@ -69,6 +71,10 @@ properties:
   blobstore.nginx_workers_per_core:
     description: "Number of NGINX worker processes per CPU core"
     default: 2
+
+  blobstore.release_level_backup:
+    description: "toggle to enable backups of the blobstore with bbr"
+    default: false
 
   system_domain:
     description: "The system domain.  The public server will listen on host 'blobstore.system-domain.tld'"
