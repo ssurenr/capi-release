@@ -54,3 +54,15 @@ ruby-2.3/rubygems-2.6.8.tgz:
   size: 754300
   object_id: 5fd4a544-aaac-437b-8435-8931964852a5
   sha: sha256:81aeb9f14e579c1753c90a8c70c76c3b2d510ee1a12e179cef8016cc9036d6ec
+ruby-2.4/bundler-1.14.6.gem:
+  size: 319488
+  object_id: 23f665a6-f6c7-4107-5e4f-ccdcd0b1bded
+  sha: sha256:f431206d5e89e803b7cf0dd232683eaec769ec168707e9b3d8297dba35137d40
+ruby-2.4/ruby-2.4.2.tar.gz:
+  size: 14187859
+  object_id: 8eec75f8-97c6-4a39-6d1c-2e00c99d3c6d
+  sha: sha256:93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c
+ruby-2.4/rubygems-2.6.13.tgz:
+  size: 768906
+  object_id: ede35968-6337-4647-63ea-60e94a9eeeb2
+  sha: sha256:d041502ae77e8d49e0a436483fb91f9ad6cc1489e49e0735e7c4a7cf10e728c9
