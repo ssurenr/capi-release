@@ -72,7 +72,7 @@ properties:
     description: "Number of NGINX worker processes per CPU core"
     default: 2
 
-  blobstore.release_level_backup:
+  release_level_backup:
     description: "toggle to enable backups of the blobstore with bbr"
     default: false
 
