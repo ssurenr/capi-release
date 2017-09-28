@@ -7,5 +7,4 @@ bosh deploy ~/workspace/cf-deployment/cf-deployment.yml \
   -o ~/workspace/capi-ci/cf-deployment-operations/use-latest-stemcell.yml \
   -o ~/workspace/capi-ci/cf-deployment-operations/skip-cert-verify.yml \
   -o ~/workspace/cf-deployment/operations/bosh-lite.yml \
-  -o ~/workspace/cf-deployment/operations/bypass-cc-bridge.yml \
   -o ~/workspace/capi-ci/cf-deployment-operations/use-latest-capi.yml $@
