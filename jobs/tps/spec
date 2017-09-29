@@ -3,6 +3,11 @@ name: tps
 
 templates:
   bpm.yml.erb: config/bpm.yml
+  pre-backup-lock.sh.erb: bin/bbr/pre-backup-lock
+  post-backup-unlock.sh.erb: bin/bbr/post-backup-unlock
+  pre-restore-lock.sh.erb: bin/bbr/pre-restore-lock
+  post-restore-unlock.sh.erb: bin/bbr/post-restore-unlock
+  drain.sh.erb: bin/drain
 
   tps_listener_as_vcap.erb: bin/tps_listener_as_vcap
   tps_watcher_as_vcap.erb: bin/tps_watcher_as_vcap
@@ -96,3 +101,6 @@ properties:
     description: "Flag to enable TPS listener. Listener functionality has be absorbed into modern CC"
     default: true
 
+  cloud_controller.release_level_backup:
+    default: false
+    description: "Include cloud_controller jobs in backup and restore operations"

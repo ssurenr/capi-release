@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+source /var/vcap/packages/capi_utils/monit_utils.sh
+
+<% if p('cloud_controller.release_level_backup') %>
+  monit_unmonitor_job tps_watcher
+
+  drain_job tps
+
+  monit_stop_job tps_watcher
+<% end %>

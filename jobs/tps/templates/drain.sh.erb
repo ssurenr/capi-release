@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+<% if p("bpm.enabled") %>
+/var/vcap/jobs/bpm/bin/bpm stop tps -p watcher 1>&2
+echo 0
+exit 0
+<% else %>
+RUN_DIR="/var/vcap/sys/run/tps"
+PIDFILE="${RUN_DIR}/tps_watcher.pid"
+
+source /var/vcap/packages/capi_utils/pid_utils.sh
+
+if [ -f "${PIDFILE}" ]; then
+  kill_and_wait "$PIDFILE" 30 &> /dev/null
+fi
+
+echo 0 # tell bosh not wait for anything
+exit 0
+<% end %>
