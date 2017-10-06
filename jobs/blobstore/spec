@@ -74,7 +74,7 @@ properties:
 
   release_level_backup:
     description: "toggle to enable backups of the blobstore with bbr"
-    default: false
+    default: true
 
   system_domain:
     description: "The system domain.  The public server will listen on host 'blobstore.system-domain.tld'"

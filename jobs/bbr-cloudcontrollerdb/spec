@@ -17,5 +17,5 @@ consumes:
 
 properties:
   cloud_controller.release_level_backup:
-    default: false
+    default: true
     description: "Include cloud_controller DB in backup and restore operations"
