@@ -8,6 +8,6 @@ JOB_PATH="/var/vcap/jobs/bbr-cloudcontrollerdb"
 BBR_ARTIFACT_FILE_PATH="${BBR_ARTIFACT_DIRECTORY}/cloudcontroller-artifact-file"
 CONFIG_PATH="${JOB_PATH}/config/config.json"
 
-<% if p('cloud_controller.release_level_backup') %>
+<% if p('release_level_backup') %>
 "/var/vcap/jobs/database-backup-restorer/bin/restore" --config "${CONFIG_PATH}" --artifact-file "${BBR_ARTIFACT_FILE_PATH}"
 <% end %>

@@ -101,6 +101,6 @@ properties:
     description: "Flag to enable TPS listener. Listener functionality has be absorbed into modern CC"
     default: true
 
-  cloud_controller.release_level_backup:
+  release_level_backup:
     default: true
     description: "Include cloud_controller jobs in backup and restore operations"
