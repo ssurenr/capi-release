@@ -24,3 +24,5 @@ fi
 rm -rf ./vendor/cache/ruby
 rm -rf ./vendor/cache/vendor
 bundle config --delete NO_INSTALL
+
+rm -rf .bundle/
