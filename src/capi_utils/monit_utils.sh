@@ -46,7 +46,19 @@ function drain_job() {
 
 function monit_start_job() {
   local job_name="$1"
-  sudo /var/vcap/bosh/bin/monit start "${job_name}"
+  local timeout=6
+  for _ in $(seq "${timeout}"); do
+    set +e
+    sudo /var/vcap/bosh/bin/monit start "${job_name}"
+    if [ $? -eq 0 ]; then
+      return
+    fi
+    set -e
+    sleep 1
+  done
+
+  echo "Monit job \"${job_name}\" failed to start after ${timeout} seconds"
+  exit 1
 }
 
 function monit_stop_job() {
