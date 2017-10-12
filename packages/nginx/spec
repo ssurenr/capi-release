@@ -4,6 +4,6 @@ files:
 - nginx/headers-more-nginx-module-0.32.tar.gz
 - nginx/nginx-1.13.4.tar.gz
 - nginx/pcre-8.40.tar.gz
-- nginx/nginx-upload-module-2.2.tar.gz
+- nginx/nginx-upload-module-2.2-at-aba1e3f.tar.gz
 - capi-release/src/nginx/upload_module_put_support.patch
 - capi-release/src/nginx/upload_module_new_nginx_support.patch
