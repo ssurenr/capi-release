@@ -32,8 +32,8 @@ nginx/nginx-dav-ext-module-0.0.3.tar.gz:
   sha: sha256:d428a0236c933779cb40ac8c91afb19d5c25a376dc3caab825bfd543e1ee530d
 nginx/nginx-upload-module-2.2-at-aba1e3f.tar.gz:
   size: 28302
-  object_id: 14e1b97e-0206-415b-66e6-6c391e0977c0
-  sha: 7372d1bc95b723c4b96b538da6baa2da91137e81
+  object_id: 33cedfd9-941a-406f-4780-55000e75aca6
+  sha: sha256:62f3621ef7f9c0c46d01fd51e8de014319b96eb84578791cfeecd7f70995fa1e
 nginx/pcre-8.40.tar.gz:
   size: 2065161
   object_id: 44706e8c-255c-4ff3-9737-23ab55a1a214
