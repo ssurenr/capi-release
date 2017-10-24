@@ -12,8 +12,8 @@ golang/go1.8.3.linux-amd64.tar.gz:
   sha: sha256:1862f4c3d3907e59b04a757cfda0ea7aa9ef39274af99a784f5be843c80c6772
 mariadb_connector_c/mariadb-connector-c-2.3.0-src.tar.gz:
   size: 536647
-  object_id: 0c2051d8-973f-4f37-5537-f846e82bd4d0
-  sha: 35f4c58c9d54d970b931c5df880718062efbb3c7
+  object_id: 071c52e8-179e-4ee7-44f0-25ffa407d639
+  sha: sha256:37faae901ca77bd48d2c6286f2e19e8c1abe7cac6fb1b128bd556617f4335c8a
 nginx/headers-more-nginx-module-0.32.tar.gz:
   size: 28033
   object_id: b14a356b-97f0-4b9a-b61d-bfff1f233e94
