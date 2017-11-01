@@ -145,10 +145,8 @@ properties:
     description: "The default stack to use if no custom stack is specified by an app."
 
   cc.staging_upload_user:
-    default: ""
     description: "User name used to access internal endpoints of Cloud Controller to upload files when staging"
   cc.staging_upload_password:
-    default: ""
     description: "User's password used to access internal endpoints of Cloud Controller to upload files when staging"
 
   cc.resource_pool.blobstore_type:
