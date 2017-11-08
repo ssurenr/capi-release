@@ -20,12 +20,15 @@ files:
   - capi-release/src/code.cloudfoundry.org/clock/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/consuladapter/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/debugserver/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/diego-logging-client/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/go-loggregator/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/go-loggregator/rpc/loggregator_v2/*.go # gosub
+  - capi-release/src/code.cloudfoundry.org/go-loggregator/v1/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/lager/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/lager/lagerflags/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/locket/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/locket/models/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/runtimeschema/cc_messages/*.go # gosub
-  - capi-release/src/code.cloudfoundry.org/runtimeschema/metric/*.go # gosub
   - capi-release/src/github.com/bmizerany/pat/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/*.go # gosub
   - capi-release/src/github.com/cloudfoundry/dropsonde/emitter/*.go # gosub
