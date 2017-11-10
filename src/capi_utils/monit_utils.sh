@@ -37,22 +37,6 @@ function wait_for_server_to_become_healthy() {
 function monit_unmonitor_job() {
   local job_name="$1"
   sudo /var/vcap/bosh/bin/monit unmonitor "${job_name}"
-  wait_unmonitor_job "${job_name}"
-}
-
-function wait_unmonitor_job() {
-  local job_name="$1"
-
-  while true; do
-    if [[ $(monit summary | grep ${job_name} ) =~ 'not monitored' ]]; then
-      echo "Unmonitored ${job_name}"
-      return 0
-    else
-      echo "Waiting for ${job_name} to be unmonitored..."
-    fi
-
-    sleep 0.1
-  done
 }
 
 function drain_job() {
