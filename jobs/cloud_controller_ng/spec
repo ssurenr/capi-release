@@ -518,9 +518,6 @@ properties:
   cc.maximum_app_disk_in_mb:
     default: 2048
     description: "The maximum amount of disk a user can request"
-  cc.users_can_select_backend:
-    default: true
-    description: "Allow non-admin users to switch their apps between DEA and Diego backends"
   cc.allow_app_ssh_access:
     default: true
     description: "Allow users to change the value of the app-level allow_ssh attribute"
