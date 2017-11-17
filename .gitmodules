@@ -78,7 +78,7 @@
 	branch = master
 [submodule "src/code.cloudfoundry.org/stager"]
 	path = src/code.cloudfoundry.org/stager
-	url = https://github.com/cloudfoundry-incubator/stager
+	url = https://github.com/cloudfoundry/stager
 	branch = master
 [submodule "src/code.cloudfoundry.org/nsync"]
 	path = src/code.cloudfoundry.org/nsync
