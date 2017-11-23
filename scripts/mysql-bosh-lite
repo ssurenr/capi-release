@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -u
+set -e
+set -o pipefail
 
 get_database_password(){
 	credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_USERNAME" -p "$CREDHUB_PASSWORD" --skip-tls-validation
@@ -8,8 +10,9 @@ get_database_password(){
 }
 
 ssh_tunnel(){
-  mysql_port=$(gshuf -i 10000-65535 -n 1)
-	bosh ssh --opts="-L ${mysql_port}:10.244.0.131:3306" -c 'while true; do continue; done' singleton-database &
+	mysql_port=$(gshuf -i 10000-65535 -n 1)
+	test -z "$mysql_port" && exit 1
+	bosh ssh --opts="-L ${mysql_port}:10.244.0.132:3306" -c 'while true; do continue; done' database &
 	ssh_pid=$!
 }
 

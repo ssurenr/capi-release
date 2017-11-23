@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -u
+set -e
+set -o pipefail
 
 get_database_password(){
 	credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_USERNAME" -p "$CREDHUB_PASSWORD" --skip-tls-validation
@@ -8,7 +10,8 @@ get_database_password(){
 }
 
 ssh_tunnel(){
-  psql_port=$(gshuf -i 10000-65535 -n 1)
+	psql_port=$(gshuf -i 10000-65535 -n 1)
+	test -z "$psql_port" && exit 1
 	bosh ssh --opts="-L ${psql_port}:10.244.0.132:5524" -c 'while true; do continue; done' postgres &
 	ssh_pid=$!
 }
