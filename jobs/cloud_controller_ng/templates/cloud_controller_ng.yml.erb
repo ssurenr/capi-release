@@ -397,6 +397,8 @@ perm:
   enabled: <%= p("perm.enabled") %>
   hostname: <%= p("perm.hostname") %>
   port: <%= perm.p("listen_port") %>
+  query_enabled: <%= p("perm.query_enabled") %>
 <% end.else do %>
   enabled: false
+  query_enabled: false
 <% end %>
