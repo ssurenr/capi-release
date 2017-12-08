@@ -15,13 +15,17 @@ templates:
   blobstore.crt.erb:    ssl/blobstore.crt
   blobstore.key.erb:    ssl/blobstore.key
   pre-start.sh.erb:     bin/pre-start
-  backup:               bin/bbr/backup
-  restore:              bin/bbr/restore
+  backup.erb:           bin/bbr/backup
+  restore.erb:              bin/bbr/restore
 
 packages:
 - nginx_webdav
 - blobstore_url_signer
 - capi_utils
+
+consumes:
+- name: directories_to_backup
+  type: directories_to_backup
 
 properties:
   bpm.enabled:
