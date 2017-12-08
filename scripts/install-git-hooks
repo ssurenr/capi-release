@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ -z $1 ]]; then
+  echo "Usage: install-git-hooks <git-hook-repo-path>"
+  exit 1
+fi
+
 GIT_HOOK_PATH=$1
 PRE_PUSH=${GIT_HOOK_PATH}/pre-push
 

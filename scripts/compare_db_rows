@@ -7,6 +7,11 @@ set -e
 # database name in that order for the first database, followed by the same
 # information for the second database.
 
+if [[ $# < 8 ]]; then
+  echo "Usage: compare_db_rows <db_user> <db_pw> <db_hostname> <db_name> <after_db_user> <after_db_pw> <after_db_hostname> <after_db_name>"
+  exit 1
+fi
+
 before_db_user=$1
 before_db_pw=$2
 before_db_hostname=$3
