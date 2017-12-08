@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+pushd `dirname $0`/..
+  cd test/
+  bundle install
+  ruby test_runner.rb
+popd

@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bosh-template (2.0.0)
+      semi_semantic (~> 1.2.0)
+    power_assert (1.1.1)
+    semi_semantic (1.2.0)
+    test-unit (3.2.6)
+      power_assert
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bosh-template
+  test-unit
+
+BUNDLED WITH
+   1.16.0
