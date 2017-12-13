@@ -1,3 +1,7 @@
+[submodule "src/github.com/cloudfoundry/durationjson"]
+	path = src/github.com/cloudfoundry/durationjson
+	url = https://github.com/cloudfoundry/durationjson
+	branch = master
 [submodule "src/github.com/bmizerany/pat"]
 	path = src/github.com/bmizerany/pat
 	url = https://github.com/bmizerany/pat
