@@ -1,3 +1,5 @@
+require 'tempfile'
+
 def create_executable(script)
   tmp_file = Tempfile.new("backup_or_restore_script")
   tmp_file.write(script)
