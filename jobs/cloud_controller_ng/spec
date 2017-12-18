@@ -70,6 +70,12 @@ provides:
   type: cloud_controller_db
   properties:
   - ccdb
+- name: directories_to_backup
+  type: directories_to_backup
+  properties:
+  - cc.packages.app_package_directory_key
+  - cc.droplets.droplet_directory_key
+  - cc.buildpacks.buildpack_directory_key
 
 consumes:
 - name: database

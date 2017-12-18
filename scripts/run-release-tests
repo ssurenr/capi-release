@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+docker run -v`pwd`:/code ruby /code/scripts/run-release-tests-linux
