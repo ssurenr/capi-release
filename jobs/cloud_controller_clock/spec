@@ -365,8 +365,7 @@ properties:
 
   cc.database_encryption.keys:
     default: {}
-    description: "label-key pairs for encrypting sensitive values in the CC database"
-
+    description: "label-key pairs for encrypting sensitive values in the CC database; labels must be < 256 characters long"
   cc.database_encryption.current_key_label:
     default: ""
     description: "current key label for encrypting values in the CC database"
