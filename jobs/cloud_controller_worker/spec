@@ -311,9 +311,18 @@ properties:
   ccdb.ssl_verify_hostname:
     default: true
     description: "Verify that the database SSL certificate matches the host to which the connection is attempted"
+
   cc.db_encryption_key:
     default: ""
     description: "key for encrypting sensitive values in the CC database"
+
+  cc.database_encryption_keys.keys:
+    default: {}
+    description: "label-key pairs for encrypting sensitive values in the CC database"
+
+  cc.database_encryption_keys.current_key_label:
+    default: ""
+    description: "current key label for encrypting values in the CC database"
 
   cc.default_app_memory:
     default: 1024
