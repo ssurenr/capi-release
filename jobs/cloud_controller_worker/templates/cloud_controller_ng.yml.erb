@@ -182,10 +182,10 @@ buildpacks:
 
 db_encryption_key: <%= p("cc.db_encryption_key") %>
 
-<% if_p("cc.database_encryption_keys") do %>
-database_encryption_keys:
-  keys: <%= p("cc.database_encryption_keys.keys", {}).to_json %>
-  current_key_label: <%= p("cc.database_encryption_keys.current_key_label").inspect %>
+<% if_p("cc.database_encryption") do %>
+database_encryption:
+  keys: <%= p("cc.database_encryption.keys", {}).to_json %>
+  current_key_label: <%= p("cc.database_encryption.current_key_label").inspect %>
 <% end %>
 
 broker_client_timeout_seconds: <%= p("cc.broker_client_timeout_seconds") %>

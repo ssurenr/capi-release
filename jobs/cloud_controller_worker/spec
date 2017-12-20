@@ -316,11 +316,11 @@ properties:
     default: ""
     description: "key for encrypting sensitive values in the CC database"
 
-  cc.database_encryption_keys.keys:
+  cc.database_encryption.keys:
     default: {}
     description: "label-key pairs for encrypting sensitive values in the CC database"
 
-  cc.database_encryption_keys.current_key_label:
+  cc.database_encryption.current_key_label:
     default: ""
     description: "current key label for encrypting values in the CC database"
 
