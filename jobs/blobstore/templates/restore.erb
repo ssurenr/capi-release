@@ -10,15 +10,17 @@ BLOBSTORE_OWNER=${BLOBSTORE_OWNER:-vcap}
 BLOBSTORE_OWNER_GROUP=${BLOBSTORE_OWNER_GROUP:-vcap}
 
 <% if p('release_level_backup') %>
-  <% [
-      link("directories_to_backup").p("cc.droplets.droplet_directory_key"),
-      link("directories_to_backup").p("cc.packages.app_package_directory_key"),
-      link("directories_to_backup").p("cc.buildpacks.buildpack_directory_key")
-    ].each do |directory_key| %>
-    rm --recursive --force ${BLOBS_DIRECTORY}/<%= directory_key %>
-    if [ -d $BACKUP_DIRECTORY/<%= directory_key %>  ]; then
+  <% if_link("directories_to_backup") do |directories_to_backup| %>
+    <% [
+           directories_to_backup.p("cc.droplets.droplet_directory_key"),
+           directories_to_backup.p("cc.packages.app_package_directory_key"),
+           directories_to_backup.p("cc.buildpacks.buildpack_directory_key")
+       ].each do |directory_key| %>
+      rm --recursive --force ${BLOBS_DIRECTORY}/<%= directory_key %>
+      if [ -d $BACKUP_DIRECTORY/<%= directory_key %>  ]; then
       cp --recursive --link $BACKUP_DIRECTORY/<%= directory_key %> $BLOBS_DIRECTORY
-    fi
+      fi
+    <% end %>
   <% end %>
 
   chown --recursive $BLOBSTORE_OWNER:$BLOBSTORE_OWNER_GROUP ${BLOBS_DIRECTORY}

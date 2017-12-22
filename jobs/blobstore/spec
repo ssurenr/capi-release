@@ -26,6 +26,7 @@ packages:
 consumes:
 - name: directories_to_backup
   type: directories_to_backup
+  optional: true
 
 properties:
   bpm.enabled:
