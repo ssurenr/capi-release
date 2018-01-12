@@ -5,6 +5,7 @@ set -x
 
 CC_PACKAGE_DIR="/var/vcap/packages/cloud_controller_ng"
 export BUNDLE_GEMFILE="${CC_PACKAGE_DIR}/cloud_controller_ng/Gemfile"
+export STACKS_YML="/var/vcap/jobs/cloud_controller_ng/config/stacks.yml"
 
 function migrate {
     set +e
