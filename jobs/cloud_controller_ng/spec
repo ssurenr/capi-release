@@ -164,6 +164,10 @@ properties:
   cc.external_port:
     description: "External Cloud Controller port"
     default: 9022
+  cc.temporary_create_internal_domain:
+    default: false
+    description: "Create the apps.internal domain so that it is reserved for use by platform service discovery"
+
   cc.tls_port:
     description: "Port for internal TLS communication"
     default: 9023
