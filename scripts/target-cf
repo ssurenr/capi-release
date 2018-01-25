@@ -4,7 +4,16 @@ set -ue
 
 get_cf_admin_password() {
   echo "Getting CF admin password from credhub... "
-  credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_USERNAME" -p "$CREDHUB_PASSWORD" --skip-tls-validation
+
+  # Newer bosh-lites use $CREDHUB_SECRET instead of $CREDHUB_PASSWORD
+  # The credhub cli is aware of $CREDHUB_SECRET so it does not need it passed in
+  set +u # $CREDHUB_PASSWORD may be unbound
+  if [[ -z $CREDHUB_PASSWORD ]]; then
+    credhub login --skip-tls-validation
+  else
+    credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_USERNAME" -p "$CREDHUB_PASSWORD" --skip-tls-validation
+  fi
+  set -u
   cf_admin_password=$(credhub get --name '/bosh-lite/cf/cf_admin_password' --output-json | jq -r '.value')
 }
 
