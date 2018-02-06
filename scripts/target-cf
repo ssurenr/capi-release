@@ -13,7 +13,7 @@ get_cf_admin_password() {
   if [[ -z $CREDHUB_PASSWORD ]]; then
     credhub login --skip-tls-validation
   else
-    credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_USERNAME" -p "$CREDHUB_PASSWORD" --skip-tls-validation
+    credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_CLIENT" -p "$CREDHUB_SECRET" --skip-tls-validation
   fi
   set -u
   cf_admin_password=$(credhub get --name '/bosh-lite/cf/cf_admin_password' --output-json | jq -r '.value')
