@@ -5,7 +5,13 @@ set -e
 set -o pipefail
 
 get_database_password(){
-	credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_CLIENT" -p "$CREDHUB_SECRET" --skip-tls-validation
+	set +u # $CREDHUB_PASSWORD may be unbound
+  if [[ -z $CREDHUB_PASSWORD ]]; then
+    credhub login --skip-tls-validation
+  else
+    credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_USERNAME" -p "$CREDHUB_PASSWORD" --skip-tls-validation
+  fi
+  set -u
 	cc_database_password=$(credhub get -n '/bosh-lite/cf/cc_database_password' --output-json | jq -r '.value')
 }
 

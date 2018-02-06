@@ -4,7 +4,13 @@ set -ue
 
 get_uaa_admin_password() {
   echo "Getting UAA admin password from credhub... "
-  credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_CLIENT" -p "$CREDHUB_SECRET" --skip-tls-validation
+  set +u # $CREDHUB_PASSWORD may be unbound
+  if [[ -z $CREDHUB_PASSWORD ]]; then
+    credhub login --skip-tls-validation
+  else
+    credhub login -s "$CREDHUB_SERVER" -u "$CREDHUB_USERNAME" -p "$CREDHUB_PASSWORD" --skip-tls-validation
+  fi
+  set -u
   uaa_admin_password=$(credhub get --name '/bosh-lite/cf/uaa_admin_client_secret' --output-json | jq -r '.value')
 }
 
