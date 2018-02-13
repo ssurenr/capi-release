@@ -17,8 +17,10 @@ get_database_password(){
 
 ssh_tunnel(){
 	mysql_port=$(gshuf -i 10000-65535 -n 1)
+	mysql_ip=$(bosh is --column ips --column instance | grep database | cut -f 2)
 	test -z "$mysql_port" && exit 1
-	bosh ssh --opts="-L ${mysql_port}:10.244.0.132:3306" -c 'while true; do continue; done' database &
+	test -z "$mysql_ip" && exit 1
+	bosh ssh --opts="-L ${mysql_port}:${mysql_ip}:3306" -c 'while true; do continue; done' database &
 	ssh_pid=$!
 }
 
