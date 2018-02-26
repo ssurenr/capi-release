@@ -45,6 +45,9 @@ consumes:
 - name: database
   type: database
   optional: true
+- name: credhub
+  type: credhub
+  optional: true
 
 properties:
   bpm.enabled:
@@ -533,6 +536,10 @@ properties:
   cc.perform_blob_cleanup:
     description: "Whether or not to perform the blob cleanup job"
     default: true
+
+  credhub_api.hostname:
+    description: "Hostname used to resolve the address of CredHub"
+    default: "credhub.service.cf.internal"
 
   release_level_backup:
     default: true

@@ -249,4 +249,9 @@ routing_api:
   routing_client_secret: <%= p("uaa.clients.cc_routing.secret") %>
 <% end %>
 
+<% if_link("credhub") do |credhub| %>
+credhub_api:
+  internal_url: <%= "https://#{p("credhub_api.hostname")}:#{credhub.p("credhub.port")}" %>
+<% end %>
+
 perform_blob_cleanup: <%= p("cc.perform_blob_cleanup") %>
