@@ -409,3 +409,13 @@ perm:
   enabled: false
   query_enabled: false
 <% end %>
+
+<% if_link("cloud_controller_to_copilot_conn") do |copilot_conn| %>
+copilot:
+  enabled: <%= p("copilot.enabled") %>
+  host: <%= p("copilot.host") %>
+  port: <%= copilot_conn.p("listen_port_for_cloud_controller") %>
+  client_ca_file: /var/vcap/jobs/cloud_controller_ng/config/certs/copilot_ca.crt
+  client_key_file: /var/vcap/jobs/cloud_controller_ng/config/certs/copilot.key
+  client_chain_file: /var/vcap/jobs/cloud_controller_ng/config/certs/copilot.crt
+<% end %>
