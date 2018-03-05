@@ -54,6 +54,9 @@ consumes:
 - name: cloud_controller_to_copilot_conn
   type: cloud_controller_to_copilot_conn
   optional: true
+- name: cloud_controller_internal
+  type: cloud_controller_internal
+  optional: true
 
 properties:
   bpm.enabled:
@@ -554,16 +557,3 @@ properties:
   cc.credential_references.interpolate_service_bindings:
     description: "Controls whether CredHub credentials are automatically interpolated in VCAP_SERVICES"
     default: true
-
-  copilot.enabled:
-    description: "Enable communication with CF Copilot. Must be enabled when using Envoy for ingress routing."
-    default: false
-  copilot.host:
-    description: "The FQDN to reach CF Copilot"
-    default: copilot.service.cf.internal
-  copilot.client_ca_file:
-    description: "PEM-encoded CA cert used to sign CF Copilot's server cert"
-  copilot.client_key_file:
-    description: "PEM-encoded Client key for communication with CF Copilot"
-  copilot.client_chain_file:
-    description: "PEM-encoded Client cert chain for communication with CF Copilot"

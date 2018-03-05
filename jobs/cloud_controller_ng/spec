@@ -79,6 +79,14 @@ provides:
   - cc.packages.app_package_directory_key
   - cc.droplets.droplet_directory_key
   - cc.buildpacks.buildpack_directory_key
+- name: cloud_controller_internal
+  type: cloud_controller_internal
+  properties:
+  - copilot.enabled
+  - copilot.host
+  - copilot.client_ca_file
+  - copilot.client_key_file
+  - copilot.client_chain_file
 
 consumes:
 - name: database
