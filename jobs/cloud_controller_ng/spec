@@ -491,6 +491,12 @@ properties:
   ccdb.ssl_verify_hostname:
     default: true
     description: "Verify that the database SSL certificate matches the host to which the connection is attempted"
+  ccdb.read_timeout:
+    default: 3600
+    description: "The read timeout for Sequel query responses"
+  ccdb.connection_validation_timeout:
+    default: 3600
+    description: "The period after which idle connections are invalid.  Note that setting this to -1 results in an additional check query for each database call, which can have performance implications"
 
   uaa.cc.token_secret:
     description: "Symmetric secret used to decode uaa tokens. Used for testing."

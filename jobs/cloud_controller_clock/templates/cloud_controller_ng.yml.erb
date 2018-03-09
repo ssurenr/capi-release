@@ -108,6 +108,8 @@ db: &db
   log_level: "<%= p("cc.db_logging_level") %>"
   log_db_queries: <%= p("cc.log_db_queries") %>
   ssl_verify_hostname: <%= p("ccdb.ssl_verify_hostname") %>
+  read_timeout: <%= p("ccdb.read_timeout") %>
+  connection_validation_timeout: <%= p("ccdb.connection_validation_timeout") %>
 <% if_p('ccdb.ca_cert') do %>
   ca_cert_path: '/var/vcap/jobs/cloud_controller_clock/config/certs/db_ca.crt'
 <% end %>
