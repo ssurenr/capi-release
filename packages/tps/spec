@@ -27,8 +27,6 @@ files:
   - capi-release/src/code.cloudfoundry.org/locket/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/locket/lock/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/locket/models/*.go # gosub
-  - capi-release/src/code.cloudfoundry.org/nsync/helpers/*.go # gosub
-  - capi-release/src/code.cloudfoundry.org/nsync/recipebuilder/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/runtimeschema/cc_messages/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/*.go # gosub
   - capi-release/src/code.cloudfoundry.org/tps/cc_client/*.go # gosub
