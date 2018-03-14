@@ -328,10 +328,10 @@ properties:
     description: "Verify that the database SSL certificate matches the host to which the connection is attempted"
   ccdb.read_timeout:
     default: 3600
-    description: "The read timeout for Sequel query responses"
+    description: "The read timeout in seconds for query responses, passed directly to the Sequel gem - see https://github.com/jeremyevans/sequel/blob/master/doc/opening_databases.rdoc for details"
   ccdb.connection_validation_timeout:
     default: 3600
-    description: "The period after which idle connections are invalid.  Note that setting this to -1 results in an additional check query for each database call, which can have performance implications"
+    description: "The period in seconds after which idle connections are validated, passed directly to the Sequel gem - see http://sequel.jeremyevans.net/rdoc-plugins/files/lib/sequel/extensions/connection_validator_rb.html for details.  Note that setting this to -1 results in an additional query whenever connections are checked out from the pool, which can have performance implications"
 
   cc.db_encryption_key:
     default: ""
