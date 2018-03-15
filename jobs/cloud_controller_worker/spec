@@ -448,6 +448,10 @@ properties:
     description: "The cc will restart if memory remains above this threshold for 3 monit cycles"
     default: 512
 
+  cc.disable_custom_buildpacks:
+    default: false
+    description: "Disable external (i.e. git) buildpacks? (Admin buildpacks and system buildpacks only.)"
+
   cc.broker_client_default_async_poll_interval_seconds:
     default: 60
     description: "Specifies interval on which the CC will poll a service broker for asynchronous actions"
